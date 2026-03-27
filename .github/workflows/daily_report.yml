@@ -33,11 +33,14 @@ jobs:
         run: |
           git config --global user.name  "Daily News Bot"
           git config --global user.email "actions@github.com"
-          git pull --rebase origin main
           git add reports/
-          git diff --staged --quiet && echo "No changes today" || \
+          if git diff --staged --quiet; then
+            echo "No changes today"
+          else
             git commit -m "📰 Daily report $(date +'%Y-%m-%d') [auto]"
-          git push
+            git pull --rebase origin main
+            git push
+          fi
 
       - name: Send report via email
         env:
