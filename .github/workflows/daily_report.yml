@@ -1,0 +1,39 @@
+name: Generate Daily News Report
+
+on:
+  schedule:
+    # 9:00 AM IST = 3:30 AM UTC, every day
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    # Allows manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate report
+        run: python scripts/generate_report.py
+
+      - name: Commit and push report
+        run: |
+          git config --global user.name  "Daily News Bot"
+          git config --global user.email "actions@github.com"
+          git add reports/
+          git diff --staged --quiet && echo "No changes today" || \
+            git commit -m "📰 Daily report $(date +'%Y-%m-%d') [auto]"
+          git push
