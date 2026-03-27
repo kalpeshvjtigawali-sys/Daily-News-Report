@@ -37,3 +37,10 @@ jobs:
           git diff --staged --quiet && echo "No changes today" || \
             git commit -m "📰 Daily report $(date +'%Y-%m-%d') [auto]"
           git push
+
+      - name: Send report via email
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: python scripts/send_email.py
