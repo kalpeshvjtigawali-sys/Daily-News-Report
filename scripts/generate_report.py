@@ -69,6 +69,9 @@ RELEVANCE_KEYWORDS = [
 ]
 
 
+# ─── Config ─────────────────────────────────────────────────────────────────
+NEWS_LOOKBACK_DAYS = 2   # include articles published within last N days
+
 # ─── Helpers ────────────────────────────────────────────────────────────────
 def clean_html(text):
     text = re.sub(r'<[^>]+>', '', text)
@@ -80,15 +83,23 @@ def truncate(text, limit=280):
     return text[:limit].rsplit(' ', 1)[0] + '…' if len(text) > limit else text
 
 def parse_date(entry):
-    """Return a formatted date string from feed entry."""
+    """Return (datetime_utc, display_string) from feed entry."""
     try:
         t = entry.get('published_parsed') or entry.get('updated_parsed')
         if t:
-            dt = datetime(*t[:6], tzinfo=timezone.utc).astimezone(IST)
-            return dt.strftime('%d %b %Y, %I:%M %p IST')
+            dt_utc = datetime(*t[:6], tzinfo=timezone.utc)
+            dt_ist = dt_utc.astimezone(IST)
+            return dt_utc, dt_ist.strftime('%d %b %Y, %I:%M %p IST')
     except Exception:
         pass
-    return ''
+    return None, ''
+
+def is_recent(dt_utc):
+    """Return True if article is within the lookback window."""
+    if dt_utc is None:
+        return True   # no date info → include it
+    cutoff = datetime.now(timezone.utc) - timedelta(days=NEWS_LOOKBACK_DAYS)
+    return dt_utc >= cutoff
 
 def source_name(feed_title, entry):
     """Best-effort source label."""
@@ -114,11 +125,18 @@ def fetch_all_articles():
         try:
             feed = feedparser.parse(url)
             feed_title = feed.feed.get('title', '')
-            for entry in feed.entries[:12]:
+            for entry in feed.entries[:20]:   # check more entries to cover 2 days
                 raw_title = entry.get('title', '')
                 title = clean_title(html.unescape(raw_title))
                 if not title or title.lower() in seen:
                     continue
+
+                dt_utc, date_display = parse_date(entry)
+
+                # Skip articles older than lookback window
+                if not is_recent(dt_utc):
+                    continue
+
                 seen.add(title.lower())
 
                 summary_raw = entry.get('summary', entry.get('description', ''))
@@ -129,12 +147,15 @@ def fetch_all_articles():
                     'link': entry.get('link', '#'),
                     'summary': summary,
                     'source': source_name(feed_title, entry),
-                    'date': parse_date(entry),
+                    'date': date_display,
+                    'dt_utc': dt_utc,   # used for sorting
                 })
         except Exception as e:
             print(f"[WARN] Could not fetch {url}: {e}")
         time.sleep(0.4)
 
+    # Sort newest first
+    articles.sort(key=lambda a: a['dt_utc'] or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
     return articles
 
 
@@ -160,7 +181,7 @@ def categorise(articles):
             # Falls into industry by default if relevant
             industry_news.append(art)
 
-    return stock_news[:20], industry_news[:25]
+    return stock_news[:30], industry_news[:35]
 
 
 # ─── HTML Report ─────────────────────────────────────────────────────────────
@@ -193,6 +214,7 @@ def generate_html(stock_news, industry_news):
     now_ist = datetime.now(IST)
     date_display = now_ist.strftime('%A, %d %B %Y')
     time_display = now_ist.strftime('%I:%M %p IST')
+    lookback_display = f"Last {NEWS_LOOKBACK_DAYS} Days"
     date_slug    = now_ist.strftime('%Y-%m-%d')
 
     stock_cards    = build_cards(stock_news)
@@ -370,6 +392,7 @@ def generate_html(stock_news, industry_news):
   <div class="badge-row">
     <span class="badge">📅 {date_display}</span>
     <span class="badge">🕐 Generated at {time_display}</span>
+    <span class="badge">📆 Coverage: {lookback_display}</span>
     <span class="badge">🇮🇳 India Focus</span>
   </div>
 </header>
