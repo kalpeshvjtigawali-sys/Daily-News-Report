@@ -16,8 +16,8 @@ Every morning at **9:00 AM IST** a fresh HTML report is generated and published 
 
 ## 🌐 View Reports
 
-👉 **[Open Latest Report](https://YOUR-USERNAME.github.io/Daily-News-Report/reports/latest.html)**
-👉 **[Browse Archive](https://YOUR-USERNAME.github.io/Daily-News-Report/reports/index.html)**
+👉 **[Open Latest Report](https://kalpeshvjtigawali-sys.github.io/Daily-News-Report/reports/latest.html)**
+👉 **[Browse Archive](https://kalpeshvjtigawali-sys.github.io/Daily-News-Report/reports/index.html)**
 
 ---
 
