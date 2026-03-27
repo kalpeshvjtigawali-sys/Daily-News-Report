@@ -78,7 +78,7 @@ def clean_html(text):
     text = html.unescape(text)
     return text.strip()
 
-def truncate(text, limit=280):
+def truncate(text, limit=600):
     text = text.strip()
     return text[:limit].rsplit(' ', 1)[0] + '…' if len(text) > limit else text
 
@@ -187,27 +187,34 @@ def categorise(articles):
 # ─── HTML Report ─────────────────────────────────────────────────────────────
 CARD_TEMPLATE = """
         <div class="card">
-          <div class="card-meta">
-            <span class="source">{source}</span>
-            <span class="date">{date}</span>
+          <div class="card-top">
+            <div class="card-num">{num}</div>
+            <div class="card-meta">
+              <span class="source">{source}</span>
+              <span class="date">{date}</span>
+            </div>
           </div>
           <a class="headline" href="{link}" target="_blank" rel="noopener noreferrer">{title}</a>
+          <div class="divider"></div>
           <p class="summary">{summary}</p>
-          <a class="read-more" href="{link}" target="_blank" rel="noopener noreferrer">Read Full Article ↗</a>
+          <a class="read-more" href="{link}" target="_blank" rel="noopener noreferrer">
+            Read Full Article &nbsp;↗
+          </a>
         </div>"""
 
-def build_cards(articles):
+def build_cards(articles, section):
     if not articles:
         return '<p class="no-news">No news found for this category today.</p>'
     return '\n'.join(
         CARD_TEMPLATE.format(
+            num=i + 1,
             source=html.escape(art['source']),
             date=html.escape(art['date']),
             link=art['link'],
             title=html.escape(art['title']),
             summary=html.escape(art['summary']),
         )
-        for art in articles
+        for i, art in enumerate(articles)
     )
 
 def generate_html(stock_news, industry_news):
@@ -217,8 +224,8 @@ def generate_html(stock_news, industry_news):
     lookback_display = f"Last {NEWS_LOOKBACK_DAYS} Days"
     date_slug    = now_ist.strftime('%Y-%m-%d')
 
-    stock_cards    = build_cards(stock_news)
-    industry_cards = build_cards(industry_news)
+    stock_cards    = build_cards(stock_news, 'stock')
+    industry_cards = build_cards(industry_news, 'industry')
 
     total = len(stock_news) + len(industry_news)
 
@@ -230,156 +237,276 @@ def generate_html(stock_news, industry_news):
   <title>Solar & Renewable Energy India — Daily Report | {date_display}</title>
   <style>
     :root {{
-      --bg: #f4f6f9;
-      --surface: #ffffff;
-      --primary: #1a6b3c;
-      --primary-light: #e8f5ee;
-      --accent: #f5a623;
-      --stock-color: #1558b0;
-      --stock-light: #eaf0fb;
-      --text: #1e2a38;
-      --muted: #6b7a8d;
-      --border: #dde3ec;
-      --radius: 10px;
-      --shadow: 0 2px 12px rgba(0,0,0,0.08);
+      --bg:           #eef1f6;
+      --surface:      #ffffff;
+      --primary:      #1a6b3c;
+      --primary-dark: #0d3d20;
+      --stock-color:  #1558b0;
+      --stock-dark:   #0b3d7a;
+      --accent:       #e07b00;
+      --text:         #1a2333;
+      --muted:        #5a6a7e;
+      --border:       #d4dbe6;
+      --radius:       12px;
+      --shadow:       0 2px 16px rgba(0,0,0,0.07);
     }}
-    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-    body {{ font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); }}
+    *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+    }}
 
-    /* ── Header ── */
+    /* ── HEADER ── */
     header {{
-      background: linear-gradient(135deg, #0d3d20 0%, #1a6b3c 60%, #228b22 100%);
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, #2e8b57 100%);
       color: #fff;
-      padding: 36px 24px 28px;
+      padding: 44px 32px 36px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }}
-    header .logo {{ font-size: 2rem; margin-bottom: 6px; }}
-    header h1 {{ font-size: 1.65rem; font-weight: 700; letter-spacing: .5px; }}
-    header .sub {{ font-size: .95rem; opacity: .85; margin-top: 6px; }}
-    .badge-row {{ display: flex; justify-content: center; gap: 12px; margin-top: 16px; flex-wrap: wrap; }}
-    .badge {{
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 20px;
-      padding: 4px 14px;
-      font-size: .8rem;
-      backdrop-filter: blur(4px);
+    header::before {{
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }}
-
-    /* ── Summary bar ── */
-    .summary-bar {{
-      background: var(--accent);
-      color: #fff;
+    header .logo {{ font-size: 2.4rem; margin-bottom: 10px; }}
+    header h1 {{
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: .4px;
+      text-shadow: 0 1px 4px rgba(0,0,0,.2);
+    }}
+    header .sub {{
+      font-size: 1rem;
+      opacity: .88;
+      margin-top: 6px;
+      letter-spacing: .3px;
+    }}
+    .badge-row {{
       display: flex;
       justify-content: center;
-      gap: 40px;
-      padding: 12px 24px;
-      font-size: .9rem;
+      gap: 10px;
+      margin-top: 20px;
       flex-wrap: wrap;
     }}
-    .summary-bar span {{ font-weight: 600; }}
+    .badge {{
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: .82rem;
+      font-weight: 500;
+      backdrop-filter: blur(6px);
+    }}
 
-    /* ── Layout ── */
-    .container {{ max-width: 1100px; margin: 0 auto; padding: 32px 16px 60px; }}
+    /* ── STATS BAR ── */
+    .stats-bar {{
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: #fff;
+      border-bottom: 3px solid var(--accent);
+      flex-wrap: wrap;
+    }}
+    .stat-item {{
+      padding: 14px 36px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      flex: 1;
+      min-width: 160px;
+    }}
+    .stat-item:last-child {{ border-right: none; }}
+    .stat-num {{ font-size: 1.7rem; font-weight: 800; color: var(--accent); line-height: 1; }}
+    .stat-label {{ font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; margin-top: 3px; }}
 
-    /* ── Section ── */
-    .section {{ margin-bottom: 40px; }}
+    /* ── LAYOUT ── */
+    .container {{ max-width: 900px; margin: 0 auto; padding: 36px 16px 64px; }}
+
+    /* ── SECTION ── */
+    .section {{ margin-bottom: 48px; }}
     .section-header {{
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 14px 20px;
+      gap: 14px;
+      padding: 16px 24px;
       border-radius: var(--radius) var(--radius) 0 0;
       color: #fff;
     }}
-    .section-header.stock  {{ background: var(--stock-color); }}
-    .section-header.industry {{ background: var(--primary); }}
-    .section-header .icon {{ font-size: 1.4rem; }}
-    .section-header h2 {{ font-size: 1.15rem; font-weight: 700; }}
-    .section-header .count {{
-      margin-left: auto;
-      background: rgba(255,255,255,.25);
-      border-radius: 12px;
-      padding: 2px 10px;
+    .section-header.stock    {{ background: linear-gradient(90deg, var(--stock-dark), var(--stock-color)); }}
+    .section-header.industry {{ background: linear-gradient(90deg, var(--primary-dark), var(--primary)); }}
+    .section-icon {{ font-size: 1.5rem; }}
+    .section-title {{
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }}
+    .section-subtitle {{
       font-size: .8rem;
+      opacity: .8;
+      margin-top: 2px;
+    }}
+    .section-count {{
+      margin-left: auto;
+      background: rgba(255,255,255,.22);
+      border-radius: 14px;
+      padding: 3px 14px;
+      font-size: .82rem;
+      font-weight: 600;
+      white-space: nowrap;
     }}
 
-    /* ── Cards grid ── */
-    .cards {{
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 16px;
-      background: var(--border);
+    /* ── ARTICLE LIST ── */
+    .articles {{
+      background: var(--surface);
       border: 1px solid var(--border);
       border-top: none;
       border-radius: 0 0 var(--radius) var(--radius);
-      padding: 16px;
+      overflow: hidden;
     }}
+
+    /* ── ARTICLE CARD ── */
     .card {{
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      border-left: 4px solid var(--border);
-      transition: transform .15s, box-shadow .15s;
+      gap: 0;
+      transition: background .15s;
     }}
-    .card:hover {{ transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }}
-    .section.stock .card  {{ border-left-color: var(--stock-color); }}
-    .section.industry .card {{ border-left-color: var(--primary); }}
+    .card:last-child {{ border-bottom: none; }}
+    .card:hover {{ background: #f8fafd; }}
 
-    .card-meta {{ display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }}
+    .card-top {{
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 10px;
+    }}
+    .card-num {{
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 2px;
+    }}
+    .section.stock    .card-num {{ background: var(--stock-color); }}
+    .section.industry .card-num {{ background: var(--primary); }}
+
+    .card-meta {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex: 1;
+    }}
     .source {{
       font-size: .72rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .5px;
-      color: var(--muted);
-      background: var(--bg);
-      padding: 2px 8px;
+      letter-spacing: .6px;
+      color: #fff;
+      padding: 2px 10px;
       border-radius: 4px;
     }}
-    .date {{ font-size: .72rem; color: var(--muted); }}
+    .section.stock    .source {{ background: var(--stock-color); }}
+    .section.industry .source {{ background: var(--primary); }}
+
+    .date {{
+      font-size: .76rem;
+      color: var(--muted);
+    }}
 
     .headline {{
-      font-size: .97rem;
+      display: block;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--text);
       text-decoration: none;
-      line-height: 1.4;
+      line-height: 1.45;
+      margin-bottom: 12px;
     }}
     .headline:hover {{ color: var(--primary); text-decoration: underline; }}
     .section.stock .headline:hover {{ color: var(--stock-color); }}
 
-    .summary {{ font-size: .84rem; color: #4a5568; line-height: 1.55; }}
+    .divider {{
+      height: 2px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+      width: 48px;
+    }}
+    .section.stock    .divider {{ background: var(--stock-color); }}
+    .section.industry .divider {{ background: var(--primary); }}
+
+    .summary {{
+      font-size: .92rem;
+      color: #3d4f63;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }}
 
     .read-more {{
-      font-size: .8rem;
-      font-weight: 600;
-      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .82rem;
+      font-weight: 700;
       text-decoration: none;
-      margin-top: auto;
+      padding: 6px 16px;
+      border-radius: 6px;
+      border: 1.5px solid;
+      align-self: flex-start;
+      transition: background .15s, color .15s;
     }}
-    .section.stock .read-more {{ color: var(--stock-color); }}
-    .read-more:hover {{ text-decoration: underline; }}
+    .section.stock .read-more {{
+      color: var(--stock-color);
+      border-color: var(--stock-color);
+    }}
+    .section.stock .read-more:hover {{
+      background: var(--stock-color);
+      color: #fff;
+    }}
+    .section.industry .read-more {{
+      color: var(--primary);
+      border-color: var(--primary);
+    }}
+    .section.industry .read-more:hover {{
+      background: var(--primary);
+      color: #fff;
+    }}
 
-    .no-news {{ padding: 24px; text-align: center; color: var(--muted); font-style: italic; }}
+    .no-news {{
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-style: italic;
+      font-size: .95rem;
+    }}
 
-    /* ── Footer ── */
+    /* ── FOOTER ── */
     footer {{
       text-align: center;
-      font-size: .78rem;
+      font-size: .8rem;
       color: var(--muted);
       border-top: 1px solid var(--border);
-      padding: 20px 16px;
+      padding: 24px 16px;
+      background: var(--surface);
     }}
-    footer a {{ color: var(--primary); text-decoration: none; }}
+    footer strong {{ color: var(--text); }}
 
     @media (max-width: 600px) {{
-      header h1 {{ font-size: 1.3rem; }}
-      .summary-bar {{ gap: 20px; }}
+      header h1 {{ font-size: 1.4rem; }}
+      .card {{ padding: 18px 16px; }}
+      .stat-item {{ padding: 12px 20px; }}
     }}
   </style>
 </head>
@@ -387,20 +514,29 @@ def generate_html(stock_news, industry_news):
 
 <header>
   <div class="logo">☀️ 🌬️</div>
-  <h1>Solar & Renewable Energy India</h1>
+  <h1>Solar &amp; Renewable Energy India</h1>
   <p class="sub">Daily Market Intelligence Report</p>
   <div class="badge-row">
     <span class="badge">📅 {date_display}</span>
-    <span class="badge">🕐 Generated at {time_display}</span>
+    <span class="badge">🕐 Generated {time_display}</span>
     <span class="badge">📆 Coverage: {lookback_display}</span>
     <span class="badge">🇮🇳 India Focus</span>
   </div>
 </header>
 
-<div class="summary-bar">
-  <div>📰 Total Articles &nbsp;<span>{total}</span></div>
-  <div>📈 IPO / Stock &nbsp;<span>{len(stock_news)}</span></div>
-  <div>🏭 Industry &nbsp;<span>{len(industry_news)}</span></div>
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">{total}</div>
+    <div class="stat-label">Total Articles</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">{len(stock_news)}</div>
+    <div class="stat-label">IPO &amp; Stock</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">{len(industry_news)}</div>
+    <div class="stat-label">Industry News</div>
+  </div>
 </div>
 
 <div class="container">
@@ -408,11 +544,14 @@ def generate_html(stock_news, industry_news):
   <!-- ── Section 1: IPO / Stock ── -->
   <div class="section stock">
     <div class="section-header stock">
-      <span class="icon">📈</span>
-      <h2>Section 1 — IPO &amp; Stock Related News</h2>
-      <span class="count">{len(stock_news)} articles</span>
+      <span class="section-icon">📈</span>
+      <div>
+        <div class="section-title">Section 1 — IPO &amp; Stock Related News</div>
+        <div class="section-subtitle">Market movements · Listings · Investor activity · Analyst ratings</div>
+      </div>
+      <span class="section-count">{len(stock_news)} articles</span>
     </div>
-    <div class="cards">
+    <div class="articles">
       {stock_cards}
     </div>
   </div>
@@ -420,11 +559,14 @@ def generate_html(stock_news, industry_news):
   <!-- ── Section 2: Industry ── -->
   <div class="section industry">
     <div class="section-header industry">
-      <span class="icon">🏭</span>
-      <h2>Section 2 — Industry Related News</h2>
-      <span class="count">{len(industry_news)} articles</span>
+      <span class="section-icon">🏭</span>
+      <div>
+        <div class="section-title">Section 2 — Industry Related News</div>
+        <div class="section-subtitle">Projects · Tenders · Policy · Capacity additions · Technology</div>
+      </div>
+      <span class="section-count">{len(industry_news)} articles</span>
     </div>
-    <div class="cards">
+    <div class="articles">
       {industry_cards}
     </div>
   </div>
@@ -432,8 +574,8 @@ def generate_html(stock_news, industry_news):
 </div>
 
 <footer>
-  <p>Auto-generated by <strong>Daily-News-Report</strong> &nbsp;|&nbsp; Sources: Google News, Mercom India, PV Magazine India &amp; others</p>
-  <p style="margin-top:6px;">News links open the original publisher's website. This report is for informational purposes only — not financial advice.</p>
+  <p>Auto-generated by <strong>Daily-News-Report</strong> &nbsp;·&nbsp; Sources: Google News, Mercom India, PV Magazine India &amp; others</p>
+  <p style="margin-top:6px; color:#8a9ab0;">News links open the original publisher's website. This report is for informational purposes only — not financial advice.</p>
 </footer>
 
 </body>
