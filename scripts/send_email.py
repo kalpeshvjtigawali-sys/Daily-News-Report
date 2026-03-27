@@ -14,9 +14,14 @@ from datetime import datetime, timezone, timedelta
 IST = timezone(timedelta(hours=5, minutes=30))
 
 def main():
-    gmail_user     = os.environ['GMAIL_USER']
-    gmail_password = os.environ['GMAIL_APP_PASSWORD']
-    recipient      = os.environ['RECIPIENT_EMAIL']
+    gmail_user     = os.environ.get('GMAIL_USER', '').strip()
+    gmail_password = os.environ.get('GMAIL_APP_PASSWORD', '').strip()
+    recipient      = os.environ.get('RECIPIENT_EMAIL', '').strip()
+
+    if not gmail_user or not gmail_password or not recipient:
+        print("⚠️  Email secrets not configured — skipping email. "
+              "Add GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENT_EMAIL as GitHub Secrets to enable.")
+        return
 
     # Find today's report; fall back to latest.html
     today = datetime.now(IST).strftime('%Y-%m-%d')
