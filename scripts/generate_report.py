@@ -11,7 +11,13 @@ import html
 import os
 import time
 import json
+import requests
 from datetime import datetime, timezone, timedelta
+try:
+    from bs4 import BeautifulSoup
+    _BS4_OK = True
+except ImportError:
+    _BS4_OK = False
 
 # ─── India Standard Time ────────────────────────────────────────────────────
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -164,51 +170,195 @@ def truncate(text, limit=700):
         return ''
     return text[:limit].rsplit(' ', 1)[0] + '…' if len(text) > limit else text
 
-def get_description_lines(art):
-    """Return exactly 3 description lines for an article as a list of strings."""
+_ARTICLE_CACHE = {}   # url → list[str]
+
+_FETCH_HEADERS = {
+    'User-Agent': (
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
+        'AppleWebKit/537.36 (KHTML, like Gecko) '
+        'Chrome/122.0.0.0 Safari/537.36'
+    ),
+    'Accept': 'text/html,application/xhtml+xml',
+    'Accept-Language': 'en-IN,en;q=0.9',
+}
+
+_SKIP_TAGS = {'script','style','nav','header','footer','aside',
+              'form','noscript','iframe','figure','figcaption'}
+
+_NOISE_PAT = re.compile(
+    r'(cookie|subscribe|sign in|log in|newsletter|advertisement|'
+    r'click here|read more|all rights reserved|©|follow us|share this)', re.I)
+
+def _fetch_article_sentences(url, timeout=5):
+    """Fetch article page → clean sentences. Returns [] on failure."""
+    if not _BS4_OK:
+        return []
+    if url in _ARTICLE_CACHE:
+        return _ARTICLE_CACHE[url]
+    try:
+        r = requests.get(url, timeout=timeout, headers=_FETCH_HEADERS,
+                         allow_redirects=True)
+        if r.status_code == 200 and 'text/html' in r.headers.get('Content-Type', ''):
+            soup = BeautifulSoup(r.text, 'html.parser')
+            for tag in soup(_SKIP_TAGS):
+                tag.decompose()
+            body = (soup.find('article') or soup.find('main') or
+                    soup.find(class_=re.compile(r'article[-_]?(body|content|text)', re.I)) or
+                    soup.find('body'))
+            raw  = re.sub(r'\s+', ' ', body.get_text(' ') if body else '').strip()
+            sents = [s.strip() for s in re.split(r'(?<=[.!?])\s+', raw)
+                     if len(s.strip()) > 35 and not _NOISE_PAT.search(s)]
+            result = sents[:5]
+            _ARTICLE_CACHE[url] = result
+            return result
+    except Exception:
+        pass
+    _ARTICLE_CACHE[url] = []
+    return []
+
+# ── Title-analysis helpers ─────────────────────────────────────────────────────
+_NUM_PAT = re.compile(
+    r'\b(\d[\d,]*\.?\d*)\s*(mw|gw|kw|mwh|gwh|kwh|%|crore|lakh|million|billion|rs\.?|₹)\b', re.I)
+_ACT_MAP = {
+    'declares':'declared',  'wins':'won',         'secures':'secured',
+    'launches':'launched',  'commissions':'commissioned', 'raises':'raised',
+    'signs':'signed',       'awards':'awarded',   'approves':'approved',
+    'achieves':'achieved',  'expands':'expanded', 'completes':'completed',
+    'announces':'announced','acquires':'acquired','files':'filed',
+    'receives':'received',  'targets':'targeted', 'bids':'bid',
+    'installs':'installed', 'deploys':'deployed', 'sets':'set',
+    'reports':'reported',   'posts':'posted',     'records':'recorded',
+}
+
+def _title_to_lines(title, source, art_category='industry'):
+    """Generate 3 distinct, informative lines that ELABORATE on the headline —
+    never simply repeat it."""
+    t       = title.strip().rstrip('.')
+    lower_t = t.lower()
+
+    # Extract numbers (capacity / financial figures)
+    nums   = _NUM_PAT.findall(t)
+    # Detect action verb
+    action_word = next((w for w in _ACT_MAP if w in lower_t), None)
+    action_past = _ACT_MAP.get(action_word, 'announced')
+
+    # Detect company name (leading capitalised block before a verb)
+    co_match = re.match(r'^([A-Z][A-Za-z\s&\-\.]+?)(?=\s+(?:Declares|Wins|Secures|Launches|'
+                        r'Commissions|Raises|Signs|Awards|Approves|Achieves|Expands|Completes|'
+                        r'Announces|Acquires|Files|Receives|Targets|Bids|Installs|Deploys|'
+                        r'Sets|Reports|Posts|Records|has|will|to\b))', t)
+    company = co_match.group(1).strip() if co_match else ''
+
+    # ── LINE 1: Who / what happened — expanded factual sentence ─────────────
+    if action_word and company:
+        after_action = t[lower_t.find(action_word) + len(action_word):].strip().lstrip(',').strip()
+        line1 = (f"{company} has {action_past} {after_action}, "
+                 f"marking a notable development in India's solar and renewable energy landscape.")
+    elif nums:
+        qty, unit = nums[0]
+        unit_label = unit.upper() if unit.lower() in ('mw','gw','kw','mwh','gwh','kwh') else unit
+        line1 = (f"This announcement involves {qty} {unit_label} of clean energy capacity, "
+                 f"adding to India's rapidly growing solar and renewable energy project pipeline.")
+    else:
+        line1 = (f"Reported by {source or 'industry sources'}, this development highlights "
+                 f"active momentum in India's solar and renewable energy ecosystem.")
+
+    # ── LINE 2: Quantitative scale / financial significance ──────────────────
+    if nums:
+        qty, unit = nums[0]
+        unit_lower = unit.lower()
+        unit_label = unit.upper() if unit_lower in ('mw','gw','kw','mwh','gwh','kwh') else unit
+        if unit_lower in ('mw', 'gw', 'kw'):
+            line2 = (f"A {qty} {unit_label} project of this scale directly supports India's "
+                     f"500 GW clean energy target by 2030 and strengthens domestic solar manufacturing "
+                     f"and deployment capabilities.")
+        elif unit_lower in ('mwh', 'gwh', 'kwh'):
+            line2 = (f"The {qty} {unit_label} energy storage component reflects the growing role of "
+                     f"BESS and battery technologies in stabilising India's renewable energy grid.")
+        else:
+            # Financial figure
+            line2 = (f"The ₹{qty} {unit} investment signals strong financial confidence in India's "
+                     f"clean energy market and reflects increasing institutional appetite for "
+                     f"solar and renewable projects.")
+    elif action_word:
+        line2 = (f"Industry observers consider this a positive signal for India's clean energy sector, "
+                 f"which continues to attract fresh capital, new projects, and strategic partnerships "
+                 f"from domestic and global players.")
+    else:
+        line2 = (f"India's solar and renewable energy market is witnessing record activity in 2025–26, "
+                 f"driven by policy support, competitive tariffs, and growing corporate sustainability mandates.")
+
+    # ── LINE 3: Forward-looking context tailored to section ─────────────────
+    if art_category == 'stock':
+        line3 = (f"Investors tracking this company on NSE/BSE should monitor the update closely, "
+                 f"as developments such as order wins, capacity additions, and financial results "
+                 f"can materially influence stock performance and near-term guidance.")
+    else:
+        line3 = (f"As India accelerates its clean energy transition, developments like this "
+                 f"strengthen the country's position as one of the world's largest and fastest-growing "
+                 f"solar markets, creating opportunities across the entire value chain.")
+
+    return [line1, line2, line3]
+
+def _rss_sentences(summary, title):
+    """Extract genuine non-title sentences from RSS summary."""
+    # Strip trailing source attribution (Google News: '  SourceName')
+    cleaned = re.sub(r'\s{2,}[A-Za-z].*$', '', summary).strip()
+    # Remove sentences that are essentially just the title
+    title_core = title.lower()[:40]
+    sents = []
+    for s in re.split(r'(?<=[.!?])\s+', cleaned):
+        s = s.strip()
+        if len(s) > 30 and s.lower()[:40] != title_core:
+            sents.append(s)
+    return sents
+
+def get_description_lines(art, art_category='industry'):
+    """Return exactly 3 meaningful, non-repetitive description lines."""
     summary = art.get('summary', '').strip()
     title   = art.get('title', '').strip()
     source  = art.get('source', '').strip()
+    link    = art.get('link', '')
 
-    # Try splitting RSS summary into sentences (min 20 chars each)
-    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 20]
+    # 1. Try fetching article for rich content
+    fetched = []
+    if link and link != '#':
+        fetched = _fetch_article_sentences(link)
 
-    # If the summary is one long sentence without punctuation, split on comma/semicolon chunks
-    if len(sentences) < 2 and len(summary) > 80:
-        chunks = [c.strip() for c in re.split(r'[,;]\s+', summary) if len(c.strip()) > 20]
-        if len(chunks) >= 2:
-            # Rejoin into 2-3 readable phrases
-            sentences = []
-            part = []
-            for c in chunks:
-                part.append(c)
-                if len(', '.join(part)) > 120:
-                    sentences.append(', '.join(part) + '.')
-                    part = []
-            if part:
-                sentences.append(', '.join(part) + ('.' if not part[-1].endswith('.') else ''))
+    # Filter fetched sentences that just repeat the title
+    title_core = title.lower()[:40]
+    genuine = [s for s in fetched if s.lower()[:40] != title_core and len(s) > 30]
 
-    lines = list(sentences[:3])
+    # 2. If we have 3+ real sentences from article, use them
+    if len(genuine) >= 3:
+        lines = [l[:200].rsplit(' ',1)[0]+'…' if len(l)>200 else l for l in genuine[:3]]
+        return lines
 
-    # Pad line 1 from title if summary is empty
-    if len(lines) == 0 and title:
-        lines.append(f"{title}.")
+    # 3. Try RSS non-title sentences to supplement
+    rss = _rss_sentences(summary, title)
+    pool = genuine + [s for s in rss if s not in genuine]
 
-    # Pad line 2 with source attribution
-    if len(lines) < 2:
-        if source:
-            lines.append(f"Reported by {source}, this development highlights ongoing momentum in India's solar and renewable energy space.")
-        else:
-            lines.append("This development marks a significant step in India's ongoing solar and renewable energy transition.")
+    # 4. Generate title-derived lines for all 3 slots (the reliable fallback)
+    title_lines = _title_to_lines(title, source, art_category)
 
-    # Pad line 3 with a forward-looking or context line
-    if len(lines) < 3:
-        lines.append("Refer to the original article for complete details, expert commentary, and further analysis.")
+    # 5. Blend: real pool sentences first, then title-derived to fill gaps
+    lines = []
+    for s in pool:
+        if len(lines) >= 3:
+            break
+        s_clean = s[:200].rsplit(' ',1)[0]+'…' if len(s)>200 else s
+        if s_clean not in lines:
+            lines.append(s_clean)
+    for tl in title_lines:
+        if len(lines) >= 3:
+            break
+        if tl not in lines:
+            lines.append(tl)
 
     return lines[:3]
 
 def get_description(art):
-    """Return description as a plain joined string (legacy use)."""
+    """Plain joined string (legacy use)."""
     return ' '.join(get_description_lines(art))
 
 def parse_date(entry):
@@ -480,11 +630,12 @@ def build_exec_summary(stock_news, industry_news):
 
 
 # ─── Card builder ─────────────────────────────────────────────────────────────
-def _card_html(art, num):
+def _card_html(art, num, art_category='industry'):
     sent_cls, sent_label = get_sentiment(art)
     tags      = get_tags(art)
     tag_html  = ''.join(f'<span class="tag">{html.escape(t)}</span>' for t in tags)
     num_str   = str(num).zfill(2)
+    desc_lines = get_description_lines(art, art_category)
     return (
         f'\n    <div class="card">'
         f'\n      <div class="card-top">'
@@ -497,7 +648,7 @@ def _card_html(art, num):
         f'\n        <span class="pill pill-{sent_cls}">{sent_label}</span>'
         f'\n      </div>'
         f'\n      <div class="card-body">'
-        + ''.join(f'<p>{html.escape(ln)}</p>' for ln in get_description_lines(art))
+        + ''.join(f'<p>{html.escape(ln)}</p>' for ln in desc_lines)
         + f'</div>'
         f'\n      <a class="orig-link" href="{art["link"]}" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>'
         f'\n      <div class="tags">{tag_html}</div>'
@@ -507,9 +658,10 @@ def _card_html(art, num):
 def build_cards(articles, section, start_num=1):
     if not articles:
         return '<p class="no-news">No news found for this category today.</p>'
+    cat = 'stock' if section == 'stock' else 'industry'
     parts = []
     for i, art in enumerate(articles):
-        parts.append(_card_html(art, start_num + i))
+        parts.append(_card_html(art, start_num + i, cat))
         if i < len(articles) - 1:
             parts.append('\n    <hr class="divider">')
     return ''.join(parts)
@@ -779,7 +931,7 @@ def _email_section_header(icon, title, count):
     </td>
   </tr>"""
 
-def _email_card(art, num, is_even):
+def _email_card(art, num, is_even, art_category='industry'):
     sent_cls, sent_label = get_sentiment(art)
     tags   = get_tags(art)
     bg     = '#FAFAFA' if is_even else '#FFFFFF'
@@ -796,7 +948,12 @@ def _email_card(art, num, is_even):
         f'{html.escape(t)}</span>'
         for t in tags
     )
-    num_str = str(num).zfill(2)
+    num_str   = str(num).zfill(2)
+    desc_html = ''.join(
+        f'<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#3A4A6B;'
+        f'line-height:1.7;margin:0 0 6px 36px;">{html.escape(ln)}</p>'
+        for ln in get_description_lines(art, art_category)
+    )
     return f"""
   <tr>
     <td style="background:{bg};border-left:5px solid #FFDD00;border-right:1px solid #E2E2E2;border-bottom:1px solid #E2E2E2;padding:16px 24px;">
@@ -814,10 +971,7 @@ def _email_card(art, num, is_even):
         <span style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:700;padding:2px 8px;border-radius:4px;{sent_style}">{sent_label}</span>
       </p>
       <!-- 3-line description -->
-      {''.join(
-          f'<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#3A4A6B;line-height:1.7;margin:0 0 6px 36px;">{html.escape(ln)}</p>'
-          for ln in get_description_lines(art)
-      )}
+      {desc_html}
       <!-- link button -->
       <p style="margin:0 0 10px 36px;">
         <a href="{art['link']}" target="_blank" style="font-family:Arial,sans-serif;font-size:8.5pt;font-weight:700;color:#243B7F;text-decoration:none;background:#FFDD00;border:2px solid #243B7F;padding:5px 13px;border-radius:4px;">&#128279; Read Original Article</a>
@@ -828,10 +982,10 @@ def _email_card(art, num, is_even):
   </tr>
   <tr><td style="border-left:5px solid #FFDD00;border-right:1px solid #E2E2E2;padding:0;"><hr style="border:none;border-top:2px dashed #FFDD00;margin:0;"></td></tr>"""
 
-def _email_cards(articles, start_num):
+def _email_cards(articles, start_num, art_category='industry'):
     if not articles:
         return f'<tr><td style="padding:24px;text-align:center;font-family:Arial,sans-serif;font-style:italic;color:#6B7A9B;background:#fff;border-left:5px solid #FFDD00;border-right:1px solid #E2E2E2;">No news found for this category today.</td></tr>'
-    return ''.join(_email_card(a, start_num + i, i % 2 == 1) for i, a in enumerate(articles))
+    return ''.join(_email_card(a, start_num + i, i % 2 == 1, art_category) for i, a in enumerate(articles))
 
 def generate_email_html(stock_news, industry_news):
     """Email-safe HTML: inline styles, table layout, web-safe fonts."""
@@ -854,8 +1008,8 @@ def generate_email_html(stock_news, industry_news):
         if i == 1:
             exec_cells += '</tr><tr>'
 
-    stock_rows    = _email_cards(stock_news,    start_num=1)
-    industry_rows = _email_cards(industry_news, start_num=len(stock_news) + 1)
+    stock_rows    = _email_cards(stock_news,    start_num=1,                    art_category='stock')
+    industry_rows = _email_cards(industry_news, start_num=len(stock_news) + 1, art_category='industry')
     sec1_hdr = _email_section_header('📈', 'Section 1 — IPO / Stock Market', len(stock_news))
     sec2_hdr = _email_section_header('🏭', 'Section 2 — Industry',           len(industry_news))
 
