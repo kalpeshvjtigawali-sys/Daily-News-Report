@@ -16,34 +16,84 @@ from datetime import datetime, timezone, timedelta
 # ─── India Standard Time ────────────────────────────────────────────────────
 IST = timezone(timedelta(hours=5, minutes=30))
 
+# ─── Priority companies for IPO/Stock section ────────────────────────────────
+PRIORITY_COMPANIES = [
+    'waaree energies', 'waaree',
+    'tata power',
+    'reliance industries', 'reliance solar', 'reliance renewable', 'reliance green',
+    'ntpc green energy', 'ntpc green',
+    'jsw energy', 'jsw energies', 'jsw solar',
+    'premier energies',
+    'borosil renewables', 'borosil',
+    'saatvik solar', 'saatvik',
+    'utl solar', 'utl',
+    'fujiyama solar', 'fujiyama',
+]
+
+# Other solar/RE companies to track in stock section
+OTHER_STOCK_COMPANIES = [
+    'adani green', 'suzlon', 'inox wind', 'inox green',
+    'sterling wilson', 'orient green', 'renew power', 'azure power',
+    'hero future energies', 'greenko', 'torrent power', 'cesc',
+    'power grid', 'ireda', 'sjvn', 'nhpc',
+]
+
 # ─── RSS Feed Sources ────────────────────────────────────────────────────────
 RSS_FEEDS = [
+    # General solar/renewable India
     "https://news.google.com/rss/search?q=solar+energy+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=renewable+energy+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=wind+energy+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=green+energy+india&hl=en-IN&gl=IN&ceid=IN:en",
+    # General stock/IPO
     "https://news.google.com/rss/search?q=solar+IPO+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=renewable+energy+stock+NSE+BSE+india&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=adani+green+tata+power+suzlon+inox+wind+stock&hl=en-IN&gl=IN&ceid=IN:en",
+    # Industry
     "https://news.google.com/rss/search?q=solar+power+plant+india+MW+GW&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=MNRE+solar+policy+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=green+hydrogen+india&hl=en-IN&gl=IN&ceid=IN:en",
+    # ── Priority company feeds ──
+    "https://news.google.com/rss/search?q=Waaree+Energies+solar&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=TATA+Power+solar+renewable&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Reliance+Industries+solar+renewable+energy&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=NTPC+Green+Energy+solar&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=JSW+Energy+solar+renewable&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Premier+Energies+solar&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Borosil+Renewables+solar&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Saatvik+Solar+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=UTL+Solar+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Fujiyama+Solar+india&hl=en-IN&gl=IN&ceid=IN:en",
+    # Specialist portals
     "https://mercomindia.com/feed/",
     "https://www.pv-magazine-india.com/feed/",
 ]
 
 # ─── Keyword Sets ────────────────────────────────────────────────────────────
 STOCK_KEYWORDS = [
+    # Market/finance terms
     'ipo', 'stock', 'share', 'nse', 'bse', 'sensex', 'nifty', 'listing',
     'market cap', 'sebi', 'equity', 'invest', 'fund', 'mutual fund',
     'dividend', 'earnings', 'quarter', 'revenue', 'profit', 'loss',
     'fundraise', 'bond', 'debt', 'valuation', 'investors',
-    'adani green', 'tata power', 'suzlon', 'inox wind', 'jsw energy',
-    'ntpc', 'power grid', 'cesc', 'sterling wilson', 'waaree',
-    'premier energies', 'orient green', 'renew power', 'azure power',
-    'hero future energies', 'greenko', 'torrent power',
     'shares', 'analyst', 'target price', 'buy rating', 'hold rating',
-    'fpo', 'preferential allotment', 'qip',
+    'fpo', 'preferential allotment', 'qip', 'rights issue',
+    # Priority companies
+    'waaree energies', 'waaree',
+    'tata power',
+    'reliance industries', 'reliance solar', 'reliance renewable',
+    'ntpc green energy', 'ntpc green',
+    'jsw energy', 'jsw energies', 'jsw solar',
+    'premier energies',
+    'borosil renewables', 'borosil',
+    'saatvik solar', 'saatvik',
+    'utl solar',
+    'fujiyama solar', 'fujiyama',
+    # Other solar companies
+    'adani green', 'suzlon', 'inox wind', 'inox green',
+    'sterling and wilson', 'sterling wilson',
+    'orient green', 'renew power', 'azure power',
+    'hero future energies', 'greenko', 'torrent power',
+    'ireda', 'sjvn', 'nhpc', 'power grid',
 ]
 
 INDUSTRY_KEYWORDS = [
@@ -56,12 +106,15 @@ INDUSTRY_KEYWORDS = [
     'battery storage', 'bess', 'energy storage', 'offshore wind',
     'floating solar', 'hybrid', 'evacuation', 'transmission',
     'seci', 'rewa', 'ntpc renewable', 'ireda', 'irena',
+    'solar module', 'solar cell', 'solar farm', 'wind turbine',
+    'renewable purchase obligation', 'rpo', 'rec', 'carbon credit',
 ]
 
 RELEVANCE_KEYWORDS = [
     'solar', 'renewable', 'wind energy', 'clean energy', 'green energy',
     'photovoltaic', 'pv ', 'energy storage', 'solar power', 'wind power',
     'rooftop solar', 'solar farm', 'solar park', 'offshore wind',
+    'green hydrogen', 'battery storage', 'bess',
 ]
 
 # ─── Config ──────────────────────────────────────────────────────────────────
@@ -144,19 +197,51 @@ def fetch_all_articles():
 
 # ─── Categorise ──────────────────────────────────────────────────────────────
 def categorise(articles):
-    stock_news, industry_news = [], []
+    priority_stock = []   # priority companies — always top of stock section
+    other_stock    = []   # other solar companies with stock signals
+    industry_news  = []
+
     for art in articles:
         blob = (art['title'] + ' ' + art['summary']).lower()
+
+        # Must be relevant to solar/renewable
         if not any(kw in blob for kw in RELEVANCE_KEYWORDS):
-            continue
+            # Exception: priority company articles are always included
+            if not any(kw in blob for kw in PRIORITY_COMPANIES):
+                continue
+
+        is_priority = any(kw in blob for kw in PRIORITY_COMPANIES)
         stock_score    = sum(1 for kw in STOCK_KEYWORDS    if kw in blob)
         industry_score = sum(1 for kw in INDUSTRY_KEYWORDS if kw in blob)
-        if stock_score >= industry_score and stock_score > 0:
-            stock_news.append(art)
+
+        if is_priority:
+            # Priority company → always stock section, regardless of score
+            priority_stock.append(art)
+        elif stock_score >= industry_score and stock_score > 0:
+            other_stock.append(art)
         elif industry_score > 0:
             industry_news.append(art)
         else:
             industry_news.append(art)
+
+    # Deduplicate across buckets (priority takes precedence)
+    seen = set()
+    def dedup(lst):
+        out = []
+        for a in lst:
+            k = a['title'].lower()
+            if k not in seen:
+                seen.add(k)
+                out.append(a)
+        return out
+
+    priority_stock = dedup(priority_stock)
+    other_stock    = dedup(other_stock)
+    industry_news  = dedup(industry_news)
+
+    # Priority companies first, then other stock news
+    stock_news = priority_stock[:20] + other_stock[:15]
+
     return stock_news[:30], industry_news[:35]
 
 
@@ -168,22 +253,50 @@ _NEG_KW = ['falls','declines','risk','curtailment','loss','rejected','cuts',
            'delays','concern','warning','penalty','slumps','drops','weakens']
 
 TAG_MAP = [
-    ('ipo',           'IPO'),        ('nse',           'NSE'),
-    ('bse',           'BSE'),        ('sebi',          'SEBI'),
-    ('bess',          'BESS'),       ('battery',       'Battery Storage'),
-    ('energy storage','Storage'),    ('green hydrogen','Green Hydrogen'),
-    ('mnre',          'MNRE'),       ('seci',          'SECI'),
-    ('cerc',          'CERC'),       ('ireda',         'IREDA'),
-    ('ntpc',          'NTPC'),       ('adani green',   'Adani Green'),
-    ('tata power',    'Tata Power'), ('suzlon',        'Suzlon'),
-    ('waaree',        'Waaree'),     ('transmission',  'Transmission'),
-    ('rooftop',       'Rooftop Solar'),('floating',    'Floating Solar'),
-    ('rpo',           'RPO'),        ('rec',           'REC'),
-    ('epc',           'EPC'),        ('ppa',           'PPA'),
-    ('rajasthan',     'Rajasthan'),  ('gujarat',       'Gujarat'),
-    ('maharashtra',   'Maharashtra'),('offshore',      'Offshore Wind'),
-    ('hydrogen',      'Hydrogen'),   ('wind',          'Wind'),
-    ('solar',         'Solar'),
+    # Priority companies first
+    ('waaree',           'Waaree Energies'),
+    ('tata power',       'Tata Power'),
+    ('reliance',         'Reliance'),
+    ('ntpc green',       'NTPC Green Energy'),
+    ('jsw energy',       'JSW Energy'),
+    ('jsw energies',     'JSW Energy'),
+    ('premier energies', 'Premier Energies'),
+    ('borosil',          'Borosil Renewables'),
+    ('saatvik',          'Saatvik Solar'),
+    ('utl solar',        'UTL Solar'),
+    ('fujiyama',         'Fujiyama Solar'),
+    # Other companies
+    ('adani green',      'Adani Green'),
+    ('suzlon',           'Suzlon'),
+    ('inox wind',        'INOX Wind'),
+    ('ireda',            'IREDA'),
+    # Market terms
+    ('ipo',              'IPO'),
+    ('nse',              'NSE'),
+    ('bse',              'BSE'),
+    ('sebi',             'SEBI'),
+    # Sector
+    ('bess',             'BESS'),
+    ('battery',          'Battery Storage'),
+    ('energy storage',   'Storage'),
+    ('green hydrogen',   'Green Hydrogen'),
+    ('mnre',             'MNRE'),
+    ('seci',             'SECI'),
+    ('cerc',             'CERC'),
+    ('transmission',     'Transmission'),
+    ('rooftop',          'Rooftop Solar'),
+    ('floating',         'Floating Solar'),
+    ('rpo',              'RPO'),
+    ('rec',              'REC'),
+    ('epc',              'EPC'),
+    ('ppa',              'PPA'),
+    ('rajasthan',        'Rajasthan'),
+    ('gujarat',          'Gujarat'),
+    ('maharashtra',      'Maharashtra'),
+    ('offshore',         'Offshore Wind'),
+    ('hydrogen',         'Hydrogen'),
+    ('solar',            'Solar'),
+    ('wind',             'Wind'),
 ]
 
 SIGNAL_DEFS = [
