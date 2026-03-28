@@ -164,28 +164,52 @@ def truncate(text, limit=700):
         return ''
     return text[:limit].rsplit(' ', 1)[0] + '…' if len(text) > limit else text
 
-def get_description(art):
-    """Return a 3-sentence description for an article.
-    Uses the RSS summary if rich enough; pads with context sentences otherwise."""
+def get_description_lines(art):
+    """Return exactly 3 description lines for an article as a list of strings."""
     summary = art.get('summary', '').strip()
     title   = art.get('title', '').strip()
     source  = art.get('source', '').strip()
-    date    = art.get('date', '').strip()
 
-    # Split summary into sentences
-    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 15]
+    # Try splitting RSS summary into sentences (min 20 chars each)
+    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 20]
 
-    # Build up to 3 good sentences; pad with contextual fallbacks if needed
-    result = sentences[:3]
+    # If the summary is one long sentence without punctuation, split on comma/semicolon chunks
+    if len(sentences) < 2 and len(summary) > 80:
+        chunks = [c.strip() for c in re.split(r'[,;]\s+', summary) if len(c.strip()) > 20]
+        if len(chunks) >= 2:
+            # Rejoin into 2-3 readable phrases
+            sentences = []
+            part = []
+            for c in chunks:
+                part.append(c)
+                if len(', '.join(part)) > 120:
+                    sentences.append(', '.join(part) + '.')
+                    part = []
+            if part:
+                sentences.append(', '.join(part) + ('.' if not part[-1].endswith('.') else ''))
 
-    if len(result) < 1 and title:
-        result.append(f"{title}.")
-    if len(result) < 2 and source:
-        result.append(f"This report was published by {source}.")
-    if len(result) < 3:
-        result.append(f"Refer to the original article for full details and analysis on this development in India's solar and renewable energy sector.")
+    lines = list(sentences[:3])
 
-    return ' '.join(result[:3])
+    # Pad line 1 from title if summary is empty
+    if len(lines) == 0 and title:
+        lines.append(f"{title}.")
+
+    # Pad line 2 with source attribution
+    if len(lines) < 2:
+        if source:
+            lines.append(f"Reported by {source}, this development highlights ongoing momentum in India's solar and renewable energy space.")
+        else:
+            lines.append("This development marks a significant step in India's ongoing solar and renewable energy transition.")
+
+    # Pad line 3 with a forward-looking or context line
+    if len(lines) < 3:
+        lines.append("Refer to the original article for complete details, expert commentary, and further analysis.")
+
+    return lines[:3]
+
+def get_description(art):
+    """Return description as a plain joined string (legacy use)."""
+    return ' '.join(get_description_lines(art))
 
 def parse_date(entry):
     try:
@@ -472,7 +496,9 @@ def _card_html(art, num):
         f'\n        <span class="pill pill-date">{html.escape(art["date"])}</span>'
         f'\n        <span class="pill pill-{sent_cls}">{sent_label}</span>'
         f'\n      </div>'
-        f'\n      <div class="card-body"><p>{html.escape(get_description(art))}</p></div>'
+        f'\n      <div class="card-body">'
+        + ''.join(f'<p>{html.escape(ln)}</p>' for ln in get_description_lines(art))
+        + f'</div>'
         f'\n      <a class="orig-link" href="{art["link"]}" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>'
         f'\n      <div class="tags">{tag_html}</div>'
         f'\n    </div>'
@@ -788,7 +814,10 @@ def _email_card(art, num, is_even):
         <span style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:700;padding:2px 8px;border-radius:4px;{sent_style}">{sent_label}</span>
       </p>
       <!-- 3-line description -->
-      <p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#3A4A6B;line-height:1.8;margin:0 0 12px 36px;display:block;">{html.escape(get_description(art))}</p>
+      {''.join(
+          f'<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#3A4A6B;line-height:1.7;margin:0 0 6px 36px;">{html.escape(ln)}</p>'
+          for ln in get_description_lines(art)
+      )}
       <!-- link button -->
       <p style="margin:0 0 10px 36px;">
         <a href="{art['link']}" target="_blank" style="font-family:Arial,sans-serif;font-size:8.5pt;font-weight:700;color:#243B7F;text-decoration:none;background:#FFDD00;border:2px solid #243B7F;padding:5px 13px;border-radius:4px;">&#128279; Read Original Article</a>
