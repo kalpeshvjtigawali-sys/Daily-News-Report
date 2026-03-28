@@ -54,6 +54,11 @@ RSS_FEEDS = [
     "https://news.google.com/rss/search?q=solar+power+plant+india+MW+GW&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=MNRE+solar+policy+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=green+hydrogen+india&hl=en-IN&gl=IN&ceid=IN:en",
+    # ── Residential / Rooftop solar ──
+    "https://news.google.com/rss/search?q=PM+Surya+Ghar+Muft+Bijli+Yojana+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=rooftop+solar+residential+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=home+solar+system+india+subsidy&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=solar+rooftop+net+metering+india&hl=en-IN&gl=IN&ceid=IN:en",
     # ── Priority company feeds ──
     "https://news.google.com/rss/search?q=Waaree+Energies+solar&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=TATA+Power+solar+renewable&hl=en-IN&gl=IN&ceid=IN:en",
@@ -106,6 +111,8 @@ INDUSTRY_KEYWORDS = [
     'ministry', 'mnre', 'policy', 'tariff', 'grid', 'rooftop',
     'solar panel', 'module', 'cell', 'installation', 'deployment',
     'pm kusum', 'solar mission', 'net metering', 'discom',
+    'pm surya ghar', 'residential solar', 'home solar', 'solar subsidy',
+    'rooftop solar residential', 'solar water heater', 'solar pump',
     'power purchase', 'ppa', 'power plant', 'green hydrogen',
     'battery storage', 'bess', 'energy storage', 'offshore wind',
     'floating solar', 'hybrid', 'evacuation', 'transmission',
@@ -119,6 +126,27 @@ RELEVANCE_KEYWORDS = [
     'photovoltaic', 'pv ', 'energy storage', 'solar power', 'wind power',
     'rooftop solar', 'solar farm', 'solar park', 'offshore wind',
     'green hydrogen', 'battery storage', 'bess',
+    'residential solar', 'pm surya ghar', 'home solar', 'rooftop pv',
+    'solar subsidy', 'net metering', 'solar for home', 'solar water heater',
+]
+
+# ─── Analyst / noise filter — skip articles that are ONLY analyst opinions ────
+ANALYST_FILTER_KEYWORDS = [
+    'analyst', 'target price', 'buy rating', 'hold rating', 'sell rating',
+    'brokerage', 'broking', 'price target', 'stock rating', 'upgrade to buy',
+    'downgrade to sell', 'initiates coverage', 'reiterates buy',
+    'reiterates hold', 'reiterates sell', 'overweight', 'underweight',
+    'outperform', 'underperform', 'technical analysis', 'rsi level',
+    'support level', 'resistance level', 'moving average', 'fibonacci',
+    'short term target', 'long term target',
+]
+
+# High-importance keywords — allow a 2nd article for the same company if these appear
+HIGH_IMPORTANCE_KEYWORDS = [
+    'ipo', 'listing', 'fundraise', 'merger', 'acquisition', 'takeover',
+    'sebi', 'penalty', 'court', 'settlement', 'bankruptcy', 'insolvency',
+    'raises', 'secures', 'wins', 'commissions', 'record', 'milestone',
+    'qip', 'fpo', 'rights issue', 'preferential allotment', 'delisting',
 ]
 
 # ─── Config ──────────────────────────────────────────────────────────────────
@@ -225,6 +253,27 @@ def fetch_all_articles():
 
 
 # ─── Categorise ──────────────────────────────────────────────────────────────
+def _which_priority_company(blob):
+    """Return a canonical company key if blob mentions a priority company."""
+    groups = [
+        ('waaree',         ['waaree energies', 'waaree']),
+        ('tata power',     ['tata power']),
+        ('reliance',       ['reliance industries', 'reliance solar', 'reliance renewable', 'reliance green']),
+        ('ntpc green',     ['ntpc green energy', 'ntpc green']),
+        ('jsw energy',     ['jsw energy', 'jsw energies', 'jsw solar']),
+        ('premier',        ['premier energies']),
+        ('borosil',        ['borosil renewables', 'borosil']),
+        ('saatvik',        ['saatvik solar', 'saatvik']),
+        ('utl',            ['utl solar', 'utl']),
+        ('fujiyama',       ['fujiyama solar', 'fujiyama']),
+        ('exide',          ['exide industries', 'exide']),
+        ('amara raja',     ['amara raja batteries', 'amara raja', 'amaraja']),
+    ]
+    for key, variants in groups:
+        if any(v in blob for v in variants):
+            return key
+    return None
+
 def categorise(articles):
     priority_stock = []   # priority companies — always top of stock section
     other_stock    = []   # other solar companies with stock signals
@@ -233,18 +282,26 @@ def categorise(articles):
     for art in articles:
         blob = (art['title'] + ' ' + art['summary']).lower()
 
+        # ── Skip pure analyst/brokerage opinion pieces ──────────────────────
+        analyst_hits = sum(1 for kw in ANALYST_FILTER_KEYWORDS if kw in blob)
+        if analyst_hits >= 2:
+            # Only skip if the article is predominantly analyst content;
+            # allow if it also has strong real-news signals (IPO, project, etc.)
+            real_news = any(kw in blob for kw in HIGH_IMPORTANCE_KEYWORDS)
+            if not real_news:
+                continue
+
         # Must be relevant to solar/renewable
         if not any(kw in blob for kw in RELEVANCE_KEYWORDS):
             # Exception: priority company articles are always included
             if not any(kw in blob for kw in PRIORITY_COMPANIES):
                 continue
 
-        is_priority = any(kw in blob for kw in PRIORITY_COMPANIES)
+        is_priority    = any(kw in blob for kw in PRIORITY_COMPANIES)
         stock_score    = sum(1 for kw in STOCK_KEYWORDS    if kw in blob)
         industry_score = sum(1 for kw in INDUSTRY_KEYWORDS if kw in blob)
 
         if is_priority:
-            # Priority company → always stock section, regardless of score
             priority_stock.append(art)
         elif stock_score >= industry_score and stock_score > 0:
             other_stock.append(art)
@@ -254,13 +311,13 @@ def categorise(articles):
             industry_news.append(art)
 
     # Deduplicate across buckets (priority takes precedence)
-    seen = set()
+    seen_titles = set()
     def dedup(lst):
         out = []
         for a in lst:
             k = a['title'].lower()
-            if k not in seen:
-                seen.add(k)
+            if k not in seen_titles:
+                seen_titles.add(k)
                 out.append(a)
         return out
 
@@ -268,10 +325,26 @@ def categorise(articles):
     other_stock    = dedup(other_stock)
     industry_news  = dedup(industry_news)
 
-    # Priority companies first, then other stock news
-    stock_news = priority_stock[:5] + other_stock[:5]
+    # ── 1 article per priority company; allow 2nd only if high-importance ────
+    company_count  = {}   # company_key → how many articles included so far
+    filtered_priority = []
+    for art in priority_stock:
+        blob = (art['title'] + ' ' + art['summary']).lower()
+        co   = _which_priority_company(blob) or 'other'
+        count = company_count.get(co, 0)
+        is_important = any(kw in blob for kw in HIGH_IMPORTANCE_KEYWORDS)
+        if count == 0:
+            filtered_priority.append(art)
+            company_count[co] = 1
+        elif count == 1 and is_important:
+            # Allow one extra article if it's high-importance
+            filtered_priority.append(art)
+            company_count[co] = 2
+        # else: skip — already have enough for this company
 
-    return stock_news[:5], industry_news[:10]
+    stock_news = filtered_priority[:5]
+
+    return stock_news, industry_news[:10]
 
 
 # ─── Sentiment & Tag helpers ──────────────────────────────────────────────────
