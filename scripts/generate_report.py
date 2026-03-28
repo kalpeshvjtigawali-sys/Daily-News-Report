@@ -767,13 +767,19 @@ def generate_email_html(stock_news, industry_news):
   </td></tr>
 
   <!-- SECTION 1 -->
-  <tr><td style="padding-top:18px;">{sec1_hdr}
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">{stock_rows}</table>
+  <tr><td style="padding-top:18px;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      {sec1_hdr}
+      {stock_rows}
+    </table>
   </td></tr>
 
   <!-- SECTION 2 -->
-  <tr><td style="padding-top:18px;">{sec2_hdr}
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">{industry_rows}</table>
+  <tr><td style="padding-top:18px;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      {sec2_hdr}
+      {industry_rows}
+    </table>
   </td></tr>
 
   <!-- FOOTER -->
