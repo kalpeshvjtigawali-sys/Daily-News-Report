@@ -126,11 +126,34 @@ def clean_html(text):
     text = html.unescape(text)
     return text.strip()
 
-def truncate(text, limit=420):
+def truncate(text, limit=700):
     text = text.strip()
     if not text:
         return ''
     return text[:limit].rsplit(' ', 1)[0] + '…' if len(text) > limit else text
+
+def get_description(art):
+    """Return a 3-sentence description for an article.
+    Uses the RSS summary if rich enough; pads with context sentences otherwise."""
+    summary = art.get('summary', '').strip()
+    title   = art.get('title', '').strip()
+    source  = art.get('source', '').strip()
+    date    = art.get('date', '').strip()
+
+    # Split summary into sentences
+    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary) if len(s.strip()) > 15]
+
+    # Build up to 3 good sentences; pad with contextual fallbacks if needed
+    result = sentences[:3]
+
+    if len(result) < 1 and title:
+        result.append(f"{title}.")
+    if len(result) < 2 and source:
+        result.append(f"This report was published by {source}.")
+    if len(result) < 3:
+        result.append(f"Refer to the original article for full details and analysis on this development in India's solar and renewable energy sector.")
+
+    return ' '.join(result[:3])
 
 def parse_date(entry):
     try:
@@ -369,7 +392,7 @@ def _card_html(art, num):
         f'\n        <span class="pill pill-date">{html.escape(art["date"])}</span>'
         f'\n        <span class="pill pill-{sent_cls}">{sent_label}</span>'
         f'\n      </div>'
-        f'\n      <div class="card-body"><p>{html.escape(art["summary"])}</p></div>'
+        f'\n      <div class="card-body"><p>{html.escape(get_description(art))}</p></div>'
         f'\n      <a class="orig-link" href="{art["link"]}" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>'
         f'\n      <div class="tags">{tag_html}</div>'
         f'\n    </div>'
@@ -684,8 +707,8 @@ def _email_card(art, num, is_even):
         <span style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:600;padding:2px 8px;border-radius:4px;background:#FFDD00;color:#243B7F;margin-right:5px;">{html.escape(art['date'])}</span>
         <span style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:700;padding:2px 8px;border-radius:4px;{sent_style}">{sent_label}</span>
       </p>
-      <!-- summary -->
-      <p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#3A4A6B;line-height:1.65;margin:0 0 12px 36px;">{html.escape(art['summary'])}</p>
+      <!-- 3-line description -->
+      <p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#3A4A6B;line-height:1.8;margin:0 0 12px 36px;display:block;">{html.escape(get_description(art))}</p>
       <!-- link button -->
       <p style="margin:0 0 10px 36px;">
         <a href="{art['link']}" target="_blank" style="font-family:Arial,sans-serif;font-size:8.5pt;font-weight:700;color:#243B7F;text-decoration:none;background:#FFDD00;border:2px solid #243B7F;padding:5px 13px;border-radius:4px;">&#128279; Read Original Article</a>
