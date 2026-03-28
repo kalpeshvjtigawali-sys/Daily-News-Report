@@ -28,6 +28,8 @@ PRIORITY_COMPANIES = [
     'saatvik solar', 'saatvik',
     'utl solar', 'utl',
     'fujiyama solar', 'fujiyama',
+    'exide industries', 'exide',
+    'amara raja batteries', 'amara raja', 'amaraja',
 ]
 
 # Other solar/RE companies to track in stock section
@@ -63,6 +65,8 @@ RSS_FEEDS = [
     "https://news.google.com/rss/search?q=Saatvik+Solar+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=UTL+Solar+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=Fujiyama+Solar+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Exide+Industries+solar+battery+energy+storage&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Amara+Raja+Batteries+solar+energy+storage&hl=en-IN&gl=IN&ceid=IN:en",
     # Specialist portals
     "https://mercomindia.com/feed/",
     "https://www.pv-magazine-india.com/feed/",
@@ -290,6 +294,9 @@ TAG_MAP = [
     ('saatvik',          'Saatvik Solar'),
     ('utl solar',        'UTL Solar'),
     ('fujiyama',         'Fujiyama Solar'),
+    ('exide industries', 'Exide Industries'),
+    ('exide',            'Exide Industries'),
+    ('amara raja',       'Amara Raja Batteries'),
     # Other companies
     ('adani green',      'Adani Green'),
     ('suzlon',           'Suzlon'),
