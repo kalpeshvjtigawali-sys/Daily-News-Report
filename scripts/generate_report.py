@@ -523,6 +523,157 @@ def generate_html(stock_news, industry_news):
 </html>"""
 
 
+# ─── Email-safe HTML (inline styles, table layout, no CSS vars) ───────────────
+def _email_section_header(icon, title, count):
+    return f"""
+  <tr>
+    <td style="background:#243B7F;padding:11px 24px;border-radius:8px 8px 0 0;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td style="font-family:Arial,sans-serif;font-size:13pt;font-weight:900;color:#FFDD00;font-style:italic;">{icon} {title}</td>
+        <td align="right"><span style="background:#FFDD00;color:#243B7F;font-family:Arial,sans-serif;font-size:7.5pt;font-weight:800;padding:2px 9px;border-radius:12px;">{count} STORIES</span></td>
+      </tr></table>
+    </td>
+  </tr>"""
+
+def _email_card(art, num, is_even):
+    sent_cls, sent_label = get_sentiment(art)
+    tags   = get_tags(art)
+    bg     = '#FAFAFA' if is_even else '#FFFFFF'
+    sent_style = (
+        'background:#E8F5EE;color:#1B7A45;border:1px solid #8ED4AE;'
+        if sent_cls == 'pos' else
+        'background:#FAEAEA;color:#B22222;border:1px solid #ECA9A9;'
+    )
+    tag_html = ''.join(
+        f'<span style="font-family:Arial,sans-serif;font-size:7pt;font-weight:700;'
+        f'padding:2px 7px;border-radius:3px;background:rgba(36,59,127,0.07);'
+        f'color:#243B7F;border:1px solid rgba(36,59,127,0.18);'
+        f'text-transform:uppercase;letter-spacing:0.4px;margin-right:4px;">'
+        f'{html.escape(t)}</span>'
+        for t in tags
+    )
+    num_str = str(num).zfill(2)
+    return f"""
+  <tr>
+    <td style="background:{bg};border-left:5px solid #FFDD00;border-right:1px solid #E2E2E2;border-bottom:1px solid #E2E2E2;padding:16px 24px;">
+      <!-- number + headline -->
+      <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
+        <td valign="top" style="width:36px;">
+          <span style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:800;color:#FFFFFF;background:#243B7F;border-radius:4px;padding:3px 7px;">{num_str}</span>
+        </td>
+        <td valign="top" style="font-family:Arial,sans-serif;font-size:10.5pt;font-weight:700;color:#243B7F;line-height:1.4;">{html.escape(art['title'])}</td>
+      </tr></table>
+      <!-- pills -->
+      <p style="margin:10px 0 10px 36px;">
+        <span style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:600;padding:2px 8px;border-radius:4px;background:#243B7F;color:#FFDD00;margin-right:5px;">{html.escape(art['source'])}</span>
+        <span style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:600;padding:2px 8px;border-radius:4px;background:#FFDD00;color:#243B7F;margin-right:5px;">{html.escape(art['date'])}</span>
+        <span style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:700;padding:2px 8px;border-radius:4px;{sent_style}">{sent_label}</span>
+      </p>
+      <!-- summary -->
+      <p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#3A4A6B;line-height:1.65;margin:0 0 12px 36px;">{html.escape(art['summary'])}</p>
+      <!-- link button -->
+      <p style="margin:0 0 10px 36px;">
+        <a href="{art['link']}" target="_blank" style="font-family:Arial,sans-serif;font-size:8.5pt;font-weight:700;color:#243B7F;text-decoration:none;background:#FFDD00;border:2px solid #243B7F;padding:5px 13px;border-radius:4px;">&#128279; Read Original Article</a>
+      </p>
+      <!-- tags -->
+      <p style="margin:4px 0 0 36px;">{tag_html}</p>
+    </td>
+  </tr>
+  <tr><td style="border-left:5px solid #FFDD00;border-right:1px solid #E2E2E2;padding:0;"><hr style="border:none;border-top:2px dashed #FFDD00;margin:0;"></td></tr>"""
+
+def _email_cards(articles, start_num):
+    if not articles:
+        return f'<tr><td style="padding:24px;text-align:center;font-family:Arial,sans-serif;font-style:italic;color:#6B7A9B;background:#fff;border-left:5px solid #FFDD00;border-right:1px solid #E2E2E2;">No news found for this category today.</td></tr>'
+    return ''.join(_email_card(a, start_num + i, i % 2 == 1) for i, a in enumerate(articles))
+
+def generate_email_html(stock_news, industry_news):
+    """Email-safe HTML: inline styles, table layout, web-safe fonts."""
+    now_ist      = datetime.now(IST)
+    date_display = now_ist.strftime('%A, %d %B %Y')
+    date_upper   = date_display.upper()
+    time_display = now_ist.strftime('%I:%M %p IST')
+    total        = len(stock_news) + len(industry_news)
+    web_url      = 'https://kalpeshvjtigawali-sys.github.io/Daily-News-Report/reports/latest.html'
+
+    # Exec summary (top 4)
+    picks = (stock_news[:2] + industry_news[:2])[:4]
+    exec_cells = ''
+    for i, art in enumerate(picks):
+        icon = '📈' if art in stock_news else '🏭'
+        t    = html.escape(art['title'][:80]) + ('…' if len(art['title']) > 80 else '')
+        b    = html.escape(art['summary'][:200]) + ('…' if len(art['summary']) > 200 else '')
+        td_style = 'width:50%;vertical-align:top;padding:11px 14px;background:rgba(255,221,0,0.07);border:1px solid rgba(255,221,0,0.2);border-left:4px solid #FFDD00;border-radius:6px;'
+        exec_cells += f'<td style="{td_style}"><p style="font-family:Arial,sans-serif;font-size:8.5pt;font-weight:800;color:#FFDD00;text-transform:uppercase;letter-spacing:0.3px;margin:0 0 4px;">{icon} {t}</p><p style="font-family:Arial,sans-serif;font-size:9pt;color:rgba(255,255,255,0.88);line-height:1.5;margin:0;">{b}</p></td>'
+        if i == 1:
+            exec_cells += '</tr><tr>'
+
+    stock_rows    = _email_cards(stock_news,    start_num=1)
+    industry_rows = _email_cards(industry_news, start_num=len(stock_news) + 1)
+    sec1_hdr = _email_section_header('📈', 'Section 1 — IPO / Stock Market', len(stock_news))
+    sec2_hdr = _email_section_header('🏭', 'Section 2 — Industry',           len(industry_news))
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Daily News Updates — Solar &amp; Renewable Energy India | {date_display}</title>
+</head>
+<body style="margin:0;padding:20px;background:#E8E8E8;font-family:Arial,Helvetica,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:680px;margin:0 auto;">
+
+  <!-- HEADER -->
+  <tr><td style="background:#243B7F;padding:18px 28px;border-radius:10px 10px 0 0;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td><p style="font-family:Arial,sans-serif;font-size:22pt;font-weight:900;font-style:italic;color:#FFDD00;margin:0;line-height:1;">Daily News Updates</p>
+          <p style="font-family:Arial,sans-serif;font-size:8pt;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase;margin:3px 0 0;">Solar &amp; Renewable Energy &nbsp;·&nbsp; India</p></td>
+      <td align="right" valign="middle">
+          <p style="font-family:Arial,sans-serif;font-size:8.5pt;font-weight:700;color:#FFDD00;letter-spacing:1px;margin:0;">{date_upper}</p>
+          <p style="font-family:Arial,sans-serif;font-size:7.5pt;color:rgba(255,255,255,0.45);margin:3px 0 0;">Last {NEWS_LOOKBACK_DAYS} Days &nbsp;·&nbsp; {total} Articles</p>
+      </td>
+    </tr></table>
+  </td></tr>
+
+  <!-- YELLOW BAR -->
+  <tr><td style="background:#FFDD00;padding:11px 28px;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="font-family:Arial,sans-serif;font-size:10pt;font-weight:800;color:#243B7F;">Solar &amp; Renewable Energy India &nbsp;|&nbsp; <span style="color:#DA7527;">Daily Market Intelligence</span></td>
+      <td align="right" style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:600;color:#1A3070;opacity:0.75;">IPO &nbsp;·&nbsp; Industry &nbsp;·&nbsp; Policy &nbsp;·&nbsp; Storage</td>
+    </tr></table>
+  </td></tr>
+
+  <!-- EXEC SUMMARY -->
+  <tr><td style="background:#243B7F;padding:18px 28px;border-left:5px solid #FFDD00;border-right:5px solid #FFDD00;">
+    <p style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:800;color:#FFDD00;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;">&#9728; &nbsp;Executive Summary — Top Stories Today</p>
+    <table width="100%" cellpadding="6" cellspacing="6" border="0"><tr>{exec_cells}</tr></table>
+  </td></tr>
+
+  <!-- VIEW FULL REPORT BUTTON -->
+  <tr><td style="background:#FFDD00;padding:12px 28px;border-left:5px solid #FFDD00;border-right:5px solid #FFDD00;border-bottom:3px solid #243B7F;text-align:center;">
+    <a href="{web_url}" target="_blank" style="font-family:Arial,sans-serif;font-size:9pt;font-weight:800;color:#FFFFFF;text-decoration:none;background:#243B7F;border:2px solid #243B7F;padding:8px 22px;border-radius:5px;">&#128279; View Full Formatted Report Online</a>
+  </td></tr>
+
+  <!-- SECTION 1 -->
+  <tr><td style="padding-top:18px;">{sec1_hdr}
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">{stock_rows}</table>
+  </td></tr>
+
+  <!-- SECTION 2 -->
+  <tr><td style="padding-top:18px;">{sec2_hdr}
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">{industry_rows}</table>
+  </td></tr>
+
+  <!-- FOOTER -->
+  <tr><td style="background:#243B7F;padding:12px 28px;border-radius:8px;margin-top:18px;display:block;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#FFDD00;">&#9679; Solar &amp; Renewable Energy India &nbsp;·&nbsp; Daily Intelligence &nbsp;·&nbsp; {date_display}</td>
+      <td align="right" style="font-family:Arial,sans-serif;font-size:7.5pt;color:rgba(255,255,255,0.45);">Generated {time_display}</td>
+    </tr></table>
+  </td></tr>
+
+</table>
+</body>
+</html>"""
+
+
 # ─── Index Page ───────────────────────────────────────────────────────────────
 def update_index(report_files):
     rows = ''
@@ -600,6 +751,13 @@ def main():
 
     with open('reports/latest.html', 'w', encoding='utf-8') as f:
         f.write(report_html)
+
+    # Email-safe version
+    email_html = generate_email_html(stock_news, industry_news)
+    with open(f'reports/email_{date_slug}.html', 'w', encoding='utf-8') as f:
+        f.write(email_html)
+    with open('reports/email_latest.html', 'w', encoding='utf-8') as f:
+        f.write(email_html)
 
     all_reports = sorted(
         [p for p in os.listdir('reports') if p.startswith('report_') and p.endswith('.html')]

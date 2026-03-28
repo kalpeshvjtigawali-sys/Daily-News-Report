@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
-Sends the latest HTML report as the email body via Gmail SMTP.
+Sends the email-safe report as the email body via Gmail SMTP.
 Requires env vars: GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENT_EMAIL
 """
 
 import os
 import smtplib
-import glob
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime, timezone, timedelta
@@ -23,17 +22,21 @@ def main():
               "Add GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENT_EMAIL as GitHub Secrets to enable.")
         return
 
-    # Find today's report; fall back to latest.html
+    # Use email-safe version (inline styles, table layout)
     today = datetime.now(IST).strftime('%Y-%m-%d')
-    report_path = f'reports/report_{today}.html'
-    if not os.path.exists(report_path):
-        report_path = 'reports/latest.html'
-
-    if not os.path.exists(report_path):
+    email_path = f'reports/email_{today}.html'
+    if not os.path.exists(email_path):
+        email_path = 'reports/email_latest.html'
+    if not os.path.exists(email_path):
+        # Fall back to web report
+        email_path = f'reports/report_{today}.html'
+    if not os.path.exists(email_path):
+        email_path = 'reports/latest.html'
+    if not os.path.exists(email_path):
         print("❌ No report file found. Skipping email.")
         return
 
-    with open(report_path, 'r', encoding='utf-8') as f:
+    with open(email_path, 'r', encoding='utf-8') as f:
         html_body = f.read()
 
     date_display = datetime.now(IST).strftime('%d %B %Y')
@@ -44,12 +47,11 @@ def main():
     msg['From']    = f"Daily News Report <{gmail_user}>"
     msg['To']      = recipient
 
-    # Plain-text fallback
     plain = (
         f"Solar & Renewable Energy India — Daily Report\n"
         f"Date: {date_display}\n\n"
-        f"Please open this email in an HTML-capable client to view the full report.\n\n"
-        f"Online version: https://kalpeshvjtigawali-sys.github.io/Daily-News-Report/reports/latest.html"
+        f"View the full report online:\n"
+        f"https://kalpeshvjtigawali-sys.github.io/Daily-News-Report/reports/latest.html"
     )
     msg.attach(MIMEText(plain, 'plain'))
     msg.attach(MIMEText(html_body, 'html'))
@@ -58,7 +60,7 @@ def main():
         server.login(gmail_user, gmail_password)
         server.sendmail(gmail_user, recipient, msg.as_string())
 
-    print(f"✅ Report emailed to {recipient}")
+    print(f"✅ Email-safe report sent to {recipient}")
 
 if __name__ == '__main__':
     main()

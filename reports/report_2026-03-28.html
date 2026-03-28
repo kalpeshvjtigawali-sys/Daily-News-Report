@@ -1,893 +1,827 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solar & Renewable Energy India — Daily Report | Saturday, 28 March 2026</title>
-  <style>
-    :root {
-      --bg:           #eef1f6;
-      --surface:      #ffffff;
-      --primary:      #1a6b3c;
-      --primary-dark: #0d3d20;
-      --stock-color:  #1558b0;
-      --stock-dark:   #0b3d7a;
-      --accent:       #e07b00;
-      --text:         #1a2333;
-      --muted:        #5a6a7e;
-      --border:       #d4dbe6;
-      --radius:       12px;
-      --shadow:       0 2px 16px rgba(0,0,0,0.07);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Updates — Solar &amp; Renewable Energy India | Saturday, 28 March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --em-yellow:    #FFDD00;
+    --em-yellow-lt: #FFF9CC;
+    --em-yellow-dk: #F5C800;
+    --em-blue:      #243B7F;
+    --em-blue-mid:  #1A3070;
+    --em-blue-dk:   #152560;
+    --em-orange:    #EA7437;
+    --em-orange-dk: #DA7527;
+    --em-white:     #FFFFFF;
+    --em-off-white: #FAFAFA;
+    --em-light:     #F3F3F3;
+    --em-border:    #E2E2E2;
+    --em-text-dk:   #1A1A2E;
+    --em-text-mid:  #3A4A6B;
+    --em-text-lt:   #6B7A9B;
+    --em-green:     #1B7A45;
+    --em-green-bg:  #E8F5EE;
+    --em-red:       #B22222;
+    --em-red-bg:    #FAEAEA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    background: #E8E8E8;
+    color: var(--em-text-dk);
+    line-height: 1.55;
+    padding: 24px 20px;
+  }
+  .page { max-width: 980px; margin: 0 auto; }
 
-    /* ── HEADER ── */
-    header {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, #2e8b57 100%);
-      color: #fff;
-      padding: 44px 32px 36px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    header .logo { font-size: 2.4rem; margin-bottom: 10px; }
-    header h1 {
-      font-size: 1.9rem;
-      font-weight: 800;
-      letter-spacing: .4px;
-      text-shadow: 0 1px 4px rgba(0,0,0,.2);
-    }
-    header .sub {
-      font-size: 1rem;
-      opacity: .88;
-      margin-top: 6px;
-      letter-spacing: .3px;
-    }
-    .badge-row {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    .badge {
-      background: rgba(255,255,255,.18);
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 20px;
-      padding: 5px 16px;
-      font-size: .82rem;
-      font-weight: 500;
-      backdrop-filter: blur(6px);
-    }
+  /* ── HEADER ── */
+  .header { border-radius: 10px 10px 0 0; overflow: hidden; }
+  .header-top {
+    background: var(--em-blue);
+    padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-name { font-size: 24pt; font-weight: 900; font-style: italic; color: var(--em-yellow); letter-spacing: -0.5px; line-height: 1; }
+  .brand-sub  { font-size: 8.5pt; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+  .header-meta   { text-align: right; }
+  .meta-date     { color: var(--em-yellow); font-size: 9pt; font-weight: 700; letter-spacing: 1px; }
+  .meta-edition  { color: rgba(255,255,255,0.45); font-size: 8pt; margin-top: 3px; }
+  .header-yellow {
+    background: var(--em-yellow);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hy-tagline  { font-size: 10.5pt; font-weight: 800; color: var(--em-blue); letter-spacing: 0.2px; }
+  .hy-tagline em { color: var(--em-orange-dk); font-style: normal; }
+  .hy-coverage { font-size: 8pt; font-weight: 600; color: var(--em-blue-mid); opacity: 0.75; }
 
-    /* ── STATS BAR ── */
-    .stats-bar {
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      background: #fff;
-      border-bottom: 3px solid var(--accent);
-      flex-wrap: wrap;
-    }
-    .stat-item {
-      padding: 14px 36px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-      flex: 1;
-      min-width: 160px;
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-num { font-size: 1.7rem; font-weight: 800; color: var(--accent); line-height: 1; }
-    .stat-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; margin-top: 3px; }
+  /* ── EXEC SUMMARY ── */
+  .exec-wrap {
+    background: var(--em-blue);
+    padding: 20px 32px;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+  }
+  .exec-label { font-size: 7.5pt; font-weight: 800; color: var(--em-yellow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .exec-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .exec-item  {
+    background: rgba(255,221,0,0.07);
+    border: 1px solid rgba(255,221,0,0.2);
+    border-left: 4px solid var(--em-yellow);
+    border-radius: 6px;
+    padding: 11px 14px;
+    color: rgba(255,255,255,0.88);
+    font-size: 9pt; line-height: 1.5;
+  }
+  .exec-item strong { display: block; color: var(--em-yellow); font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
 
-    /* ── LAYOUT ── */
-    .container { max-width: 900px; margin: 0 auto; padding: 36px 16px 64px; }
+  /* ── SIGNALS BAR ── */
+  .signals {
+    background: var(--em-yellow);
+    padding: 10px 32px;
+    display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+    border-bottom: 3px solid var(--em-blue);
+  }
+  .sig-label { font-size: 7.5pt; font-weight: 800; color: var(--em-blue); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; margin-right: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 7.5pt; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.2px; }
+  .chip-blue   { background: var(--em-blue);      color: var(--em-yellow); }
+  .chip-orange { background: var(--em-orange-dk); color: #fff; }
+  .chip-green  { background: var(--em-green);     color: #fff; }
+  .chip-red    { background: var(--em-red);       color: #fff; }
 
-    /* ── SECTION ── */
-    .section { margin-bottom: 48px; }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 16px 24px;
-      border-radius: var(--radius) var(--radius) 0 0;
-      color: #fff;
-    }
-    .section-header.stock    { background: linear-gradient(90deg, var(--stock-dark), var(--stock-color)); }
-    .section-header.industry { background: linear-gradient(90deg, var(--primary-dark), var(--primary)); }
-    .section-icon { font-size: 1.5rem; }
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: .3px;
-    }
-    .section-subtitle {
-      font-size: .8rem;
-      opacity: .8;
-      margin-top: 2px;
-    }
-    .section-count {
-      margin-left: auto;
-      background: rgba(255,255,255,.22);
-      border-radius: 14px;
-      padding: 3px 14px;
-      font-size: .82rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+  /* ── SECTION ── */
+  .section { margin-top: 18px; }
+  .section-hdr {
+    background: var(--em-blue);
+    padding: 11px 32px;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-icon  { font-size: 14pt; }
+  .section-title { font-size: 12pt; font-weight: 800; color: var(--em-yellow); font-style: italic; }
+  .section-count { margin-left: auto; background: var(--em-yellow); color: var(--em-blue); font-size: 7.5pt; font-weight: 800; padding: 2px 9px; border-radius: 12px; letter-spacing: 0.5px; }
 
-    /* ── ARTICLE LIST ── */
-    .articles {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-top: none;
-      border-radius: 0 0 var(--radius) var(--radius);
-      overflow: hidden;
-    }
+  /* ── CARD ── */
+  .card {
+    background: var(--em-white);
+    border-left: 5px solid var(--em-yellow);
+    border-right: 1px solid var(--em-border);
+    border-bottom: 1px solid var(--em-border);
+    padding: 16px 28px;
+  }
+  .card:nth-child(even) { background: var(--em-off-white); }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .card-top      { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 8px; }
+  .card-num      { font-size: 7.5pt; font-weight: 800; color: var(--em-white); background: var(--em-blue); border-radius: 4px; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.5px; }
+  .card-headline { font-size: 10.5pt; font-weight: 700; color: var(--em-blue); line-height: 1.4; }
 
-    /* ── ARTICLE CARD ── */
-    .card {
-      padding: 24px 28px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      transition: background .15s;
-    }
-    .card:last-child { border-bottom: none; }
-    .card:hover { background: #f8fafd; }
+  .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .pill      { display: inline-flex; align-items: center; font-size: 7.5pt; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.2px; }
+  .pill-src  { background: var(--em-blue);     color: var(--em-yellow); }
+  .pill-date { background: var(--em-yellow);   color: var(--em-blue); }
+  .pill-pos  { background: var(--em-green-bg); color: var(--em-green); border: 1px solid #8ED4AE; font-weight: 700; }
+  .pill-neg  { background: var(--em-red-bg);   color: var(--em-red);   border: 1px solid #ECA9A9; font-weight: 700; }
 
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 10px;
-    }
-    .card-num {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .75rem;
-      font-weight: 800;
-      color: #fff;
-      margin-top: 2px;
-    }
-    .section.stock    .card-num { background: var(--stock-color); }
-    .section.industry .card-num { background: var(--primary); }
+  .card-body   { font-size: 9.5pt; color: var(--em-text-mid); line-height: 1.65; margin-bottom: 12px; font-weight: 400; }
+  .card-body p + p { margin-top: 7px; }
 
-    .card-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      flex: 1;
-    }
-    .source {
-      font-size: .72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .6px;
-      color: #fff;
-      padding: 2px 10px;
-      border-radius: 4px;
-    }
-    .section.stock    .source { background: var(--stock-color); }
-    .section.industry .source { background: var(--primary); }
+  .orig-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 8.5pt; font-weight: 700;
+    color: var(--em-blue); text-decoration: none;
+    background: var(--em-yellow); border: 2px solid var(--em-blue);
+    padding: 5px 13px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .orig-link:hover { background: var(--em-yellow-lt); }
 
-    .date {
-      font-size: .76rem;
-      color: var(--muted);
-    }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .tag  { font-size: 7pt; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: rgba(36,59,127,0.07); color: var(--em-blue); border: 1px solid rgba(36,59,127,0.18); text-transform: uppercase; letter-spacing: 0.4px; }
 
-    .headline {
-      display: block;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-      line-height: 1.45;
-      margin-bottom: 12px;
-    }
-    .headline:hover { color: var(--primary); text-decoration: underline; }
-    .section.stock .headline:hover { color: var(--stock-color); }
+  .divider { border: none; border-top: 2px dashed var(--em-yellow); margin: 0; }
+  .no-news { padding: 32px; text-align: center; color: var(--em-text-lt); font-style: italic; background: var(--em-white); border-left: 5px solid var(--em-yellow); border-right: 1px solid var(--em-border); border-bottom: 1px solid var(--em-border); border-radius: 0 0 8px 8px; }
 
-    .divider {
-      height: 2px;
-      border-radius: 2px;
-      margin-bottom: 14px;
-      width: 48px;
-    }
-    .section.stock    .divider { background: var(--stock-color); }
-    .section.industry .divider { background: var(--primary); }
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 18px;
+    background: var(--em-blue);
+    border-radius: 8px;
+    padding: 13px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-l { color: var(--em-yellow); font-size: 8.5pt; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--em-yellow); flex-shrink: 0; }
+  .footer-r { color: rgba(255,255,255,0.45); font-size: 8pt; }
 
-    .summary {
-      font-size: .92rem;
-      color: #3d4f63;
-      line-height: 1.75;
-      margin-bottom: 16px;
-    }
-
-    .read-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: .82rem;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 6px 16px;
-      border-radius: 6px;
-      border: 1.5px solid;
-      align-self: flex-start;
-      transition: background .15s, color .15s;
-    }
-    .section.stock .read-more {
-      color: var(--stock-color);
-      border-color: var(--stock-color);
-    }
-    .section.stock .read-more:hover {
-      background: var(--stock-color);
-      color: #fff;
-    }
-    .section.industry .read-more {
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-    .section.industry .read-more:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .no-news {
-      padding: 40px;
-      text-align: center;
-      color: var(--muted);
-      font-style: italic;
-      font-size: .95rem;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      font-size: .8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      padding: 24px 16px;
-      background: var(--surface);
-    }
-    footer strong { color: var(--text); }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.4rem; }
-      .card { padding: 18px 16px; }
-      .stat-item { padding: 12px 20px; }
-    }
-  </style>
+  @media print { body { background: #fff; padding: 0; } .page { max-width: 100%; } }
+  @media (max-width: 620px) {
+    .exec-grid { grid-template-columns: 1fr; }
+    .header-top, .header-yellow { flex-direction: column; gap: 8px; text-align: center; }
+    .footer { flex-direction: column; gap: 6px; text-align: center; }
+    .card { padding: 14px 16px; }
+  }
+</style>
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="logo">☀️ 🌬️</div>
-  <h1>Solar &amp; Renewable Energy India</h1>
-  <p class="sub">Daily Market Intelligence Report</p>
-  <div class="badge-row">
-    <span class="badge">📅 Saturday, 28 March 2026</span>
-    <span class="badge">🕐 Generated 12:20 AM IST</span>
-    <span class="badge">📆 Coverage: Last 2 Days</span>
-    <span class="badge">🇮🇳 India Focus</span>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Daily News Updates</div>
+        <div class="brand-sub">Solar &amp; Renewable Energy &nbsp;&#183;&nbsp; India</div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-date">SATURDAY, 28 MARCH 2026</div>
+        <div class="meta-edition">Daily News Intelligence &nbsp;&#183;&nbsp; Coverage: Last 2 Days</div>
+      </div>
+    </div>
+    <div class="header-yellow">
+      <div class="hy-tagline">Solar &amp; Renewable Energy India &nbsp;|&nbsp; <em>Daily Market Intelligence</em></div>
+      <div class="hy-coverage">IPO / Stock Market &nbsp;&#183;&nbsp; Industry &nbsp;&#183;&nbsp; Policy &amp; Regulation &nbsp;&#183;&nbsp; Energy Storage</div>
+    </div>
   </div>
-</header>
 
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-num">34</div>
-    <div class="stat-label">Total Articles</div>
+  <!-- EXEC SUMMARY -->
+  <div class="exec-wrap">
+    <div class="exec-label">&#9728; &nbsp;Executive Summary — Top Stories Today &nbsp;(39 articles)</div>
+    <div class="exec-grid">
+      <div class="exec-item"><strong>📈 China solar cell prices fall for third consecutive week as upstream costs ease</strong>In a new weekly update for pv magazine, OPIS, a Dow Jones company, provides a quick look at the main price trends in the global PV industry.</div>
+      <div class="exec-item"><strong>📈 USITC Opens Probe into TOPCon Solar Imports for Patent Infringement</strong>Listen to this article The U.S. International Trade Commission (USITC) has initiated a Section 337 investigation into imports of Tunnel Oxide Passivated Contact (TOPCon) solar</div>
+      <div class="exec-item"><strong>🏭 Clean Energy transition part of India’s larger national, geopolitical strategy: Dr Ji…</strong>Clean Energy transition part of India’s larger national, geopolitical strategy: Dr Jitendra  Daily Excelsior</div>
+      <div class="exec-item"><strong>🏭 Jitendra Singh Highlights India’s Clean Energy Push to Cut Imports, Boost Global Role</strong>Jitendra Singh Highlights India’s Clean Energy Push to Cut Imports, Boost Global Role  Daily Pioneer</div>
+    </div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num">5</div>
-    <div class="stat-label">IPO &amp; Stock</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">29</div>
-    <div class="stat-label">Industry News</div>
-  </div>
-</div>
 
-<div class="container">
+  <!-- SIGNALS BAR -->
+  <div class="signals">
+    <span class="sig-label">Market Signals</span>
+    <span class="chip chip-green">&#9650; BESS / Storage</span>
+    <span class="chip chip-green">&#9650; RE Financing</span>
+    <span class="chip chip-blue">&#9675; Policy &amp; Regulation</span>
+    <span class="chip chip-blue">&#9675; IPO / Stock Market</span>
+    <span class="chip chip-orange">&#9678; Rooftop / PM Surya Ghar</span>
+    <span class="chip chip-orange">&#9678; Green Hydrogen</span>
+  </div>
 
-  <!-- ── Section 1: IPO / Stock ── -->
-  <div class="section stock">
-    <div class="section-header stock">
+  <!-- SECTION 1: IPO / STOCK -->
+  <div class="section">
+    <div class="section-hdr">
       <span class="section-icon">📈</span>
-      <div>
-        <div class="section-title">Section 1 — IPO &amp; Stock Related News</div>
-        <div class="section-subtitle">Market movements · Listings · Investor activity · Analyst ratings</div>
-      </div>
-      <span class="section-count">5 articles</span>
+      <span class="section-title">Section 1 — IPO / Stock Market</span>
+      <span class="section-count">4 STORIES</span>
     </div>
-    <div class="articles">
-      
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">1</div>
-            <div class="card-meta">
-              <span class="source">Mercomindia.com RSS feed</span>
-              <span class="date">27 Mar 2026, 08:47 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://www.mercomindia.com/usitc-opens-probe-into-topcon-solar-imports-for-patent-infringement" target="_blank" rel="noopener noreferrer">USITC Opens Probe into TOPCon Solar Imports for Patent Infringement</a>
-          <div class="divider"></div>
-          <p class="summary">Listen to this article The U.S. International Trade Commission (USITC) has initiated a Section 337 investigation into imports of Tunnel Oxide Passivated Contact (TOPCon) solar</p>
-          <a class="read-more" href="https://www.mercomindia.com/usitc-opens-probe-into-topcon-solar-imports-for-patent-infringement" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">2</div>
-            <div class="card-meta">
-              <span class="source">Saur Energy</span>
-              <span class="date">27 Mar 2026, 03:52 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQaElpMC1aamZmUmV4WlJiaU43MlVPZEF1Y0gwZkw5ZnFWM0M2d1F6WTVPeDFJVF9oQ3dqM3h5bU15X05PZlgyekI4M3NDZmo4dExDRlh2OE1NZGZEQk9ueVJwdXpTR3c3eTEwcFhBUWJuMXlRTVIzYktSOEJuMEYwZ3l2NU0wQWIyMHlRZlh4cVhTWXRVTTBsZGI2SUtZcTQ3ZmFaUDZoZWVnckdLYjM2UTVKT0F6X0JETjAzM29NQXF2bkdZTDJOcGp3?oc=5" target="_blank" rel="noopener noreferrer">Tata Power Expands Renewable Skilling Network with TPSDI Centre in Prayagraj</a>
-          <div class="divider"></div>
-          <p class="summary">Tata Power Expands Renewable Skilling Network with TPSDI Centre in Prayagraj  Saur Energy</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQaElpMC1aamZmUmV4WlJiaU43MlVPZEF1Y0gwZkw5ZnFWM0M2d1F6WTVPeDFJVF9oQ3dqM3h5bU15X05PZlgyekI4M3NDZmo4dExDRlh2OE1NZGZEQk9ueVJwdXpTR3c3eTEwcFhBUWJuMXlRTVIzYktSOEJuMEYwZ3l2NU0wQWIyMHlRZlh4cVhTWXRVTTBsZGI2SUtZcTQ3ZmFaUDZoZWVnckdLYjM2UTVKT0F6X0JETjAzM29NQXF2bkdZTDJOcGp3?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">3</div>
-            <div class="card-meta">
-              <span class="source">SolarQuarter</span>
-              <span class="date">27 Mar 2026, 11:42 AM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPeEtIT3VfUDJtTjV0OGc3Q2FTYkdDOWZ6VXJMeDhNSE02MjBGUVRrblluZ2dvV3hKOVNUTUl5d1A1cWhGSktub1R2SzluZG5Vek5wb09TMElPMlFXUV9EaEJEZGR6clo5cEZuTVRZZkRaVHBLVGJsUDQ0MHVIWHh4YlBVWXlNZ21tZ2JfaU4xS2pPLXJDQ1ZLOGtTWFZoc3JYU1p5V1QxdkRPTm8xTk9kN0tudlV6S3JUTVNlRVlqWQ?oc=5" target="_blank" rel="noopener noreferrer">LGE India Signs Solar PPAs with HREPL and Sunsure Energy to Power Manufacturing Units</a>
-          <div class="divider"></div>
-          <p class="summary">LGE India Signs Solar PPAs with HREPL and Sunsure Energy to Power Manufacturing Units  SolarQuarter</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPeEtIT3VfUDJtTjV0OGc3Q2FTYkdDOWZ6VXJMeDhNSE02MjBGUVRrblluZ2dvV3hKOVNUTUl5d1A1cWhGSktub1R2SzluZG5Vek5wb09TMElPMlFXUV9EaEJEZGR6clo5cEZuTVRZZkRaVHBLVGJsUDQ0MHVIWHh4YlBVWXlNZ21tZ2JfaU4xS2pPLXJDQ1ZLOGtTWFZoc3JYU1p5V1QxdkRPTm8xTk9kN0tudlV6S3JUTVNlRVlqWQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">4</div>
-            <div class="card-meta">
-              <span class="source">Machine Maker</span>
-              <span class="date">26 Mar 2026, 05:08 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQW4wRkxjeUNaakZTZ21qZ3F3TVpsZzVQeHp3enRfdDhBODNQSjhmWWQ3SzYzSVN3bGtRQzNUWjRhZUM4UG9XSUF6R0kxLXJoc1duNEpqNDBlYVdicnQxM3E2VndVNjJfUFRpS1dOMkVnZ3Z1RHp4UzloZkZBaFBmX0h5RWo2OUlQeUNfREVFaGVhcWdVNUZNS3A4bHhERmNRckZXNDZRUWp6UQ?oc=5" target="_blank" rel="noopener noreferrer">Suzlon Secures Sixth Wind Energy Order from GAIL for Maharashtra Project</a>
-          <div class="divider"></div>
-          <p class="summary">Suzlon Secures Sixth Wind Energy Order from GAIL for Maharashtra Project  Machine Maker</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQW4wRkxjeUNaakZTZ21qZ3F3TVpsZzVQeHp3enRfdDhBODNQSjhmWWQ3SzYzSVN3bGtRQzNUWjRhZUM4UG9XSUF6R0kxLXJoc1duNEpqNDBlYVdicnQxM3E2VndVNjJfUFRpS1dOMkVnZ3Z1RHp4UzloZkZBaFBmX0h5RWo2OUlQeUNfREVFaGVhcWdVNUZNS3A4bHhERmNRckZXNDZRUWp6UQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">5</div>
-            <div class="card-meta">
-              <span class="source">Energetica India Magazine</span>
-              <span class="date">26 Mar 2026, 04:39 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNaEYxalVWWkpSWkF4U2gxT0ZudVlzNG5SRlU3Z0w5czAzTWk0bFJLUGk5bHlMZ1pDdFV1R2ZFOFA0cVRPbjN0NFpXbmIxY0k0VHRGdDRhS1BmeFZrYVo5bHdMdjhnVEhVSVAwSDBpdk9sX2otQVZMemhVY1ZSX0ZIb3p1WHc4R01rZGQxNDEzdlFvUFNuRjVEX1RHX2ZUTlRqaEduckYtRzhMdDFn?oc=5" target="_blank" rel="noopener noreferrer">NTPC Green Energy Signs MoU with Nxtra Data for Development of RE Projects</a>
-          <div class="divider"></div>
-          <p class="summary">NTPC Green Energy Signs MoU with Nxtra Data for Development of RE Projects  Energetica India Magazine</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNaEYxalVWWkpSWkF4U2gxT0ZudVlzNG5SRlU3Z0w5czAzTWk0bFJLUGk5bHlMZ1pDdFV1R2ZFOFA0cVRPbjN0NFpXbmIxY0k0VHRGdDRhS1BmeFZrYVo5bHdMdjhnVEhVSVAwSDBpdk9sX2otQVZMemhVY1ZSX0ZIb3p1WHc4R01rZGQxNDEzdlFvUFNuRjVEX1RHX2ZUTlRqaEduckYtRzhMdDFn?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">01</span>
+        <div class="card-headline">China solar cell prices fall for third consecutive week as upstream costs ease</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">28 Mar 2026, 06:48 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>In a new weekly update for pv magazine, OPIS, a Dow Jones company, provides a quick look at the main price trends in the global PV industry.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/03/28/china-solar-cell-prices-fall-for-third-consecutive-week-as-upstream-costs-ease/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">NSE</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">02</span>
+        <div class="card-headline">USITC Opens Probe into TOPCon Solar Imports for Patent Infringement</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">27 Mar 2026, 08:47 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Listen to this article The U.S. International Trade Commission (USITC) has initiated a Section 337 investigation into imports of Tunnel Oxide Passivated Contact (TOPCon) solar</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/usitc-opens-probe-into-topcon-solar-imports-for-patent-infringement" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">03</span>
+        <div class="card-headline">Tata Power Expands Renewable Skilling Network with TPSDI Centre in Prayagraj</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Saur Energy</span>
+        <span class="pill pill-date">27 Mar 2026, 03:52 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Tata Power Expands Renewable Skilling Network with TPSDI Centre in Prayagraj  Saur Energy</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQaElpMC1aamZmUmV4WlJiaU43MlVPZEF1Y0gwZkw5ZnFWM0M2d1F6WTVPeDFJVF9oQ3dqM3h5bU15X05PZlgyekI4M3NDZmo4dExDRlh2OE1NZGZEQk9ueVJwdXpTR3c3eTEwcFhBUWJuMXlRTVIzYktSOEJuMEYwZ3l2NU0wQWIyMHlRZlh4cVhTWXRVTTBsZGI2SUtZcTQ3ZmFaUDZoZWVnckdLYjM2UTVKT0F6X0JETjAzM29NQXF2bkdZTDJOcGp3?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Tata Power</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">04</span>
+        <div class="card-headline">Suzlon Secures Sixth Wind Energy Order from GAIL for Maharashtra Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Machine Maker</span>
+        <span class="pill pill-date">26 Mar 2026, 05:08 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Suzlon Secures Sixth Wind Energy Order from GAIL for Maharashtra Project  Machine Maker</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQW4wRkxjeUNaakZTZ21qZ3F3TVpsZzVQeHp3enRfdDhBODNQSjhmWWQ3SzYzSVN3bGtRQzNUWjRhZUM4UG9XSUF6R0kxLXJoc1duNEpqNDBlYVdicnQxM3E2VndVNjJfUFRpS1dOMkVnZ3Z1RHp4UzloZkZBaFBmX0h5RWo2OUlQeUNfREVFaGVhcWdVNUZNS3A4bHhERmNRckZXNDZRUWp6UQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Suzlon</span><span class="tag">Maharashtra</span><span class="tag">Wind</span></div>
     </div>
   </div>
 
-  <!-- ── Section 2: Industry ── -->
-  <div class="section industry">
-    <div class="section-header industry">
+  <!-- SECTION 2: INDUSTRY -->
+  <div class="section">
+    <div class="section-hdr">
       <span class="section-icon">🏭</span>
-      <div>
-        <div class="section-title">Section 2 — Industry Related News</div>
-        <div class="section-subtitle">Projects · Tenders · Policy · Capacity additions · Technology</div>
+      <span class="section-title">Section 2 — Industry</span>
+      <span class="section-count">35 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">05</span>
+        <div class="card-headline">Clean Energy transition part of India’s larger national, geopolitical strategy: Dr Jitendra</div>
       </div>
-      <span class="section-count">29 articles</span>
+      <div class="card-meta">
+        <span class="pill pill-src">Daily Excelsior</span>
+        <span class="pill pill-date">28 Mar 2026, 05:10 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Clean Energy transition part of India’s larger national, geopolitical strategy: Dr Jitendra  Daily Excelsior</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxPNHNKaE5EQm03bTB6VEEzN1lUNENtOF8tUU4tNFNpSkktaVAwVkRYc2hsT3NVbEl6S2tXcnVsTC0yRDVfNGpXMGZKZ3A2TnFHVlhONHI2NXYzSW4tWkRQNkhoMHg0RldmdzMzNzlRdFlFcVBqZlNNY3ZPUUlLVnI0SGxDZVQzdTdyUDZuOXVGakRXVGVRX0M3SUlOMm9FLXNyVk1sVFRodno4LUNCQVFURGgwOG9laVVJV0daMQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
     </div>
-    <div class="articles">
-      
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">1</div>
-            <div class="card-meta">
-              <span class="source">Mercomindia.com RSS feed</span>
-              <span class="date">27 Mar 2026, 10:46 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://www.mercomindia.com/potaliya-petrochemicals-kishan-infrastructure-win-secis-17-7-mw-rooftop-solar-auction" target="_blank" rel="noopener noreferrer">Potaliya Petrochemicals, Kishan Infrastructure Win SECI’s 17.77 MW Rooftop Solar Auction</a>
-          <div class="divider"></div>
-          <p class="summary">Potaliya Petrochemicals and Kishan Infrastructure Industries have won the Solar Energy Corporation of India’s (SECI) auction to install 17.77 MW of grid-connected rooftop solar projects on government buildings in Puducherry (Tranche-V). Potaliya Petrochemicals won 15 MW, and Kishan Infrastructure Industries won 2.768 MW at a tariff of ₹4.11 (~$0.0434)/kWh.</p>
-          <a class="read-more" href="https://www.mercomindia.com/potaliya-petrochemicals-kishan-infrastructure-win-secis-17-7-mw-rooftop-solar-auction" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">2</div>
-            <div class="card-meta">
-              <span class="source">ESG Today</span>
-              <span class="date">27 Mar 2026, 09:15 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPakk1bEJVSXdjVzBfYmxReW1NallhODFQanRmNC1uQ3RFWXVjTVoyV0pTdnFtRy1ZMmpoQmdFZk8xVzFwdnJpNC1aSngzOUN3QjY3aVM4emp5SlltTVVMdGdOQk13b3M3VFZLWFMweFI3Y1dIQTI1TmR3U0dueDBVcFQ4RS1xcFVl?oc=5" target="_blank" rel="noopener noreferrer">India Approves Cautious 2035 Climate, Clean Energy Goals</a>
-          <div class="divider"></div>
-          <p class="summary">India Approves Cautious 2035 Climate, Clean Energy Goals  ESG Today</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPakk1bEJVSXdjVzBfYmxReW1NallhODFQanRmNC1uQ3RFWXVjTVoyV0pTdnFtRy1ZMmpoQmdFZk8xVzFwdnJpNC1aSngzOUN3QjY3aVM4emp5SlltTVVMdGdOQk13b3M3VFZLWFMweFI3Y1dIQTI1TmR3U0dueDBVcFQ4RS1xcFVl?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">3</div>
-            <div class="card-meta">
-              <span class="source">Mercomindia.com</span>
-              <span class="date">27 Mar 2026, 07:18 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOb1ZHY0JtSFozaUZGeXp3eEJnaUZHVkVkbVdsYWxsWHgxTC1nVC1fc0NuNEpEZFZlcnFucHh5SkUwSS05ZS02TWxjcFhHZkZCWDhub0s4UkI1VzhyOUtLWFRhQ1E1Z0k2b004ZWJlemtfTTNENzNwaHpmdG0teDBfdFVfN3Z6NkFnRUM1QnlXdUdZV0M4bkUwaE9BcTNIR1ctbEkyOVhMaw?oc=5" target="_blank" rel="noopener noreferrer">KP Energy Secures Order to Set Up 91 MW Wind-Solar Hybrid Project in Gujarat</a>
-          <div class="divider"></div>
-          <p class="summary">KP Energy Secures Order to Set Up 91 MW Wind-Solar Hybrid Project in Gujarat  Mercomindia.com</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOb1ZHY0JtSFozaUZGeXp3eEJnaUZHVkVkbVdsYWxsWHgxTC1nVC1fc0NuNEpEZFZlcnFucHh5SkUwSS05ZS02TWxjcFhHZkZCWDhub0s4UkI1VzhyOUtLWFRhQ1E1Z0k2b004ZWJlemtfTTNENzNwaHpmdG0teDBfdFVfN3Z6NkFnRUM1QnlXdUdZV0M4bkUwaE9BcTNIR1ctbEkyOVhMaw?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">4</div>
-            <div class="card-meta">
-              <span class="source">IBTimes India</span>
-              <span class="date">27 Mar 2026, 07:06 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNV0k1UzZVUElfVkpzalhTc1NSYzY2SE50bHpNcWJHeHZ5M1BpSWhSbngyMHg4U05Xc1ZSYzh6STZBVDdQbE5haFJReGUyWEpzaEM5QUtHck4xWW0xajFDQlVtSEJodDd6X0hZcmZGZFBUaVNFTTdud2QyMndNQlc5VzlWMHJXSnlMbGxXcjcxeWwyV2ttM1doVFlfeC1YY3dhMWZrWE45ajB4SGlQV3RSNUE5cEplY2RBQmwxYQ?oc=5" target="_blank" rel="noopener noreferrer">J&amp;K&#x27;s first wind power project shelved despite 5,000+ MW potential; logistical hurdles cited</a>
-          <div class="divider"></div>
-          <p class="summary">J&amp;K&#x27;s first wind power project shelved despite 5,000+ MW potential; logistical hurdles cited  IBTimes India</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNV0k1UzZVUElfVkpzalhTc1NSYzY2SE50bHpNcWJHeHZ5M1BpSWhSbngyMHg4U05Xc1ZSYzh6STZBVDdQbE5haFJReGUyWEpzaEM5QUtHck4xWW0xajFDQlVtSEJodDd6X0hZcmZGZFBUaVNFTTdud2QyMndNQlc5VzlWMHJXSnlMbGxXcjcxeWwyV2ttM1doVFlfeC1YY3dhMWZrWE45ajB4SGlQV3RSNUE5cEplY2RBQmwxYQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">5</div>
-            <div class="card-meta">
-              <span class="source">Chemical Industry Digest</span>
-              <span class="date">27 Mar 2026, 06:44 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPcG43bmhZdk53MzBkWWdpR2FwU1NjMXByWGZjZ1ZQTkw5OHhJaXUwbnZyU3N0cm14eE1DRWhQODM1N1RuQ2FwNHBvdnZvVGhCbzhjdXJmcnN3V2x0UWxwZzkxX1VOU09Id0JZakZBZC1QcTJYQlNKWjFxSUxDRHdsNU10MlZfVF9kbzM0anp5WEg?oc=5" target="_blank" rel="noopener noreferrer">Ceigall India Signs 337 MW Solar Power Agreements with MSEDCL</a>
-          <div class="divider"></div>
-          <p class="summary">Ceigall India Signs 337 MW Solar Power Agreements with MSEDCL  Chemical Industry Digest</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPcG43bmhZdk53MzBkWWdpR2FwU1NjMXByWGZjZ1ZQTkw5OHhJaXUwbnZyU3N0cm14eE1DRWhQODM1N1RuQ2FwNHBvdnZvVGhCbzhjdXJmcnN3V2x0UWxwZzkxX1VOU09Id0JZakZBZC1QcTJYQlNKWjFxSUxDRHdsNU10MlZfVF9kbzM0anp5WEg?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">6</div>
-            <div class="card-meta">
-              <span class="source">Mercomindia.com</span>
-              <span class="date">27 Mar 2026, 05:06 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOSUh1XzltTklTMktfQ3ItdGtzYmg1Z1FYSkhfOWwwLUhuOFhXTEVPYWRGUmdJaEpkNXVHNlprS3doZTNEN2VPNEg5S0dpUXpWN25SQkxraTlvRmk1SUVVNUpaLUYzUHE4Z3V1eWdVVzYzaXJROExjRkQtUXczeFJVbDlaeVVsMG0yMzRFbGJvWEdNaGtlOGpHSTFXdzVOSV9xY1J3?oc=5" target="_blank" rel="noopener noreferrer">MAHAGENCO-NTPC Green JV Issues Land Procurement Tender for Renewable Projects</a>
-          <div class="divider"></div>
-          <p class="summary">MAHAGENCO-NTPC Green JV Issues Land Procurement Tender for Renewable Projects  Mercomindia.com</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOSUh1XzltTklTMktfQ3ItdGtzYmg1Z1FYSkhfOWwwLUhuOFhXTEVPYWRGUmdJaEpkNXVHNlprS3doZTNEN2VPNEg5S0dpUXpWN25SQkxraTlvRmk1SUVVNUpaLUYzUHE4Z3V1eWdVVzYzaXJROExjRkQtUXczeFJVbDlaeVVsMG0yMzRFbGJvWEdNaGtlOGpHSTFXdzVOSV9xY1J3?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">7</div>
-            <div class="card-meta">
-              <span class="source">pv magazine India</span>
-              <span class="date">27 Mar 2026, 04:26 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxNU2YxamhFM25DcHBMdTFiY2h2aHYxRXYyZzJ4T01xMnlVeUd0OTFtMTZrMHIxbEppYkp4am8tYVhweFN5YjNTendGNVhHUE5KRHZaYTllVDAwUl8zdEhzRWFQWG9DbDlUYk9NU3c4UF9CQmZRdWZmd0VqRFFUeGZEM0ZzMGdwVVBRYUJ4cVdrV2tUcG12QVExU2E3R1k4enpsU3pYVDY5MVRvTnZ2WW9tblBFQ0x0MldCTnJhSTRYcXJ1UW1zZjB5NEgwR2ZKM0Z1RVM3QQ?oc=5" target="_blank" rel="noopener noreferrer">How to build trust in peer-to-peer electricity trading with blockchain in solar energy space</a>
-          <div class="divider"></div>
-          <p class="summary">How to build trust in peer-to-peer electricity trading with blockchain in solar energy space  pv magazine India</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxNU2YxamhFM25DcHBMdTFiY2h2aHYxRXYyZzJ4T01xMnlVeUd0OTFtMTZrMHIxbEppYkp4am8tYVhweFN5YjNTendGNVhHUE5KRHZaYTllVDAwUl8zdEhzRWFQWG9DbDlUYk9NU3c4UF9CQmZRdWZmd0VqRFFUeGZEM0ZzMGdwVVBRYUJ4cVdrV2tUcG12QVExU2E3R1k4enpsU3pYVDY5MVRvTnZ2WW9tblBFQ0x0MldCTnJhSTRYcXJ1UW1zZjB5NEgwR2ZKM0Z1RVM3QQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">8</div>
-            <div class="card-meta">
-              <span class="source">pv magazine India</span>
-              <span class="date">27 Mar 2026, 03:43 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOYnpKbFVOYkpXZGtSa3VKVVZEUDlxMWZQakp6b2VBWFdCQ2U5bTBRbGFRTGJqcTRPWXZwam51d3Yzd3E1ajZRbzVTLVFiVDN0LXM2Y25VY2laUTN3c2JFT05PZE9STFNKTm5TamhEYWZUVEt4bHZ6ek9NWTFlX09iS0Qzc1NQenBfdmp3RDhWYm1PMF8wQnRnN0lpaDdESVdyaldiMDI1clJuYk1ubFBJcWJfSHotWTUwc1dXcVU4YzlueVdEQmtDaUEtdXFOa21vM2JyVTY1amY?oc=5" target="_blank" rel="noopener noreferrer">Rays Power Infra to develop 200 MW round-the-clock renewable energy project for Indian Railways</a>
-          <div class="divider"></div>
-          <p class="summary">Rays Power Infra to develop 200 MW round-the-clock renewable energy project for Indian Railways  pv magazine India</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOYnpKbFVOYkpXZGtSa3VKVVZEUDlxMWZQakp6b2VBWFdCQ2U5bTBRbGFRTGJqcTRPWXZwam51d3Yzd3E1ajZRbzVTLVFiVDN0LXM2Y25VY2laUTN3c2JFT05PZE9STFNKTm5TamhEYWZUVEt4bHZ6ek9NWTFlX09iS0Qzc1NQenBfdmp3RDhWYm1PMF8wQnRnN0lpaDdESVdyaldiMDI1clJuYk1ubFBJcWJfSHotWTUwc1dXcVU4YzlueVdEQmtDaUEtdXFOa21vM2JyVTY1amY?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">9</div>
-            <div class="card-meta">
-              <span class="source">PSU Connect</span>
-              <span class="date">27 Mar 2026, 03:21 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxNQ000SERnNThnNnBZb0wtSy05allOMHBZbE5RejV3UjlSU0JlSG5PN21jVndNUXM4eGtfS1M2Yjh1QlphQXZDd0lIaTc0c1RhLVhqSTlDWGRZbGc0d0tyVk05M0w2Qk0wOTJfMlVIZFZOY2NtMXZTa0d2UVBmUklveU1nVjFqTk8zUkQ5TTZ2NWsycXA3Si1hckZTV2RBX0MtT0pLYlBXVVNwUUc4UVJoTnRsVzY3OGVaUU5wQ0VhcTRmcFVQX3llS0kteklrMm83czg3ajktcTExNEVaYUE?oc=5" target="_blank" rel="noopener noreferrer">Jindal Stainless and Oyster Renewable Commission 315.6 MW Solar-Wind Hybrid Project in Madhya Pradesh</a>
-          <div class="divider"></div>
-          <p class="summary">Jindal Stainless and Oyster Renewable Commission 315.6 MW Solar-Wind Hybrid Project in Madhya Pradesh  PSU Connect</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxNQ000SERnNThnNnBZb0wtSy05allOMHBZbE5RejV3UjlSU0JlSG5PN21jVndNUXM4eGtfS1M2Yjh1QlphQXZDd0lIaTc0c1RhLVhqSTlDWGRZbGc0d0tyVk05M0w2Qk0wOTJfMlVIZFZOY2NtMXZTa0d2UVBmUklveU1nVjFqTk8zUkQ5TTZ2NWsycXA3Si1hckZTV2RBX0MtT0pLYlBXVVNwUUc4UVJoTnRsVzY3OGVaUU5wQ0VhcTRmcFVQX3llS0kteklrMm83czg3ajktcTExNEVaYUE?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">10</div>
-            <div class="card-meta">
-              <span class="source">Renewables Now</span>
-              <span class="date">27 Mar 2026, 03:11 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcjNIa1BoREkwQ2ZUNTlubzNkdVJLM3c5YVBiTURtWGFxLUk0Q1ZWd0VlekxSXzRrcTdZX29vTnk5MkZ3ZldVTUN2UUNvZk1XTVV3LVRXQ2VVSms0MFNjd0ViRHBXSEZOa2tqM2g1TUdVQ1R1UFRhbFJuQjdzUVVwRVN6bDhFak5CM01CVjlKODNzcEhoWXB4X1FFNEVzek9jX21XLU8yUHpXdw?oc=5" target="_blank" rel="noopener noreferrer">Jindal, Oyster Renewable start powering up Indian wind, solar hybrid</a>
-          <div class="divider"></div>
-          <p class="summary">Jindal, Oyster Renewable start powering up Indian wind, solar hybrid  Renewables Now</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcjNIa1BoREkwQ2ZUNTlubzNkdVJLM3c5YVBiTURtWGFxLUk0Q1ZWd0VlekxSXzRrcTdZX29vTnk5MkZ3ZldVTUN2UUNvZk1XTVV3LVRXQ2VVSms0MFNjd0ViRHBXSEZOa2tqM2g1TUdVQ1R1UFRhbFJuQjdzUVVwRVN6bDhFak5CM01CVjlKODNzcEhoWXB4X1FFNEVzek9jX21XLU8yUHpXdw?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">11</div>
-            <div class="card-meta">
-              <span class="source">Mercomindia.com</span>
-              <span class="date">27 Mar 2026, 02:16 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNd0xMeXlGdkR1cjdVNDQxM1FOQVhNWnNxeXVzb0g4QkN0QzZmNDJfN082VFpzdGxmWTNhVklJZi15WW1FVzE0dGJHRGtoREdjTW1yYS1DTWZVZlQtUWFxdTd1OUNOUmpaVkpsaUdaLXdncFVjY3M5WjUtTV94QlRIdDd5anNLalJOZHRTRGJpb0FSUGF0WGM2SVFDSGJtelYtYmhYd2Y5Yw?oc=5" target="_blank" rel="noopener noreferrer">India Eyes 137,500 ckm Grid Expansion to Support 900 GW Renewables by FY 2036</a>
-          <div class="divider"></div>
-          <p class="summary">India Eyes 137,500 ckm Grid Expansion to Support 900 GW Renewables by FY 2036  Mercomindia.com</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNd0xMeXlGdkR1cjdVNDQxM1FOQVhNWnNxeXVzb0g4QkN0QzZmNDJfN082VFpzdGxmWTNhVklJZi15WW1FVzE0dGJHRGtoREdjTW1yYS1DTWZVZlQtUWFxdTd1OUNOUmpaVkpsaUdaLXdncFVjY3M5WjUtTV94QlRIdDd5anNLalJOZHRTRGJpb0FSUGF0WGM2SVFDSGJtelYtYmhYd2Y5Yw?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">12</div>
-            <div class="card-meta">
-              <span class="source">DriveSpark</span>
-              <span class="date">27 Mar 2026, 01:43 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPQ0FjaEFDRDMzRW1QMDFReUUyMkpjeEZCclBVRWt2VjdPamd0TXphVjJQcXVRNk9NaG9YY0k0MExQcncyenVuYlN4YjBjU0RQaGNYNENCZXBBa0NobTNVVFlVTjNmSFhCQktsS1ZSc3FncUdneGpNdkctMzgtcGozUWJjZExfcHVUalE3Ym5nOA?oc=5" target="_blank" rel="noopener noreferrer">India Developing Solar-Powered UAV That Can Stay in Air for 90 Days!</a>
-          <div class="divider"></div>
-          <p class="summary">India Developing Solar-Powered UAV That Can Stay in Air for 90 Days!  DriveSpark</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPQ0FjaEFDRDMzRW1QMDFReUUyMkpjeEZCclBVRWt2VjdPamd0TXphVjJQcXVRNk9NaG9YY0k0MExQcncyenVuYlN4YjBjU0RQaGNYNENCZXBBa0NobTNVVFlVTjNmSFhCQktsS1ZSc3FncUdneGpNdkctMzgtcGozUWJjZExfcHVUalE3Ym5nOA?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">13</div>
-            <div class="card-meta">
-              <span class="source">CNBC</span>
-              <span class="date">27 Mar 2026, 01:30 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQVERRUTA1b0dJYkJYbnJpbG9Ua09PRmwwWF9jcV9WSDg5bHhDSk82dVVkVGNkTXVIMmd5T2hmeFhJYVJidTNRbDIwbVFGeDJkSGxaVF9SVVptTTJqVHFZVEpnSG1fRG1rZVJjV3M3MXFEVFFxZUhrX1d4M3pwTDkxazYwN2o4YmU0OXp4dUFRd3lZSlJULU5NRW9tbXpHa0dob2c0VlRyTW5mWmRsVUE?oc=5" target="_blank" rel="noopener noreferrer">Could the Iran war be an unlikely catalyst for India’s green energy sprint?</a>
-          <div class="divider"></div>
-          <p class="summary">Could the Iran war be an unlikely catalyst for India’s green energy sprint?  CNBC</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQVERRUTA1b0dJYkJYbnJpbG9Ua09PRmwwWF9jcV9WSDg5bHhDSk82dVVkVGNkTXVIMmd5T2hmeFhJYVJidTNRbDIwbVFGeDJkSGxaVF9SVVptTTJqVHFZVEpnSG1fRG1rZVJjV3M3MXFEVFFxZUhrX1d4M3pwTDkxazYwN2o4YmU0OXp4dUFRd3lZSlJULU5NRW9tbXpHa0dob2c0VlRyTW5mWmRsVUE?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">14</div>
-            <div class="card-meta">
-              <span class="source">pv magazine India</span>
-              <span class="date">27 Mar 2026, 01:08 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://www.pv-magazine-india.com/2026/03/27/solar-2-0-indias-solar-revolution-moves-beyond-gigawatts/" target="_blank" rel="noopener noreferrer">Solar 2.0: India’s solar revolution moves beyond gigawatts</a>
-          <div class="divider"></div>
-          <p class="summary">India&#x27;s first solar decade was about speed and volume. The next will be about intelligence and performance. High-efficiency modules, bifacial panels, agrivoltaic systems, advanced power electronics, and integrated battery storage are no longer emerging technologies — they are the infrastructure of Solar 2.0.</p>
-          <a class="read-more" href="https://www.pv-magazine-india.com/2026/03/27/solar-2-0-indias-solar-revolution-moves-beyond-gigawatts/" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">15</div>
-            <div class="card-meta">
-              <span class="source">Trade Brains</span>
-              <span class="date">27 Mar 2026, 01:04 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQZVRRamM5U1FkMWJKLVhMblJ1WS1maUdWTEV2cXRGakxoSW84VjdHNG52cVY1eTkzUkwwak5hcm1nZjlGRjNVYVl6VFRyMDVpM0xHNlpMU29tRm9RWGI1bERhX2hwcG9EXzBIZnJfY1U1M2h4b3RnSEduTkx0bTZPOTRKN3pjenpsbWZ6OFBmN2Rpc05KTmxMVktDaVVJVm5l?oc=5" target="_blank" rel="noopener noreferrer">Jindal Stainless Commences ₹2,000 Cr Solar-Wind Hybrid Project in MP</a>
-          <div class="divider"></div>
-          <p class="summary">Jindal Stainless Commences ₹2,000 Cr Solar-Wind Hybrid Project in MP  Trade Brains</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQZVRRamM5U1FkMWJKLVhMblJ1WS1maUdWTEV2cXRGakxoSW84VjdHNG52cVY1eTkzUkwwak5hcm1nZjlGRjNVYVl6VFRyMDVpM0xHNlpMU29tRm9RWGI1bERhX2hwcG9EXzBIZnJfY1U1M2h4b3RnSEduTkx0bTZPOTRKN3pjenpsbWZ6OFBmN2Rpc05KTmxMVktDaVVJVm5l?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">16</div>
-            <div class="card-meta">
-              <span class="source">Manufacturing Today India</span>
-              <span class="date">27 Mar 2026, 12:20 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMifkFVX3lxTE5jYjhRcE9aeFQ1dDBkLUNUY1ZDZTBsYjlwN2pJbEpjRHJYVnl1dUtVZU5IMGFTZnQtTTFBSFNnT3RQa09MSGhtbzBjaUJoVlZMWVV3OEFoN0Jza1NpeWxqejRmQmNLTTBWVGpuSTRYN2JwcHlPMGxVTklSaW5TQQ?oc=5" target="_blank" rel="noopener noreferrer">Loom Solar reaches 1 Lakh homes, gains Pan-India access</a>
-          <div class="divider"></div>
-          <p class="summary">Loom Solar reaches 1 Lakh homes, gains Pan-India access  Manufacturing Today India</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMifkFVX3lxTE5jYjhRcE9aeFQ1dDBkLUNUY1ZDZTBsYjlwN2pJbEpjRHJYVnl1dUtVZU5IMGFTZnQtTTFBSFNnT3RQa09MSGhtbzBjaUJoVlZMWVV3OEFoN0Jza1NpeWxqejRmQmNLTTBWVGpuSTRYN2JwcHlPMGxVTklSaW5TQQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">17</div>
-            <div class="card-meta">
-              <span class="source">Machine Maker</span>
-              <span class="date">27 Mar 2026, 11:48 AM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVDlzRmNZN2VpbTlCQXc2d2NpZ3doUkFacWxNYTN1WkVEVGxBRWExcFZMSmNGWXhsaW5kc1RLT0FUUE9kMGY1NEdhOFg4N2dCQmVrN0tCcEEtaU1yN3FYcHRTbEc0QmxMeUYyZTU4dzRTd2pnUTBBM2dKX25IWjh3WE5xa3UzSFAxLXY2MWw3Q01UZVFwN0YxN0laQ2UtU0Nhc3hTaERjS0ZIWmw2QUJJVDM5NzV4SkhZVE1v?oc=5" target="_blank" rel="noopener noreferrer">Renewable Energy Partnerships Accelerate Clean Manufacturing for LG Electronics India</a>
-          <div class="divider"></div>
-          <p class="summary">Renewable Energy Partnerships Accelerate Clean Manufacturing for LG Electronics India  Machine Maker</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVDlzRmNZN2VpbTlCQXc2d2NpZ3doUkFacWxNYTN1WkVEVGxBRWExcFZMSmNGWXhsaW5kc1RLT0FUUE9kMGY1NEdhOFg4N2dCQmVrN0tCcEEtaU1yN3FYcHRTbEc0QmxMeUYyZTU4dzRTd2pnUTBBM2dKX25IWjh3WE5xa3UzSFAxLXY2MWw3Q01UZVFwN0YxN0laQ2UtU0Nhc3hTaERjS0ZIWmw2QUJJVDM5NzV4SkhZVE1v?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">18</div>
-            <div class="card-meta">
-              <span class="source">pv magazine India</span>
-              <span class="date">27 Mar 2026, 11:42 AM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxOcU90XzBxc0ZHdzZiczdoQ2NZTUxvX0JveTBpbHlTT084VjEyUk90UjhBRkxuRDh3REtfcE5DdlZJUUhMNjlqNkdCazNMTjg3SDk5LVd2TVJSaElGMDNXM2ExbmV1YlNiY29qWjJrYUFSMUVjaXJzY2M5eDRwckhGdGI2TGpBWm1CVGxMR3lrNk8zS0tfbXg5S2kzN2d2YzBkbHM4WkVZbFFzNktkN0Vrc0lMV0RERUR4elZ6bldzQVRDUzNkYk51ZGFxTjhaVUY4bE1BQWs4bDFSWkphQVM1QQ?oc=5" target="_blank" rel="noopener noreferrer">Oyster Renewable commissions part capacity of 315.6 MW hybrid wind-solar project for Jindal Stainless</a>
-          <div class="divider"></div>
-          <p class="summary">Oyster Renewable commissions part capacity of 315.6 MW hybrid wind-solar project for Jindal Stainless  pv magazine India</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxOcU90XzBxc0ZHdzZiczdoQ2NZTUxvX0JveTBpbHlTT084VjEyUk90UjhBRkxuRDh3REtfcE5DdlZJUUhMNjlqNkdCazNMTjg3SDk5LVd2TVJSaElGMDNXM2ExbmV1YlNiY29qWjJrYUFSMUVjaXJzY2M5eDRwckhGdGI2TGpBWm1CVGxMR3lrNk8zS0tfbXg5S2kzN2d2YzBkbHM4WkVZbFFzNktkN0Vrc0lMV0RERUR4elZ6bldzQVRDUzNkYk51ZGFxTjhaVUY4bE1BQWs4bDFSWkphQVM1QQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">19</div>
-            <div class="card-meta">
-              <span class="source">Renewables Now</span>
-              <span class="date">27 Mar 2026, 11:34 AM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQVDVSUW9vcTdJemJMQkVvMjNuQ1N4V3I3TW9pWlFWbmdjNXlVQ1lJRzVQclhaV3NmUUk5TGtsRnN3OVg0dGhTUG5LbGg5dHcxRE9KQXN2VkhRSVpsNklpSm12VTBXSkJLM0VRcE9jbDc5UEl4eFBKRm93WDNnUXl6Q1J6RGlsWVllMDQwcFlSV1FseUtGcEhqX21lVVEwUENT?oc=5" target="_blank" rel="noopener noreferrer">LG agrees 25-year solar power off-take for Indian factories</a>
-          <div class="divider"></div>
-          <p class="summary">LG agrees 25-year solar power off-take for Indian factories  Renewables Now</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQVDVSUW9vcTdJemJMQkVvMjNuQ1N4V3I3TW9pWlFWbmdjNXlVQ1lJRzVQclhaV3NmUUk5TGtsRnN3OVg0dGhTUG5LbGg5dHcxRE9KQXN2VkhRSVpsNklpSm12VTBXSkJLM0VRcE9jbDc5UEl4eFBKRm93WDNnUXl6Q1J6RGlsWVllMDQwcFlSV1FseUtGcEhqX21lVVEwUENT?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">20</div>
-            <div class="card-meta">
-              <span class="source">pv magazine India</span>
-              <span class="date">27 Mar 2026, 10:41 AM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://www.pv-magazine-india.com/2026/03/27/saudi-arabia-adds-around-7-8-gw-of-solar-in-2025/" target="_blank" rel="noopener noreferrer">Saudi Arabia adds around 7.8 GW of solar in 2025</a>
-          <div class="divider"></div>
-          <p class="summary">Saudi Arabia had a record year for solar deployment last year, taking cumulative capacity past 12.4 GW. GlobalData is forecasting annual deployments to increase in the coming years but notes that they remain behind the pace required to meet the country’s target of 130 GW of renewables by 2030, instead nearing the goal by 2035.</p>
-          <a class="read-more" href="https://www.pv-magazine-india.com/2026/03/27/saudi-arabia-adds-around-7-8-gw-of-solar-in-2025/" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">21</div>
-            <div class="card-meta">
-              <span class="source">Renewable Watch Magazine</span>
-              <span class="date">27 Mar 2026, 10:39 AM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQWTU1bG9MYlBhLUNCVjExZTRWbElwaEE1SVdkUURRVlFuNVRKRmpLRXl2WnNsbzg4SWJ6MW54dDFzRFV1ajFzdW9iUExzU0dhX1NYYlZGTTdpZ0d6NV90V2F1LUh3bUx0ZDA5em5RRVMtckZLX1JHQlRSZ29oaVRnMFAxV0k3RjFIVkVqYVdOQ2tCRW81bTNmejFkcFhSVzAwQTloQnJR?oc=5" target="_blank" rel="noopener noreferrer">Green Molecules: Moving towards green hydrogen and its derivatives</a>
-          <div class="divider"></div>
-          <p class="summary">Green Molecules: Moving towards green hydrogen and its derivatives  Renewable Watch Magazine</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQWTU1bG9MYlBhLUNCVjExZTRWbElwaEE1SVdkUURRVlFuNVRKRmpLRXl2WnNsbzg4SWJ6MW54dDFzRFV1ajFzdW9iUExzU0dhX1NYYlZGTTdpZ0d6NV90V2F1LUh3bUx0ZDA5em5RRVMtckZLX1JHQlRSZ29oaVRnMFAxV0k3RjFIVkVqYVdOQ2tCRW81bTNmejFkcFhSVzAwQTloQnJR?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">22</div>
-            <div class="card-meta">
-              <span class="source">The Hindu</span>
-              <span class="date">26 Mar 2026, 09:09 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxORjJVcnBweDRzMVdxeTBrNFA4OEVvVWxsQnAycDdqakVUSkJ3OWQ1YlY2NE1nMk5JUXgxSmx5R1pRakZVcEI1cWpiMHY2d2trcExoUGdKYjZCSGJRS0NCR0ZfWnZhY1lKM2puSElaQTZkanBLTFk3RG1VMk02ZEVXbGpqU0hvRGJZU1hjWDZJQVRxSGNHYkxtUzd0RkZIVjd0dkt6UXNaSlZwWXY4NlFsOWlZZm5GQdIBvAFBVV95cUxONlpTS1hfVUItcWN4X0tZV0ZNam1CMEIxeTJiclBMZDJqUXM2ZTBDRE5kdDBCamN4TzJ0a3BKU3hSWFFGQlVlcVBLUTZPaktRcy1HdWNZQ3lheUZtQWs4dUJwa3pNNEcwYkE4ckJsSnJzV3RzbzNjMm1LaFJ5NWgtS3FUSGlLSVgyWWc3SC11a200RFpSQ1J2bklYbHRnSXBUVmE0ZkpSSnh6Um5GRXNHOGZMTTJ1bkd4QkQzVQ?oc=5" target="_blank" rel="noopener noreferrer">‘Large-scale solar energy systems are high in T.N.’</a>
-          <div class="divider"></div>
-          <p class="summary">‘Large-scale solar energy systems are high in T.N.’  The Hindu</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxORjJVcnBweDRzMVdxeTBrNFA4OEVvVWxsQnAycDdqakVUSkJ3OWQ1YlY2NE1nMk5JUXgxSmx5R1pRakZVcEI1cWpiMHY2d2trcExoUGdKYjZCSGJRS0NCR0ZfWnZhY1lKM2puSElaQTZkanBLTFk3RG1VMk02ZEVXbGpqU0hvRGJZU1hjWDZJQVRxSGNHYkxtUzd0RkZIVjd0dkt6UXNaSlZwWXY4NlFsOWlZZm5GQdIBvAFBVV95cUxONlpTS1hfVUItcWN4X0tZV0ZNam1CMEIxeTJiclBMZDJqUXM2ZTBDRE5kdDBCamN4TzJ0a3BKU3hSWFFGQlVlcVBLUTZPaktRcy1HdWNZQ3lheUZtQWs4dUJwa3pNNEcwYkE4ckJsSnJzV3RzbzNjMm1LaFJ5NWgtS3FUSGlLSVgyWWc3SC11a200RFpSQ1J2bklYbHRnSXBUVmE0ZkpSSnh6Um5GRXNHOGZMTTJ1bkd4QkQzVQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">23</div>
-            <div class="card-meta">
-              <span class="source">Business Wire</span>
-              <span class="date">26 Mar 2026, 08:57 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNVW9qbkJGU1pOZTdaSkFJYzhkZUlwMzgtb2YxbEsweko0T2JRaFR1c1lZM3hHRS03MHZkWGhPR085R2FySVlXdENzMk9hUEtMOHpjcFNSYzgwVDNxLXlMdk5BcG1kdEhvRU81RHhBSjRsT2g3SkI0OThUQlN3Nkd1UjRlVnY1RWZWOFdEV0liOU9iZXJLampHdQ?oc=5" target="_blank" rel="noopener noreferrer">India: The Up-and-Coming Solar Market</a>
-          <div class="divider"></div>
-          <p class="summary">India: The Up-and-Coming Solar Market  Business Wire</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNVW9qbkJGU1pOZTdaSkFJYzhkZUlwMzgtb2YxbEsweko0T2JRaFR1c1lZM3hHRS03MHZkWGhPR085R2FySVlXdENzMk9hUEtMOHpjcFNSYzgwVDNxLXlMdk5BcG1kdEhvRU81RHhBSjRsT2g3SkI0OThUQlN3Nkd1UjRlVnY1RWZWOFdEV0liOU9iZXJLampHdQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">24</div>
-            <div class="card-meta">
-              <span class="source">Renewables Now</span>
-              <span class="date">26 Mar 2026, 07:17 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNWDMzank0VF84c1NaYWlTS2pfRFA2WnpuUDV6SDJBZkRGdXBFOWdPMDBRSEs4MkNlVW5FUmYwdUtwYjZ1VmtZUWsyTnk4ZGc3R1lTcm5hdEVsR1hSZ1VSMFhtZlNldXJfXzdzVk5ZYUFpcVJaSlQxcDVXNmhEZ1MwOHNQelVad1BmdDh5eEttYVR0VFVpXzJJdWp2T1FKWFJYUUFKYw?oc=5" target="_blank" rel="noopener noreferrer">Blueleaf Energy switches on 300-MWp wind-solar hybrid in India</a>
-          <div class="divider"></div>
-          <p class="summary">Blueleaf Energy switches on 300-MWp wind-solar hybrid in India  Renewables Now</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNWDMzank0VF84c1NaYWlTS2pfRFA2WnpuUDV6SDJBZkRGdXBFOWdPMDBRSEs4MkNlVW5FUmYwdUtwYjZ1VmtZUWsyTnk4ZGc3R1lTcm5hdEVsR1hSZ1VSMFhtZlNldXJfXzdzVk5ZYUFpcVJaSlQxcDVXNmhEZ1MwOHNQelVad1BmdDh5eEttYVR0VFVpXzJJdWp2T1FKWFJYUUFKYw?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">25</div>
-            <div class="card-meta">
-              <span class="source">Moneycontrol.com</span>
-              <span class="date">26 Mar 2026, 06:50 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxNLTZWUkQycXFpMklJUTZfRnNEZlBKVTFLcXN2WFZ4QmhIMmdPVTI1UnpZRFVVRGl1UklrV1dFa0l0V3czR19aQ0NXZmU5N0kxTC1nUEVfM0lKVkxmbnBTS242R3MzMHNzbDZhMDhNeG9ySWZTSlB1QVhfZGFuS1VBT1NSeHRRVi0tYnhQTVFrdWg4UmEtNWpRV0d5aDR5TWw5amtJcWtvRmk3RE8zQm9mV0Z2UjM3X1lhLWFUdkwyM05wNExIOGZqTzIydDNKZFV5d0ZZcnJqclFqTWNiT2ZZcU1GNVFNXzVmeldmedIB8gFBVV95cUxPTGhXbnlnSFNnTlFiVTNlLVU2X3JMbzBXbnhxdEg3dGh3R2VqWmo0dktRM0QyUWZiYkc1WmFZeGJESC1BOFE5Y2Q1MW5PRlN4SWxCSU1FbWEzT3BaLUJNak4yRlh2elkwMWRUNTRvRDlONEo4ZHFYbTdnR0UyR1B5RjltMGlMOUhwYXpKV3Nhd1Y4RDAxUTdSelQ3aXdweWdIcndKYVZ5Z1F6c1JoODlHYnhBelRCY05venEzX19YQUhsSzUxZ2hWSFlzMzlZLWZfbXlzejRmajkxOWJVQmVyN1p2c2FCV0o3Yi1VUm50UXhZQQ?oc=5" target="_blank" rel="noopener noreferrer">Wind power producers set for Rs 1,500 crore windfall as Supreme Court ends tariff deduction dispute</a>
-          <div class="divider"></div>
-          <p class="summary">Wind power producers set for Rs 1,500 crore windfall as Supreme Court ends tariff deduction dispute  Moneycontrol.com</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxNLTZWUkQycXFpMklJUTZfRnNEZlBKVTFLcXN2WFZ4QmhIMmdPVTI1UnpZRFVVRGl1UklrV1dFa0l0V3czR19aQ0NXZmU5N0kxTC1nUEVfM0lKVkxmbnBTS242R3MzMHNzbDZhMDhNeG9ySWZTSlB1QVhfZGFuS1VBT1NSeHRRVi0tYnhQTVFrdWg4UmEtNWpRV0d5aDR5TWw5amtJcWtvRmk3RE8zQm9mV0Z2UjM3X1lhLWFUdkwyM05wNExIOGZqTzIydDNKZFV5d0ZZcnJqclFqTWNiT2ZZcU1GNVFNXzVmeldmedIB8gFBVV95cUxPTGhXbnlnSFNnTlFiVTNlLVU2X3JMbzBXbnhxdEg3dGh3R2VqWmo0dktRM0QyUWZiYkc1WmFZeGJESC1BOFE5Y2Q1MW5PRlN4SWxCSU1FbWEzT3BaLUJNak4yRlh2elkwMWRUNTRvRDlONEo4ZHFYbTdnR0UyR1B5RjltMGlMOUhwYXpKV3Nhd1Y4RDAxUTdSelQ3aXdweWdIcndKYVZ5Z1F6c1JoODlHYnhBelRCY05venEzX19YQUhsSzUxZ2hWSFlzMzlZLWZfbXlzejRmajkxOWJVQmVyN1p2c2FCV0o3Yi1VUm50UXhZQQ?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">26</div>
-            <div class="card-meta">
-              <span class="source">Mercomindia.com</span>
-              <span class="date">26 Mar 2026, 03:33 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPU0RIVmxEQ1RCYnF5WUF5NHVfbS1IVHkwVGtDaDFHdkJaTVE4UTFQS2ZCdTY1TVRfVk9HN3BHU29iX3U0aC0wQWhuMXhXeER6bEpNSEYxUERVZkkyaHEwN3RMZDlocG1PWjREQ2V3TEJuR2FfSVBKN0ljUEVXTk9QN3RMYTJUNW5iVlhXbS1RaXJlS1ZseXNxc2IyalBYZFJQOFdjVThjMWgxdFozVDB3Tg?oc=5" target="_blank" rel="noopener noreferrer">Polyplex to Source Solar Energy from Solar Projects of CleanMax and Berkeley Energy</a>
-          <div class="divider"></div>
-          <p class="summary">Polyplex to Source Solar Energy from Solar Projects of CleanMax and Berkeley Energy  Mercomindia.com</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPU0RIVmxEQ1RCYnF5WUF5NHVfbS1IVHkwVGtDaDFHdkJaTVE4UTFQS2ZCdTY1TVRfVk9HN3BHU29iX3U0aC0wQWhuMXhXeER6bEpNSEYxUERVZkkyaHEwN3RMZDlocG1PWjREQ2V3TEJuR2FfSVBKN0ljUEVXTk9QN3RMYTJUNW5iVlhXbS1RaXJlS1ZseXNxc2IyalBYZFJQOFdjVThjMWgxdFozVDB3Tg?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">27</div>
-            <div class="card-meta">
-              <span class="source">Indian Chemical News</span>
-              <span class="date">26 Mar 2026, 02:53 PM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxPRDlwS2pTYXRWU1dMOHh0ZEt3bXZRY2RPZGZ4M2VlbFo4S3h6SUhNLUdfbHM0eTRCeHNOYVg3bm0tMk5TeUR4OG9Sa2NwcHN1UEE0OEYyX3oxVzM5TkJuQUgtX1MzR0hCM0d4YlJjOUtVSzNpU2dSVzlWVjZQUk4xTUdmc2RjTG9Qc055cnRRZEtYSmJQR3VpMFZLZmZSamFSNGR6cTJTMGpESGFXemdLX3lvMkdWMmh0U2YtVk1OaFBHcXNSZ25kNnNsTEE4cVhoWkthQ1pGSV9PTVBrbHh1aExzWWfSAesBQVVfeXFMUFVxM2VLXzY5SVU2WFFrSnM2b3o3WEV5N1JGdk5femRqX25xbk1QY1pmd254Ymw3UXRHa21mOUFveVhtZDJHWGRqemJyOHhSblRHLTBCd3QxeDhsV0V5UmZoQlBfNHJTUVFlRFM4a2dKUWVyOFFXZ3BsNzR1VEItX2x3TmpFazVqYzM2Ym9nYjJyWEpmeDB6TmtrUkJ2NFFtOEFLUDluMW1YV2J4ZDdMYU1rWXI3Q3h3Um50dExUMFJxT0NVSFA1czNFbW9nbjIwNGdpWUVUTUZUTDBUVE0tbEtET0ZkSi0ybktGaw?oc=5" target="_blank" rel="noopener noreferrer">Government drives green hydrogen expansion and strengthens clean energy transition: Sripad Yesso Naik</a>
-          <div class="divider"></div>
-          <p class="summary">Government drives green hydrogen expansion and strengthens clean energy transition: Sripad Yesso Naik  Indian Chemical News</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxPRDlwS2pTYXRWU1dMOHh0ZEt3bXZRY2RPZGZ4M2VlbFo4S3h6SUhNLUdfbHM0eTRCeHNOYVg3bm0tMk5TeUR4OG9Sa2NwcHN1UEE0OEYyX3oxVzM5TkJuQUgtX1MzR0hCM0d4YlJjOUtVSzNpU2dSVzlWVjZQUk4xTUdmc2RjTG9Qc055cnRRZEtYSmJQR3VpMFZLZmZSamFSNGR6cTJTMGpESGFXemdLX3lvMkdWMmh0U2YtVk1OaFBHcXNSZ25kNnNsTEE4cVhoWkthQ1pGSV9PTVBrbHh1aExzWWfSAesBQVVfeXFMUFVxM2VLXzY5SVU2WFFrSnM2b3o3WEV5N1JGdk5femRqX25xbk1QY1pmd254Ymw3UXRHa21mOUFveVhtZDJHWGRqemJyOHhSblRHLTBCd3QxeDhsV0V5UmZoQlBfNHJTUVFlRFM4a2dKUWVyOFFXZ3BsNzR1VEItX2x3TmpFazVqYzM2Ym9nYjJyWEpmeDB6TmtrUkJ2NFFtOEFLUDluMW1YV2J4ZDdMYU1rWXI3Q3h3Um50dExUMFJxT0NVSFA1czNFbW9nbjIwNGdpWUVUTUZUTDBUVE0tbEtET0ZkSi0ybktGaw?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">28</div>
-            <div class="card-meta">
-              <span class="source">SolarQuarter</span>
-              <span class="date">26 Mar 2026, 09:34 AM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNmtPNGxKWlh0NjAwcDA4Mi1MMWJWbUNraG5VSGlZelpPZTFlalVpNmQ2OUJNMW41Z0pFYTlyS2dCS0lzTl9iUkc0MVNqY0tsYUpURzc0WDRUOFMzQ1hvWEFwSkFSVGFDTDVWRW1tdU9xRUw1a09FWG1rZVZ1YjViVnFJNFplNnVvSEtfSUxPNWx5NWNSV1pRb29leUg5MHU2QU9CMTk1RDJrOWs3cHp6ZlFXOTdaMG5pMHR2dDVVRXNmOG8?oc=5" target="_blank" rel="noopener noreferrer">Green Hydrogen: India Commissions 8,000 TPA Capacity under National Green Hydrogen Mission</a>
-          <div class="divider"></div>
-          <p class="summary">Green Hydrogen: India Commissions 8,000 TPA Capacity under National Green Hydrogen Mission  SolarQuarter</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNmtPNGxKWlh0NjAwcDA4Mi1MMWJWbUNraG5VSGlZelpPZTFlalVpNmQ2OUJNMW41Z0pFYTlyS2dCS0lzTl9iUkc0MVNqY0tsYUpURzc0WDRUOFMzQ1hvWEFwSkFSVGFDTDVWRW1tdU9xRUw1a09FWG1rZVZ1YjViVnFJNFplNnVvSEtfSUxPNWx5NWNSV1pRb29leUg5MHU2QU9CMTk1RDJrOWs3cHp6ZlFXOTdaMG5pMHR2dDVVRXNmOG8?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-num">29</div>
-            <div class="card-meta">
-              <span class="source">Sarkaritel.com</span>
-              <span class="date">26 Mar 2026, 06:29 AM IST</span>
-            </div>
-          </div>
-          <a class="headline" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNZ3l2OEozS1dQSnFBQmRUaUJCRXV3WWphd0prYzgydzd0Q1FEM245X3p5RHdwOTgycWlETXkyeXFEZjJ0NzN1TDNSb01HQUMzRVBmSnMzaXNDRlF3aGt1NVlzTHhrd2Y5VW9IdGVKd0RtaG9SOTQtTXNDTTlxajAtVnI0dTBTcnM1dThUR3RPdU94TnM1cGZSMGFJaFFLbkR3SHpv?oc=5" target="_blank" rel="noopener noreferrer">India’s Renewable Energy Push Strengthens Economic Resilience and Energy Security</a>
-          <div class="divider"></div>
-          <p class="summary">India’s Renewable Energy Push Strengthens Economic Resilience and Energy Security  Sarkaritel.com</p>
-          <a class="read-more" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNZ3l2OEozS1dQSnFBQmRUaUJCRXV3WWphd0prYzgydzd0Q1FEM245X3p5RHdwOTgycWlETXkyeXFEZjJ0NzN1TDNSb01HQUMzRVBmSnMzaXNDRlF3aGt1NVlzTHhrd2Y5VW9IdGVKd0RtaG9SOTQtTXNDTTlxajAtVnI0dTBTcnM1dThUR3RPdU94TnM1cGZSMGFJaFFLbkR3SHpv?oc=5" target="_blank" rel="noopener noreferrer">
-            Read Full Article &nbsp;↗
-          </a>
-        </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">06</span>
+        <div class="card-headline">Jitendra Singh Highlights India’s Clean Energy Push to Cut Imports, Boost Global Role</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Daily Pioneer</span>
+        <span class="pill pill-date">28 Mar 2026, 04:27 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Jitendra Singh Highlights India’s Clean Energy Push to Cut Imports, Boost Global Role  Daily Pioneer</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPUm1zUFpPbmpDUmlnN3ZPLU1nNXpmQ0RLeWZkc1dyYkN4ZS10MXF1T3I0U2dmZEVtTkVvX25yMWVTUTNZZC05dDF4enJWLUFINi1aSEJKcG00clNjM1JpbVRHREJUY09USlNyNTRLbmFrQk1mYXB0eDhNQ0ZWZkktWEo1Rkd1WjlseEhDU0RJeWRMTjQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
     </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">07</span>
+        <div class="card-headline">Saatvik Green Energy Subsidiary Secures ₹14 Crore Solar PV Module Supply Order</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">scanx.trade</span>
+        <span class="pill pill-date">28 Mar 2026, 01:30 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Saatvik Green Energy Subsidiary Secures ₹14 Crore Solar PV Module Supply Order  scanx.trade</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMizwFBVV95cUxQSnhpREtTd1BzX1ZkeWlOdGlOUHItUzZDX1lQdUw2N3BVUHhQSlZJVmJNR281NFVCejlaQ1ZzdGE0LVg3a1VVWWxqaENSajZkWnBqT3ZHaUFuY1BYTDRMc1F0VTJWZ1BiNUVpeWhfRkNLUnRvd3JKa2w1ckNRM1pad1RmOVVIOVQxM1FfRVliY0hGdi14ZllUakMwamRHUk1YODhydy03MUlyTUUwcFZ3dFhlazdoeEpoMUxIcjVuTmZCcFZuNWdMTHZ1NzZpeFE?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">08</span>
+        <div class="card-headline">NeuEN Green Energy bags 10K TPA green hydrogen contract from NRL</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">MillenniumPost</span>
+        <span class="pill pill-date">28 Mar 2026, 01:03 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>NeuEN Green Energy bags 10K TPA green hydrogen contract from NRL  MillenniumPost</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPV2xTdDJfZi1VZl9GRFFqU1hmM0NJRlB3ZnJVRjZHdlpXSExUYmVicUxlT0RuenFXUGdZeGlrX2JWd3A2dnl2X1djYV94YXVWa0ltRzQ4TUhsdDc2R1hHRVd6Nk83U2dWWVJ0NHNpeG5SczJPbWdDSGJCZHZGdDUzelplbkMzWkVnRi0zNEliS2JLbWx3cVdfVFpaOS0wcGxVdE9ILUJWcHRUZFhDZ1J30gG0AUFVX3lxTFBtNDduOElScG1sbl9hWWNZcjkyWkJhR1lFTDhWV2t5MVJpUXFkUWN4VlJXOXJ3b2d0M0xBM3Naa1lDcGNSd0pRTjNSNUpnMm5peUVlMW9hWXVVOEFhMmhocll6WjU0eUY2eHI4M1o3b1NSc2tLZW42dmcyOGFUeWVxYUNEQzhtSHBLTnlxbktsOUR6bG5mTFVKazNBTnJmdjFiV18wR2xkT3hlZFZRX3JBU3BKRw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Green Hydrogen</span><span class="tag">Hydrogen</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">09</span>
+        <div class="card-headline">Potaliya Petrochemicals, Kishan Infrastructure Win SECI’s 17.77 MW Rooftop Solar Auction</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">27 Mar 2026, 10:46 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Potaliya Petrochemicals and Kishan Infrastructure Industries have won the Solar Energy Corporation of India’s (SECI) auction to install 17.77 MW of grid-connected rooftop solar projects on government buildings in Puducherry (Tranche-V). Potaliya Petrochemicals won 15 MW, and Kishan Infrastructure Industries won 2.768 MW at a tariff of ₹4.11 (~$0.0434)/kWh.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/potaliya-petrochemicals-kishan-infrastructure-win-secis-17-7-mw-rooftop-solar-auction" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">SECI</span><span class="tag">Rooftop Solar</span><span class="tag">RPO</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">10</span>
+        <div class="card-headline">MAHAGENCO-NTPC Green JV Issues Land Procurement Tender for Renewable Projects</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">27 Mar 2026, 10:36 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>MAHAGENCO NTPC Green Energy (MNGEPL), a joint venture company of MAHAGENCO and NTPC Green Energy, has issued an expression of interest to procure 10,000 acres of land for the development of solar and renewable energy projects across Maharashtra.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/mahagenco-ntpc-green-jv-issues-land-procurement-tender-for-renewable-projects" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">NTPC</span><span class="tag">Maharashtra</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">11</span>
+        <div class="card-headline">Government is accelerating country’s clean energy transition with strong focus on building indigenous capacities &amp; technologies: Union Minister Dr Jitendra Singh | DD News On Air</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">News On AIR</span>
+        <span class="pill pill-date">27 Mar 2026, 10:01 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Government is accelerating country’s clean energy transition with strong focus on building indigenous capacities &amp; technologies: Union Minister Dr Jitendra Singh | DD News On Air  News On AIR</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMilgJBVV95cUxNRWdqUnAyZ3pDNmVKb2tDeW50OWJ2LVJHbWNubGZfaV9zeGUzRWZsWnpEUUhTUFE2dkVxdUtEUnU4RElTa1hLVHV6WHJ1RU9GbGptNWszQ3U1WEpnMjh0R0V6bTNaQktjcUpfd0lpVG0yWVowbXA1WEpMUmtSd19jSzhHMXBnc2xjTHh4MEkyRVpCOU5HbEYtTXRpdERUeTdCcmExeXdCX0RxMzVueHpNNmNzaFBISXh2c2JVZlJITk1vWHVlTkNtN1Jod0xuMlRTWUtjZk9QUUNLYWt3Nlo3em9KOFlrMWJUSHpRVmd3STJVaVY4Q0dJZlVkWVhVQk9NMTduRDlVX3dETDRHUDVRSVdvLUw0QQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">12</span>
+        <div class="card-headline">Saatvik Green Energy Wins Rs 638 Crore Solar Cell Supply Contract</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">BW Businessworld</span>
+        <span class="pill pill-date">27 Mar 2026, 09:03 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Saatvik Green Energy Wins Rs 638 Crore Solar Cell Supply Contract  BW Businessworld</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQWjVnRG5hRklhUENxamNTUzBMMjcxV0FrbDdlWFNWNXlvdXNwSDlIVWtfY1FUWks1WllnWVJVZTZLRFdTSmgxaEExME1xN3R6QzBwZ1F4MldRSzRKMGtDU1hoQzEyMWFuUWRqUmVKamt4TWk0VXJuUWh0QUlDcGxCclhxQ29wUVoyT19Gb2lHbl9HMUlhZ2xreFRxc0lQdmN4VVUtdXJfNzdUUTR0dXc?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">13</span>
+        <div class="card-headline">KP Energy Secures Order to Set Up 91 MW Wind-Solar Hybrid Project in Gujarat</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com</span>
+        <span class="pill pill-date">27 Mar 2026, 07:18 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>KP Energy Secures Order to Set Up 91 MW Wind-Solar Hybrid Project in Gujarat  Mercomindia.com</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQT21kLXIzdUh6Y2htVUI0aHBUVS1Db2Fva2hlOTZVN0hjUER3QW55Nzk0VzFzNWtVbmI4YXR1THN5czBKUVRybHdlRC00WHhzUlF4d3JPVkt5NDBNb0lVTmE2RHJqTXlVSi1YTERjN0dEXzFLZDNYeUFWTnFubGg0c09HTXVhSVpmT0ZOSUVnMXZjeXc4RUJHbXdkM2NyekZHLVE?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Gujarat</span><span class="tag">Wind</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">14</span>
+        <div class="card-headline">J&amp;K&#x27;s first wind power project shelved despite 5,000+ MW potential; logistical hurdles cited</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">IBTimes India</span>
+        <span class="pill pill-date">27 Mar 2026, 07:06 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>J&amp;K&#x27;s first wind power project shelved despite 5,000+ MW potential; logistical hurdles cited  IBTimes India</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNV0k1UzZVUElfVkpzalhTc1NSYzY2SE50bHpNcWJHeHZ5M1BpSWhSbngyMHg4U05Xc1ZSYzh6STZBVDdQbE5haFJReGUyWEpzaEM5QUtHck4xWW0xajFDQlVtSEJodDd6X0hZcmZGZFBUaVNFTTdud2QyMndNQlc5VzlWMHJXSnlMbGxXcjcxeWwyV2ttM1doVFlfeC1YY3dhMWZrWE45ajB4SGlQV3RSNUE5cEplY2RBQmwxYQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">15</span>
+        <div class="card-headline">Ceigall India Signs 337 MW Solar Power Agreements with MSEDCL</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Chemical Industry Digest</span>
+        <span class="pill pill-date">27 Mar 2026, 06:44 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Ceigall India Signs 337 MW Solar Power Agreements with MSEDCL  Chemical Industry Digest</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPcG43bmhZdk53MzBkWWdpR2FwU1NjMXByWGZjZ1ZQTkw5OHhJaXUwbnZyU3N0cm14eE1DRWhQODM1N1RuQ2FwNHBvdnZvVGhCbzhjdXJmcnN3V2x0UWxwZzkxX1VOU09Id0JZakZBZC1QcTJYQlNKWjFxSUxDRHdsNU10MlZfVF9kbzM0anp5WEg?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">16</span>
+        <div class="card-headline">How to build trust in peer-to-peer electricity trading with blockchain in solar energy space</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">27 Mar 2026, 04:26 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>How to build trust in peer-to-peer electricity trading with blockchain in solar energy space  pv magazine India</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxNU2YxamhFM25DcHBMdTFiY2h2aHYxRXYyZzJ4T01xMnlVeUd0OTFtMTZrMHIxbEppYkp4am8tYVhweFN5YjNTendGNVhHUE5KRHZaYTllVDAwUl8zdEhzRWFQWG9DbDlUYk9NU3c4UF9CQmZRdWZmd0VqRFFUeGZEM0ZzMGdwVVBRYUJ4cVdrV2tUcG12QVExU2E3R1k4enpsU3pYVDY5MVRvTnZ2WW9tblBFQ0x0MldCTnJhSTRYcXJ1UW1zZjB5NEgwR2ZKM0Z1RVM3QQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">17</span>
+        <div class="card-headline">Who are the Top 100 PV manufacturers today?</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">27 Mar 2026, 04:00 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>The Terawatt PV 100 ranks the top 100 solar manufacturing companies using a new methodology based on production scale, financial strength, and corporate transparency, with Tongwei leading the Q1 2026 list and most top firms headquartered in China. The analysis highlights increasing global supply-chain scrutiny driven by tariffs and ESG mandates, while also showing rising influence from Indian companies and strong positions for key materials and equipment suppliers.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/03/27/who-are-the-top-100-pv-manufacturers-today/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">RPO</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">18</span>
+        <div class="card-headline">Rays Power Infra to develop 200 MW round-the-clock renewable energy project for Indian Railways</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">27 Mar 2026, 03:43 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Rays Power Infra to develop 200 MW round-the-clock renewable energy project for Indian Railways  pv magazine India</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOYnpKbFVOYkpXZGtSa3VKVVZEUDlxMWZQakp6b2VBWFdCQ2U5bTBRbGFRTGJqcTRPWXZwam51d3Yzd3E1ajZRbzVTLVFiVDN0LXM2Y25VY2laUTN3c2JFT05PZE9STFNKTm5TamhEYWZUVEt4bHZ6ek9NWTFlX09iS0Qzc1NQenBfdmp3RDhWYm1PMF8wQnRnN0lpaDdESVdyaldiMDI1clJuYk1ubFBJcWJfSHotWTUwc1dXcVU4YzlueVdEQmtDaUEtdXFOa21vM2JyVTY1amY?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">19</span>
+        <div class="card-headline">Jindal Stainless and Oyster Renewable Commission 315.6 MW Solar-Wind Hybrid Project in Madhya Pradesh</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">PSU Connect</span>
+        <span class="pill pill-date">27 Mar 2026, 03:21 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Jindal Stainless and Oyster Renewable Commission 315.6 MW Solar-Wind Hybrid Project in Madhya Pradesh  PSU Connect</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxNQ000SERnNThnNnBZb0wtSy05allOMHBZbE5RejV3UjlSU0JlSG5PN21jVndNUXM4eGtfS1M2Yjh1QlphQXZDd0lIaTc0c1RhLVhqSTlDWGRZbGc0d0tyVk05M0w2Qk0wOTJfMlVIZFZOY2NtMXZTa0d2UVBmUklveU1nVjFqTk8zUkQ5TTZ2NWsycXA3Si1hckZTV2RBX0MtT0pLYlBXVVNwUUc4UVJoTnRsVzY3OGVaUU5wQ0VhcTRmcFVQX3llS0kteklrMm83czg3ajktcTExNEVaYUE?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">20</span>
+        <div class="card-headline">Jindal, Oyster Renewable start powering up Indian wind, solar hybrid</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Renewables Now</span>
+        <span class="pill pill-date">27 Mar 2026, 03:11 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Jindal, Oyster Renewable start powering up Indian wind, solar hybrid  Renewables Now</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcjNIa1BoREkwQ2ZUNTlubzNkdVJLM3c5YVBiTURtWGFxLUk0Q1ZWd0VlekxSXzRrcTdZX29vTnk5MkZ3ZldVTUN2UUNvZk1XTVV3LVRXQ2VVSms0MFNjd0ViRHBXSEZOa2tqM2g1TUdVQ1R1UFRhbFJuQjdzUVVwRVN6bDhFak5CM01CVjlKODNzcEhoWXB4X1FFNEVzek9jX21XLU8yUHpXdw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">21</span>
+        <div class="card-headline">India Eyes 137,500 ckm Grid Expansion to Support 900 GW Renewables by FY 2036</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com</span>
+        <span class="pill pill-date">27 Mar 2026, 02:16 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>India Eyes 137,500 ckm Grid Expansion to Support 900 GW Renewables by FY 2036  Mercomindia.com</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNd0xMeXlGdkR1cjdVNDQxM1FOQVhNWnNxeXVzb0g4QkN0QzZmNDJfN082VFpzdGxmWTNhVklJZi15WW1FVzE0dGJHRGtoREdjTW1yYS1DTWZVZlQtUWFxdTd1OUNOUmpaVkpsaUdaLXdncFVjY3M5WjUtTV94QlRIdDd5anNLalJOZHRTRGJpb0FSUGF0WGM2SVFDSGJtelYtYmhYd2Y5Yw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">22</span>
+        <div class="card-headline">Could the Iran war be an unlikely catalyst for India’s green energy sprint?</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">CNBC</span>
+        <span class="pill pill-date">27 Mar 2026, 01:30 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Could the Iran war be an unlikely catalyst for India’s green energy sprint?  CNBC</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQVERRUTA1b0dJYkJYbnJpbG9Ua09PRmwwWF9jcV9WSDg5bHhDSk82dVVkVGNkTXVIMmd5T2hmeFhJYVJidTNRbDIwbVFGeDJkSGxaVF9SVVptTTJqVHFZVEpnSG1fRG1rZVJjV3M3MXFEVFFxZUhrX1d4M3pwTDkxazYwN2o4YmU0OXp4dUFRd3lZSlJULU5NRW9tbXpHa0dob2c0VlRyTW5mWmRsVUE?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">23</span>
+        <div class="card-headline">Solar 2.0: India’s solar revolution moves beyond gigawatts</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">27 Mar 2026, 01:08 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>India&#x27;s first solar decade was about speed and volume. The next will be about intelligence and performance. High-efficiency modules, bifacial panels, agrivoltaic systems, advanced power electronics, and integrated battery storage are no longer emerging technologies — they are the infrastructure of Solar 2.0.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/03/27/solar-2-0-indias-solar-revolution-moves-beyond-gigawatts/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Battery Storage</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">24</span>
+        <div class="card-headline">Jindal Stainless Commences ₹2,000 Cr Solar-Wind Hybrid Project in MP</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Trade Brains</span>
+        <span class="pill pill-date">27 Mar 2026, 01:04 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Jindal Stainless Commences ₹2,000 Cr Solar-Wind Hybrid Project in MP  Trade Brains</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQZVRRamM5U1FkMWJKLVhMblJ1WS1maUdWTEV2cXRGakxoSW84VjdHNG52cVY1eTkzUkwwak5hcm1nZjlGRjNVYVl6VFRyMDVpM0xHNlpMU29tRm9RWGI1bERhX2hwcG9EXzBIZnJfY1U1M2h4b3RnSEduTkx0bTZPOTRKN3pjenpsbWZ6OFBmN2Rpc05KTmxMVktDaVVJVm5l?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">25</span>
+        <div class="card-headline">Loom Solar reaches 1 Lakh homes, gains Pan-India access</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Manufacturing Today India</span>
+        <span class="pill pill-date">27 Mar 2026, 12:20 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Loom Solar reaches 1 Lakh homes, gains Pan-India access  Manufacturing Today India</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMifkFVX3lxTE5jYjhRcE9aeFQ1dDBkLUNUY1ZDZTBsYjlwN2pJbEpjRHJYVnl1dUtVZU5IMGFTZnQtTTFBSFNnT3RQa09MSGhtbzBjaUJoVlZMWVV3OEFoN0Jza1NpeWxqejRmQmNLTTBWVGpuSTRYN2JwcHlPMGxVTklSaW5TQQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">26</span>
+        <div class="card-headline">Renewable Energy Partnerships Accelerate Clean Manufacturing for LG Electronics India</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Machine Maker</span>
+        <span class="pill pill-date">27 Mar 2026, 11:48 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Renewable Energy Partnerships Accelerate Clean Manufacturing for LG Electronics India  Machine Maker</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVDlzRmNZN2VpbTlCQXc2d2NpZ3doUkFacWxNYTN1WkVEVGxBRWExcFZMSmNGWXhsaW5kc1RLT0FUUE9kMGY1NEdhOFg4N2dCQmVrN0tCcEEtaU1yN3FYcHRTbEc0QmxMeUYyZTU4dzRTd2pnUTBBM2dKX25IWjh3WE5xa3UzSFAxLXY2MWw3Q01UZVFwN0YxN0laQ2UtU0Nhc3hTaERjS0ZIWmw2QUJJVDM5NzV4SkhZVE1v?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">27</span>
+        <div class="card-headline">Oyster Renewable commissions part capacity of 315.6 MW hybrid wind-solar project for Jindal Stainless</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">27 Mar 2026, 11:42 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Oyster Renewable commissions part capacity of 315.6 MW hybrid wind-solar project for Jindal Stainless  pv magazine India</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxOcU90XzBxc0ZHdzZiczdoQ2NZTUxvX0JveTBpbHlTT084VjEyUk90UjhBRkxuRDh3REtfcE5DdlZJUUhMNjlqNkdCazNMTjg3SDk5LVd2TVJSaElGMDNXM2ExbmV1YlNiY29qWjJrYUFSMUVjaXJzY2M5eDRwckhGdGI2TGpBWm1CVGxMR3lrNk8zS0tfbXg5S2kzN2d2YzBkbHM4WkVZbFFzNktkN0Vrc0lMV0RERUR4elZ6bldzQVRDUzNkYk51ZGFxTjhaVUY4bE1BQWs4bDFSWkphQVM1QQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">28</span>
+        <div class="card-headline">LG agrees 25-year solar power off-take for Indian factories</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Renewables Now</span>
+        <span class="pill pill-date">27 Mar 2026, 11:34 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>LG agrees 25-year solar power off-take for Indian factories  Renewables Now</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQVDVSUW9vcTdJemJMQkVvMjNuQ1N4V3I3TW9pWlFWbmdjNXlVQ1lJRzVQclhaV3NmUUk5TGtsRnN3OVg0dGhTUG5LbGg5dHcxRE9KQXN2VkhRSVpsNklpSm12VTBXSkJLM0VRcE9jbDc5UEl4eFBKRm93WDNnUXl6Q1J6RGlsWVllMDQwcFlSV1FseUtGcEhqX21lVVEwUENT?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">29</span>
+        <div class="card-headline">Saudi Arabia adds around 7.8 GW of solar in 2025</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">27 Mar 2026, 10:41 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Saudi Arabia had a record year for solar deployment last year, taking cumulative capacity past 12.4 GW. GlobalData is forecasting annual deployments to increase in the coming years but notes that they remain behind the pace required to meet the country’s target of 130 GW of renewables by 2030, instead nearing the goal by 2035.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/03/27/saudi-arabia-adds-around-7-8-gw-of-solar-in-2025/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">REC</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">30</span>
+        <div class="card-headline">Green Molecules: Moving towards green hydrogen and its derivatives</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Renewable Watch Magazine</span>
+        <span class="pill pill-date">27 Mar 2026, 10:39 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Green Molecules: Moving towards green hydrogen and its derivatives  Renewable Watch Magazine</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQWTU1bG9MYlBhLUNCVjExZTRWbElwaEE1SVdkUURRVlFuNVRKRmpLRXl2WnNsbzg4SWJ6MW54dDFzRFV1ajFzdW9iUExzU0dhX1NYYlZGTTdpZ0d6NV90V2F1LUh3bUx0ZDA5em5RRVMtckZLX1JHQlRSZ29oaVRnMFAxV0k3RjFIVkVqYVdOQ2tCRW81bTNmejFkcFhSVzAwQTloQnJR?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Green Hydrogen</span><span class="tag">Hydrogen</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">31</span>
+        <div class="card-headline">‘Large-scale solar energy systems are high in T.N.’</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">The Hindu</span>
+        <span class="pill pill-date">26 Mar 2026, 09:09 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>‘Large-scale solar energy systems are high in T.N.’  The Hindu</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxORjJVcnBweDRzMVdxeTBrNFA4OEVvVWxsQnAycDdqakVUSkJ3OWQ1YlY2NE1nMk5JUXgxSmx5R1pRakZVcEI1cWpiMHY2d2trcExoUGdKYjZCSGJRS0NCR0ZfWnZhY1lKM2puSElaQTZkanBLTFk3RG1VMk02ZEVXbGpqU0hvRGJZU1hjWDZJQVRxSGNHYkxtUzd0RkZIVjd0dkt6UXNaSlZwWXY4NlFsOWlZZm5GQdIBvAFBVV95cUxONlpTS1hfVUItcWN4X0tZV0ZNam1CMEIxeTJiclBMZDJqUXM2ZTBDRE5kdDBCamN4TzJ0a3BKU3hSWFFGQlVlcVBLUTZPaktRcy1HdWNZQ3lheUZtQWs4dUJwa3pNNEcwYkE4ckJsSnJzV3RzbzNjMm1LaFJ5NWgtS3FUSGlLSVgyWWc3SC11a200RFpSQ1J2bklYbHRnSXBUVmE0ZkpSSnh6Um5GRXNHOGZMTTJ1bkd4QkQzVQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">32</span>
+        <div class="card-headline">India: The Up-and-Coming Solar Market</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">businesswire.com</span>
+        <span class="pill pill-date">26 Mar 2026, 08:57 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>India: The Up-and-Coming Solar Market  businesswire.com</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNVW9qbkJGU1pOZTdaSkFJYzhkZUlwMzgtb2YxbEsweko0T2JRaFR1c1lZM3hHRS03MHZkWGhPR085R2FySVlXdENzMk9hUEtMOHpjcFNSYzgwVDNxLXlMdk5BcG1kdEhvRU81RHhBSjRsT2g3SkI0OThUQlN3Nkd1UjRlVnY1RWZWOFdEV0liOU9iZXJLampHdQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">33</span>
+        <div class="card-headline">Blueleaf Energy switches on 300-MWp wind-solar hybrid in India</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Renewables Now</span>
+        <span class="pill pill-date">26 Mar 2026, 07:17 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Blueleaf Energy switches on 300-MWp wind-solar hybrid in India  Renewables Now</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNWDMzank0VF84c1NaYWlTS2pfRFA2WnpuUDV6SDJBZkRGdXBFOWdPMDBRSEs4MkNlVW5FUmYwdUtwYjZ1VmtZUWsyTnk4ZGc3R1lTcm5hdEVsR1hSZ1VSMFhtZlNldXJfXzdzVk5ZYUFpcVJaSlQxcDVXNmhEZ1MwOHNQelVad1BmdDh5eEttYVR0VFVpXzJJdWp2T1FKWFJYUUFKYw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">34</span>
+        <div class="card-headline">Wind power producers set for Rs 1,500 crore windfall as Supreme Court ends tariff deduction dispute</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Moneycontrol.com</span>
+        <span class="pill pill-date">26 Mar 2026, 06:50 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Wind power producers set for Rs 1,500 crore windfall as Supreme Court ends tariff deduction dispute  Moneycontrol.com</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxNLTZWUkQycXFpMklJUTZfRnNEZlBKVTFLcXN2WFZ4QmhIMmdPVTI1UnpZRFVVRGl1UklrV1dFa0l0V3czR19aQ0NXZmU5N0kxTC1nUEVfM0lKVkxmbnBTS242R3MzMHNzbDZhMDhNeG9ySWZTSlB1QVhfZGFuS1VBT1NSeHRRVi0tYnhQTVFrdWg4UmEtNWpRV0d5aDR5TWw5amtJcWtvRmk3RE8zQm9mV0Z2UjM3X1lhLWFUdkwyM05wNExIOGZqTzIydDNKZFV5d0ZZcnJqclFqTWNiT2ZZcU1GNVFNXzVmeldmedIB8gFBVV95cUxPTGhXbnlnSFNnTlFiVTNlLVU2X3JMbzBXbnhxdEg3dGh3R2VqWmo0dktRM0QyUWZiYkc1WmFZeGJESC1BOFE5Y2Q1MW5PRlN4SWxCSU1FbWEzT3BaLUJNak4yRlh2elkwMWRUNTRvRDlONEo4ZHFYbTdnR0UyR1B5RjltMGlMOUhwYXpKV3Nhd1Y4RDAxUTdSelQ3aXdweWdIcndKYVZ5Z1F6c1JoODlHYnhBelRCY05venEzX19YQUhsSzUxZ2hWSFlzMzlZLWZfbXlzejRmajkxOWJVQmVyN1p2c2FCV0o3Yi1VUm50UXhZQQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">35</span>
+        <div class="card-headline">Blueleaf Energy Commissions 300 MW Wind-Solar Hybrid Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com</span>
+        <span class="pill pill-date">26 Mar 2026, 05:30 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Blueleaf Energy Commissions 300 MW Wind-Solar Hybrid Project  Mercomindia.com</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPTmR5SGZqbWxMc2duWUl0bWowX05LOWcxdDI0MFZpZ3NpeUY1WTh6bXp4RXFHNnZzcEFMc1NLLXIwdFFGYkw1cG9YYlMtUWFGS2RpeFlVNTRwNEU1ZzBIbS1lUWoxMHc4YXNES2tCVnRfTzBkLVRhYU10RUFCQkhGLUpXUDNvcFJWYTBjQQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">36</span>
+        <div class="card-headline">Polyplex to Source Solar Energy from Solar Projects of CleanMax and Berkeley Energy</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com</span>
+        <span class="pill pill-date">26 Mar 2026, 03:33 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Polyplex to Source Solar Energy from Solar Projects of CleanMax and Berkeley Energy  Mercomindia.com</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPU0RIVmxEQ1RCYnF5WUF5NHVfbS1IVHkwVGtDaDFHdkJaTVE4UTFQS2ZCdTY1TVRfVk9HN3BHU29iX3U0aC0wQWhuMXhXeER6bEpNSEYxUERVZkkyaHEwN3RMZDlocG1PWjREQ2V3TEJuR2FfSVBKN0ljUEVXTk9QN3RMYTJUNW5iVlhXbS1RaXJlS1ZseXNxc2IyalBYZFJQOFdjVThjMWgxdFozVDB3Tg?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">37</span>
+        <div class="card-headline">Government drives green hydrogen expansion and strengthens clean energy transition: Sripad Yesso Naik</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Indian Chemical News</span>
+        <span class="pill pill-date">26 Mar 2026, 02:53 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Government drives green hydrogen expansion and strengthens clean energy transition: Sripad Yesso Naik  Indian Chemical News</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxPRDlwS2pTYXRWU1dMOHh0ZEt3bXZRY2RPZGZ4M2VlbFo4S3h6SUhNLUdfbHM0eTRCeHNOYVg3bm0tMk5TeUR4OG9Sa2NwcHN1UEE0OEYyX3oxVzM5TkJuQUgtX1MzR0hCM0d4YlJjOUtVSzNpU2dSVzlWVjZQUk4xTUdmc2RjTG9Qc055cnRRZEtYSmJQR3VpMFZLZmZSamFSNGR6cTJTMGpESGFXemdLX3lvMkdWMmh0U2YtVk1OaFBHcXNSZ25kNnNsTEE4cVhoWkthQ1pGSV9PTVBrbHh1aExzWWfSAesBQVVfeXFMUFVxM2VLXzY5SVU2WFFrSnM2b3o3WEV5N1JGdk5femRqX25xbk1QY1pmd254Ymw3UXRHa21mOUFveVhtZDJHWGRqemJyOHhSblRHLTBCd3QxeDhsV0V5UmZoQlBfNHJTUVFlRFM4a2dKUWVyOFFXZ3BsNzR1VEItX2x3TmpFazVqYzM2Ym9nYjJyWEpmeDB6TmtrUkJ2NFFtOEFLUDluMW1YV2J4ZDdMYU1rWXI3Q3h3Um50dExUMFJxT0NVSFA1czNFbW9nbjIwNGdpWUVUTUZUTDBUVE0tbEtET0ZkSi0ybktGaw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Green Hydrogen</span><span class="tag">Hydrogen</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">38</span>
+        <div class="card-headline">Renewables to drive bulk of power capacity expansion; solar and wind to lead growth: Centrum report</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">ET EnergyWorld</span>
+        <span class="pill pill-date">26 Mar 2026, 01:55 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Renewables to drive bulk of power capacity expansion; solar and wind to lead growth: Centrum report  ET EnergyWorld</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi-gFBVV95cUxOR2JOWGhXTlJDMmZ6NTF2d05rSEdzcDlYLWN4WGhZZEJDcnhad1NBODNta0FuNzNISVZOOGI2WkFjV2dJTmF5bjV3NnNlUlFrS1dJZXdOT29hekhmc2lCUjUwLU9La0NZc3dvUXRCc0w3Q1B5emlLUG1hcVpxNGdUVUp0Y3YzcE4tdmZnS2RhcFBMRnNvMDk2ejJRRWx3Tll4OXVYQkpwaTQ5VXhyTlh6X1ZPckRUREtFWG5hQjRUU2pvWkdyNW1RRmNuaVBob0F5OWFaaUo2T0NnajJCRU1ySFlpUXJJbGw5cFBqaEp1c1NkclV5TzdUSlFn0gH_AUFVX3lxTE9RYjZUb2l1ZGVXcHQzQ2xMS2U3WEs3Uy16WDZvWDgtM01LVF95Uk5oYjB4NFNIZVZjRXAxN2hBQ0c2akpYaE9mYlFVaDdRcDh1UmFyTGhqZ1VURnB5N2hfcnI4MGhmc3RzcHZKM2RydHFZWVdISGE0Uk83bHloenlVRlJoclVlUlVFcG95TXNuUXZneUtCYkc2d2Y4X2Nub045czlZbU9iWlgyVkRXUTBqWWRWbDBDQzV5UjlZOEhCWXBPRk5LQmVPc1M2QWhPSGNtNnRRQTBvR1dFVk1Iam5GMWg5cEdtd2RUejM0NWRnNXdqRWMwYXE3MkFCZTVvUQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">39</span>
+        <div class="card-headline">Daily News Wrap-Up: India’s Energy Storage Up 26% in 2025, 547 MWh Added</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com</span>
+        <span class="pill pill-date">26 Mar 2026, 11:03 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Daily News Wrap-Up: India’s Energy Storage Up 26% in 2025, 547 MWh Added  Mercomindia.com</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOQ3VHbVdESzhBenNOVVpjblVrdXB1c3FVUEQtSFVpYW5zUnUyZDF5c0EwVDN6anFCRDMweEJNY25PbFBrMWZWMjR3dTZsTktTcFlxRW1LbXBBTF8xcC0tTUkta2tSd2FYR2tFaUwwZEtkYXVLbEp6WmV4SXNXcDdXVThOQ0xtQjl6RVdOWlFrbWNwSHkxN3cyNUJlaGs?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Storage</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-l">
+      <div class="footer-dot"></div>
+      Solar &amp; Renewable Energy India &nbsp;&#183;&nbsp; Daily News Intelligence &nbsp;&#183;&nbsp; Saturday, 28 March 2026
+    </div>
+    <div class="footer-r">Generated 09:16 AM IST &nbsp;&#183;&nbsp; Sources: Google News, Mercom India, PV Magazine &amp; others</div>
   </div>
 
 </div>
-
-<footer>
-  <p>Auto-generated by <strong>Daily-News-Report</strong> &nbsp;·&nbsp; Sources: Google News, Mercom India, PV Magazine India &amp; others</p>
-  <p style="margin-top:6px; color:#8a9ab0;">News links open the original publisher's website. This report is for informational purposes only — not financial advice.</p>
-</footer>
-
 </body>
 </html>
