@@ -126,8 +126,10 @@ def clean_html(text):
     text = html.unescape(text)
     return text.strip()
 
-def truncate(text, limit=600):
+def truncate(text, limit=420):
     text = text.strip()
+    if not text:
+        return ''
     return text[:limit].rsplit(' ', 1)[0] + '…' if len(text) > limit else text
 
 def parse_date(entry):
@@ -240,9 +242,9 @@ def categorise(articles):
     industry_news  = dedup(industry_news)
 
     # Priority companies first, then other stock news
-    stock_news = priority_stock[:20] + other_stock[:15]
+    stock_news = priority_stock[:5] + other_stock[:5]
 
-    return stock_news[:30], industry_news[:35]
+    return stock_news[:5], industry_news[:10]
 
 
 # ─── Sentiment & Tag helpers ──────────────────────────────────────────────────
