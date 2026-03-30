@@ -650,20 +650,70 @@ def categorise(articles):
         else:
             industry_news.append(art)
 
-    # Deduplicate across buckets (priority takes precedence)
+    # ── Stop-words for similarity check ──────────────────────────────────────
+    _STOP = {
+        'a','an','the','is','are','was','were','has','have','had','and','or',
+        'of','in','at','to','for','on','by','with','from','as','its','it',
+        'this','that','be','been','will','can','may','also','how','what',
+        'india','indian','news','report','says','said',
+    }
+
+    def _title_keywords(title):
+        """Return set of meaningful words from a title."""
+        return {w for w in re.sub(r'[^a-z0-9\s]','',title.lower()).split()
+                if len(w) > 2 and w not in _STOP}
+
+    def _is_similar(title_a, title_b, threshold=0.35):
+        """True if two titles share >= threshold fraction of their keywords."""
+        ka, kb = _title_keywords(title_a), _title_keywords(title_b)
+        if not ka or not kb:
+            return False
+        overlap = len(ka & kb)
+        return overlap / min(len(ka), len(kb)) >= threshold
+
+    # Deduplicate by exact title first, then by topic similarity
     seen_titles = set()
-    def dedup(lst):
+
+    # Key phrases that identify a topic cluster — max 1 article per cluster
+    _TOPIC_PHRASES = [
+        'surya ghar', 'pm kusum', 'green hydrogen', 'energy storage', 'bess',
+        'offshore wind', 'floating solar', 'net metering', 'solar manufacturing',
+        'pli scheme', 'pli solar', 'solar exports', 'carbon credit',
+        'renewable purchase obligation', 'wind energy', 'solar auction',
+        'solar tender', 'solar policy', 'solar rooftop',
+    ]
+
+    def _topic_key(title):
+        t = title.lower()
+        for phrase in _TOPIC_PHRASES:
+            if phrase in t:
+                return phrase
+        return None
+
+    def dedup(lst, topic_dedup=False):
         out = []
+        seen_topics = {}   # topic_phrase → count
         for a in lst:
             k = a['title'].lower()
-            if k not in seen_titles:
-                seen_titles.add(k)
-                out.append(a)
+            if k in seen_titles:
+                continue
+            if topic_dedup:
+                # Skip if a very similar article is already in out
+                if any(_is_similar(a['title'], b['title']) for b in out):
+                    continue
+                # Limit to 1 article per recognised topic cluster
+                tp = _topic_key(a['title'])
+                if tp and seen_topics.get(tp, 0) >= 1:
+                    continue
+                if tp:
+                    seen_topics[tp] = seen_topics.get(tp, 0) + 1
+            seen_titles.add(k)
+            out.append(a)
         return out
 
     priority_stock = dedup(priority_stock)
     other_stock    = dedup(other_stock)
-    industry_news  = dedup(industry_news)
+    industry_news  = dedup(industry_news, topic_dedup=True)   # topic-level dedup for industry
 
     # ── 1 article per priority company; allow 2nd only if high-importance ────
     company_count  = {}   # company_key → how many articles included so far
