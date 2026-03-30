@@ -219,87 +219,206 @@ def _fetch_article_sentences(url, timeout=5):
 # ── Title-analysis helpers ─────────────────────────────────────────────────────
 _NUM_PAT = re.compile(
     r'\b(\d[\d,]*\.?\d*)\s*(mw|gw|kw|mwh|gwh|kwh|%|crore|lakh|million|billion|rs\.?|₹)\b', re.I)
-_ACT_MAP = {
-    'declares':'declared',  'wins':'won',         'secures':'secured',
-    'launches':'launched',  'commissions':'commissioned', 'raises':'raised',
-    'signs':'signed',       'awards':'awarded',   'approves':'approved',
-    'achieves':'achieved',  'expands':'expanded', 'completes':'completed',
-    'announces':'announced','acquires':'acquired','files':'filed',
-    'receives':'received',  'targets':'targeted', 'bids':'bid',
-    'installs':'installed', 'deploys':'deployed', 'sets':'set',
-    'reports':'reported',   'posts':'posted',     'records':'recorded',
-}
+
+_INDIA_LOCATIONS = [
+    'rajasthan','gujarat','maharashtra','tamil nadu','andhra pradesh','telangana',
+    'karnataka','kerala','madhya pradesh','uttar pradesh','punjab','haryana',
+    'odisha','jharkhand','west bengal','himachal','uttarakhand','arunachal',
+    'ladakh','jammu','kashmir','rewa','khavda','bhadla','pavagada',
+    'nellore','coimbatore','surat','pune','nagpur','jodhpur',
+]
+
+_REGULATORS = ['cerc','serc','sebi','mnre','ministry','nclt','nclat','tribunal',
+               'high court','supreme court']
+
+def _extract_title_facts(title):
+    t_lower = title.lower()
+    nums = _NUM_PAT.findall(title)
+    co_m = re.match(
+        r'^([A-Z][A-Za-z0-9\s&\-\.\']+?)(?=\s+(?:Declares|Wins|Secures|Launches|'
+        r'Commissions|Raises|Signs|Awards|Approves|Achieves|Expands|Completes|'
+        r'Announces|Acquires|Files|Receives|Targets|Bids|Installs|Deploys|Sets|'
+        r'Reports|Posts|Records|Bags|Gets|Joins|Partners|Plans|Seeks|Cuts|Drops|'
+        r'Surges|Falls|Slips|Hits|Reaches|Crosses|Enters|Exits|Schedules|Hikes|Plunges))', title)
+    if co_m:
+        company = co_m.group(1).strip()
+    else:
+        # Fallback: first sequence of capitalized words at start of title
+        fb = re.match(r'^([A-Z][A-Za-z0-9\s&\-\.]+?)(?=\s+[a-z]|$)', title)
+        company = fb.group(1).strip() if fb else ''
+    location = next((l.title() for l in _INDIA_LOCATIONS if l in t_lower), '')
+    regulator = next((r.upper() for r in _REGULATORS if r in t_lower), '')
+    return nums, company, location, regulator
+
+def _news_type(t_lower, nums):
+    if any(w in t_lower for w in ['declares commercial operation','commissions','commissioned',' cod']):
+        return 'commissioning'
+    if any(w in t_lower for w in ['ipo','fpo','qip','listing','rights issue','preferential allotment','goes public']):
+        return 'ipo'
+    if any(w in t_lower for w in ['cerc','serc','high court','supreme court','nclt','relief','penalty','case','lawsuit','legal']):
+        return 'legal'
+    if any(w in t_lower for w in ['profit','revenue','ebitda','quarterly',' q1 ',' q2 ',' q3 ',' q4 ','results','pbt','pat']):
+        return 'results'
+    if any(w in t_lower for w in ['rooftop','surya ghar','pm kusum','prosumer','net metering','residential solar']):
+        return 'rooftop'
+    if any(w in t_lower for w in ['tender','auction','rfp','rfq','floats','invited bids','invites bid']):
+        return 'tender'
+    if any(w in t_lower for w in ['mnre','ministry','policy','pli','amendment','regulation','tariff','rpo','government scheme']):
+        return 'policy'
+    if nums and nums[0][1].lower() in ('crore','lakh','million','billion'):
+        if any(w in t_lower for w in ['raises','raised','fundraise','secures funding','ncd','bond','debt','investment']):
+            return 'financial'
+    if any(w in t_lower for w in ['secures','wins','bags','awarded contract','order worth','supply order','order for','bagged','clinches','inks deal','nets order','contract worth','supply agreement']):
+        return 'order'
+    if any(w in t_lower for w in ['analyst','investor meet','investor day','concall','conference call']):
+        return 'analyst_meet'
+    if any(w in t_lower for w in ['share price','stock rises','stock falls','surges','plunges',' hits 52','rally']):
+        return 'stock_move'
+    if any(w in t_lower for w in ['expands','targets','plans to','aims','sets target','eyes','forays']):
+        return 'expansion'
+    if any(w in t_lower for w in ['hydrogen','electrolyser','green fuel']):
+        return 'hydrogen'
+    if any(w in t_lower for w in ['storage','bess','battery','mwh','gwh']):
+        return 'storage'
+    return 'general'
 
 def _title_to_lines(title, source, art_category='industry'):
-    """Generate 3 distinct, informative lines that ELABORATE on the headline —
-    never simply repeat it."""
+    """Return 3 lines unique to THIS article — based on its news type and specific facts."""
     t       = title.strip().rstrip('.')
-    lower_t = t.lower()
+    t_lower = t.lower()
+    nums, company, location, regulator = _extract_title_facts(t)
+    ntype   = _news_type(t_lower, nums)
 
-    # Extract numbers (capacity / financial figures)
-    nums   = _NUM_PAT.findall(t)
-    # Detect action verb
-    action_word = next((w for w in _ACT_MAP if w in lower_t), None)
-    action_past = _ACT_MAP.get(action_word, 'announced')
+    co       = company or source or 'The company'
+    qty      = nums[0][0] if nums else ''
+    unit_raw = nums[0][1] if nums else ''
+    unit     = unit_raw.upper() if unit_raw.lower() in ('mw','gw','kw','mwh','gwh','kwh') else unit_raw
+    loc_str  = f" in {location}" if location else " across India"
 
-    # Detect company name (leading capitalised block before a verb)
-    co_match = re.match(r'^([A-Z][A-Za-z\s&\-\.]+?)(?=\s+(?:Declares|Wins|Secures|Launches|'
-                        r'Commissions|Raises|Signs|Awards|Approves|Achieves|Expands|Completes|'
-                        r'Announces|Acquires|Files|Receives|Targets|Bids|Installs|Deploys|'
-                        r'Sets|Reports|Posts|Records|has|will|to\b))', t)
-    company = co_match.group(1).strip() if co_match else ''
+    if ntype == 'commissioning':
+        l1 = (f"{co} has achieved commercial operation of its {qty} {unit} solar project{loc_str}, "
+              f"adding fresh renewable capacity and marking a key execution milestone.")
+        l2 = (f"The {qty} {unit} plant will supply clean electricity to the grid under a Power Purchase Agreement, "
+              f"contributing directly to India's national target of 500 GW renewable capacity by 2030.")
+        l3 = (f"Commissioning milestones are closely tracked by investors and analysts "
+              f"as they signal the start of revenue generation and validate the company's project delivery capability.")
 
-    # ── LINE 1: Who / what happened — expanded factual sentence ─────────────
-    if action_word and company:
-        after_action = t[lower_t.find(action_word) + len(action_word):].strip().lstrip(',').strip()
-        line1 = (f"{company} has {action_past} {after_action}, "
-                 f"marking a notable development in India's solar and renewable energy landscape.")
-    elif nums:
-        qty, unit = nums[0]
-        unit_label = unit.upper() if unit.lower() in ('mw','gw','kw','mwh','gwh','kwh') else unit
-        line1 = (f"This announcement involves {qty} {unit_label} of clean energy capacity, "
-                 f"adding to India's rapidly growing solar and renewable energy project pipeline.")
-    else:
-        line1 = (f"Reported by {source or 'industry sources'}, this development highlights "
-                 f"active momentum in India's solar and renewable energy ecosystem.")
+    elif ntype == 'order':
+        order_size = f"{qty} {unit} " if qty and unit_raw.lower() in ('mw','gw','kw') else (f"₹{qty} {unit} " if qty else "")
+        l1 = (f"{co} has secured a {order_size}solar order, adding to its revenue backlog "
+              f"and reinforcing its position as a key player in India's solar market.")
+        l2 = (f"Order wins of this nature strengthen {co}'s manufacturing or EPC pipeline "
+              f"and signal rising demand from utilities, PSUs, or commercial & industrial buyers.")
+        l3 = (f"A growing order book directly supports revenue visibility and investor confidence — "
+              f"it is one of the most-watched metrics for solar manufacturers and EPC companies.")
 
-    # ── LINE 2: Quantitative scale / financial significance ──────────────────
-    if nums:
-        qty, unit = nums[0]
-        unit_lower = unit.lower()
-        unit_label = unit.upper() if unit_lower in ('mw','gw','kw','mwh','gwh','kwh') else unit
-        if unit_lower in ('mw', 'gw', 'kw'):
-            line2 = (f"A {qty} {unit_label} project of this scale directly supports India's "
-                     f"500 GW clean energy target by 2030 and strengthens domestic solar manufacturing "
-                     f"and deployment capabilities.")
-        elif unit_lower in ('mwh', 'gwh', 'kwh'):
-            line2 = (f"The {qty} {unit_label} energy storage component reflects the growing role of "
-                     f"BESS and battery technologies in stabilising India's renewable energy grid.")
-        else:
-            # Financial figure
-            line2 = (f"The ₹{qty} {unit} investment signals strong financial confidence in India's "
-                     f"clean energy market and reflects increasing institutional appetite for "
-                     f"solar and renewable projects.")
-    elif action_word:
-        line2 = (f"Industry observers consider this a positive signal for India's clean energy sector, "
-                 f"which continues to attract fresh capital, new projects, and strategic partnerships "
-                 f"from domestic and global players.")
-    else:
-        line2 = (f"India's solar and renewable energy market is witnessing record activity in 2025–26, "
-                 f"driven by policy support, competitive tariffs, and growing corporate sustainability mandates.")
+    elif ntype == 'ipo':
+        l1 = (f"{co} is advancing its public market journey, opening up India's solar growth story "
+              f"to a broader base of retail and institutional investors on Indian stock exchanges.")
+        l2 = (f"IPO proceeds are typically earmarked for capacity expansion, debt reduction, and "
+              f"working capital, enabling the company to scale up faster in a competitive market.")
+        l3 = (f"Solar sector IPOs in India have attracted strong subscription demand, "
+              f"reflecting high investor confidence in long-term renewable energy sector growth.")
 
-    # ── LINE 3: Forward-looking context tailored to section ─────────────────
-    if art_category == 'stock':
-        line3 = (f"Investors tracking this company on NSE/BSE should monitor the update closely, "
-                 f"as developments such as order wins, capacity additions, and financial results "
-                 f"can materially influence stock performance and near-term guidance.")
-    else:
-        line3 = (f"As India accelerates its clean energy transition, developments like this "
-                 f"strengthen the country's position as one of the world's largest and fastest-growing "
-                 f"solar markets, creating opportunities across the entire value chain.")
+    elif ntype == 'legal':
+        reg = regulator or 'the regulatory authority'
+        l1 = (f"{co} has received a key ruling from {reg}, which could directly affect "
+              f"its project economics, tariff recovery, or compliance obligations.")
+        l2 = (f"Regulatory and legal decisions involving GST, tariff adjustments, or compliance orders "
+              f"can materially impact a solar company's revenue recognition and project margins.")
+        l3 = (f"The outcome of this case sets a precedent for similar disputes across the sector, "
+              f"making it a development closely watched by developers, financiers, and legal counsel.")
 
-    return [line1, line2, line3]
+    elif ntype == 'results':
+        l1 = (f"{co} has disclosed its latest financial results, offering a window into its revenue "
+              f"growth, operational efficiency, and profitability for the reporting period.")
+        l2 = (f"Key performance indicators — including revenue from operations, EBITDA margins, and net profit — "
+              f"reflect the company's project commissioning pace and order execution progress.")
+        l3 = (f"Earnings releases are pivotal events for stock market investors, "
+              f"often driving near-term price action and shaping analyst target revisions.")
 
+    elif ntype == 'rooftop':
+        l1 = (f"This update relates to India's rooftop solar segment — one of the fastest-growing "
+              f"areas of the clean energy market, serving households, businesses, and institutions.")
+        l2 = (f"Government schemes like PM Surya Ghar Muft Bijli Yojana and net metering regulations "
+              f"are enabling millions of Indians to generate their own clean electricity and reduce bills.")
+        l3 = (f"Rooftop solar reduces grid dependency for end-users and promotes distributed generation, "
+              f"playing a vital role alongside large-scale solar parks in India's energy transition.")
+
+    elif ntype == 'tender':
+        cap_str = f"{qty} {unit} " if qty else ""
+        l1 = (f"A {cap_str}solar tender has been issued{loc_str}, creating fresh project opportunities "
+              f"for solar developers, EPC firms, and equipment suppliers across India.")
+        l2 = (f"Competitive bidding for tenders of this scale attracts leading developers and typically "
+              f"results in aggressive tariff discovery, benefiting DISCOMs and end consumers.")
+        l3 = (f"India's auction-based solar market has consistently driven tariffs to record lows, "
+              f"making solar one of the cheapest sources of new electricity generation.")
+
+    elif ntype == 'policy':
+        l1 = (f"A regulatory or policy development has been announced that could reshape "
+              f"investment flows, project approval timelines, or equipment sourcing in India's solar sector.")
+        l2 = (f"Policy signals from MNRE, state energy departments, or CERC are critical inputs "
+              f"for developers planning capacity additions and for financiers structuring project debt.")
+        l3 = (f"India's solar market is highly policy-sensitive — clarity and consistency in government "
+              f"regulation are essential for sustaining the pace of renewable capacity addition.")
+
+    elif ntype == 'financial':
+        l1 = (f"{co} has raised ₹{qty} {unit} in fresh capital, strengthening its financial position "
+              f"to fund upcoming capacity additions, project development, or debt reduction.")
+        l2 = (f"This fundraise signals institutional confidence in {co}'s growth strategy and "
+              f"its ability to scale operations in India's increasingly competitive clean energy market.")
+        l3 = (f"Access to capital at competitive rates is a key advantage for solar companies — "
+              f"it enables aggressive project bidding, faster manufacturing scale-up, and lower tariff offers.")
+
+    elif ntype == 'analyst_meet':
+        l1 = (f"{co} has scheduled an analyst and investor interaction, where management is expected to "
+              f"discuss order pipeline, capacity expansion plans, financial guidance, and market outlook.")
+        l2 = (f"Investor meets provide direct access to management commentary on near-term order wins, "
+              f"margins, working capital, and strategic priorities — key inputs for equity research.")
+        l3 = (f"Such events reflect a company's commitment to investor transparency and "
+              f"often coincide with or precede major business announcements or quarterly earnings.")
+
+    elif ntype == 'stock_move':
+        l1 = (f"{co}'s stock is attracting market attention on Indian exchanges, "
+              f"with price movement driven by business developments or broader sector sentiment.")
+        l2 = (f"Share price moves in the solar sector are often triggered by order disclosures, "
+              f"earnings beats, capacity commissioning news, or policy-related catalysts.")
+        l3 = (f"Investors should evaluate whether such price action is backed by fundamental "
+              f"changes in business outlook or reflects short-term momentum trading activity.")
+
+    elif ntype == 'expansion':
+        l1 = (f"{co} has outlined expansion targets or strategic growth plans{loc_str}, "
+              f"reflecting its ambition to scale up in India's fast-growing solar energy market.")
+        l2 = (f"Expansion announcements reveal management's confidence in long-term project demand, "
+              f"domestic manufacturing opportunities, and the company's ability to execute at scale.")
+        l3 = (f"India's solar sector is attracting aggressive capacity expansion from established players "
+              f"and new entrants alike, supported by strong government policy tailwinds and rising demand.")
+
+    elif ntype == 'hydrogen':
+        l1 = (f"This development relates to green hydrogen — a clean fuel produced using renewable "
+              f"electricity — increasingly central to India's industrial decarbonisation strategy.")
+        l2 = (f"India's National Green Hydrogen Mission targets 5 MMTPA output by 2030, "
+              f"creating significant opportunities for electrolyser manufacturers and RE project developers.")
+        l3 = (f"Green hydrogen production requires large volumes of solar and wind power, "
+              f"making it a major demand driver for renewable energy in the decade ahead.")
+
+    elif ntype == 'storage':
+        l1 = (f"This news covers energy storage — a critical technology that allows solar and "
+              f"wind power to be dispatched beyond generation hours, enabling 24x7 clean power supply.")
+        l2 = (f"Battery Energy Storage Systems (BESS) are gaining rapid traction in India as "
+              f"costs decline and grid operators increasingly mandate storage in new renewable tenders.")
+        l3 = (f"India's energy storage market is projected to grow significantly, driven by "
+              f"round-the-clock RE obligations and rising corporate demand for firm clean energy.")
+
+    else:  # general
+        l1 = (f"{co} is involved in a new development in India's solar and renewable energy sector, "
+              f"reflecting the dynamic commercial, regulatory, and investment activity across the industry.")
+        l2 = (f"India's clean energy sector is seeing record activity in 2025–26, with new project "
+              f"announcements, manufacturing investments, and policy developments emerging regularly.")
+        l3 = (f"Stakeholders across the solar value chain — developers, manufacturers, financiers, and "
+              f"policymakers — are actively shaping India's next phase of clean energy expansion.")
+
+    return [l1, l2, l3]
 def _rss_sentences(summary, title):
     """Extract genuine non-title sentences from RSS summary."""
     # Strip trailing source attribution (Google News: '  SourceName')
