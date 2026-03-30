@@ -78,6 +78,19 @@ RSS_FEEDS = [
     "https://news.google.com/rss/search?q=Fujiyama+Solar+india&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=Exide+Industries+solar+battery+energy+storage&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=Amara+Raja+Batteries+solar+energy+storage&hl=en-IN&gl=IN&ceid=IN:en",
+    # ── Regulatory & Policy feeds ──
+    "https://news.google.com/rss/search?q=CERC+solar+renewable+energy+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=MNRE+policy+order+india+2025+2026&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=solar+renewable+energy+regulation+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=SECI+tender+solar+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=PLI+solar+module+india+policy&hl=en-IN&gl=IN&ceid=IN:en",
+    # ── Solar industry company feeds ──
+    "https://news.google.com/rss/search?q=Adani+Green+Energy+solar&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Suzlon+Energy+wind+solar+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=INOX+Wind+renewable+energy+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=ReNew+Power+solar+wind+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=Sterling+Wilson+solar+EPC+india&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=IREDA+solar+renewable+india&hl=en-IN&gl=IN&ceid=IN:en",
     # Specialist portals
     "https://mercomindia.com/feed/",
     "https://www.pv-magazine-india.com/feed/",
@@ -112,19 +125,34 @@ STOCK_KEYWORDS = [
 ]
 
 INDUSTRY_KEYWORDS = [
+    # Capacity / project
     'mw', 'gw', 'megawatt', 'gigawatt', 'solar park', 'wind farm',
     'tender', 'bid', 'auction', 'capacity', 'plant', 'project',
-    'ministry', 'mnre', 'policy', 'tariff', 'grid', 'rooftop',
-    'solar panel', 'module', 'cell', 'installation', 'deployment',
-    'pm kusum', 'solar mission', 'net metering', 'discom',
-    'pm surya ghar', 'residential solar', 'home solar', 'solar subsidy',
-    'rooftop solar residential', 'solar water heater', 'solar pump',
-    'power purchase', 'ppa', 'power plant', 'green hydrogen',
-    'battery storage', 'bess', 'energy storage', 'offshore wind',
-    'floating solar', 'hybrid', 'evacuation', 'transmission',
-    'seci', 'rewa', 'ntpc renewable', 'ireda', 'irena',
-    'solar module', 'solar cell', 'solar farm', 'wind turbine',
-    'renewable purchase obligation', 'rpo', 'rec', 'carbon credit',
+    'power purchase', 'ppa', 'power plant', 'floating solar',
+    'solar farm', 'wind turbine', 'solar module', 'solar cell',
+    'installation', 'deployment', 'commissioning', 'epc',
+    # Regulatory / policy
+    'cerc', 'serc', 'mnre', 'ministry', 'policy', 'regulation',
+    'regulatory', 'compliance', 'amendment', 'notification',
+    'circular', 'directive', 'order by', 'tribunal', 'nclt',
+    'tariff', 'grid', 'discom', 'net metering', 'rpo',
+    'renewable purchase obligation', 'rec', 'carbon credit',
+    'seci', 'rewa', 'ireda', 'irena', 'pli scheme', 'pli solar',
+    'solar mission', 'pm kusum', 'pm surya ghar',
+    # Rooftop / residential
+    'rooftop', 'rooftop solar', 'residential solar', 'home solar',
+    'solar subsidy', 'solar water heater', 'solar pump',
+    # Technology / storage
+    'green hydrogen', 'battery storage', 'bess', 'energy storage',
+    'offshore wind', 'hybrid', 'evacuation', 'transmission',
+    'electrolyser', 'fuel cell', 'floating solar',
+    # Solar industry companies
+    'adani green', 'suzlon', 'inox wind', 'inox green',
+    'sterling wilson', 'renew power', 'azure power',
+    'hero future energies', 'greenko', 'torrent power',
+    'ireda', 'sjvn', 'nhpc', 'power grid corporation',
+    'ntpc renewable', 'tata power solar', 'avaada', 'amp energy',
+    'acme solar', 'eden renewables', 'ayana renewable',
 ]
 
 RELEVANCE_KEYWORDS = [
@@ -145,6 +173,11 @@ ANALYST_FILTER_KEYWORDS = [
     'outperform', 'underperform', 'technical analysis', 'rsi level',
     'support level', 'resistance level', 'moving average', 'fibonacci',
     'short term target', 'long term target',
+    # Analyst recommendation titles
+    'stock to buy', 'stocks to buy', 'buy this stock', 'top pick',
+    '% upside', 'upside target', 'upside potential', '% return',
+    'multibagger', 'wealth creator', 'stock recommendation',
+    'should you buy', 'should i buy', 'is it a buy',
 ]
 
 # High-importance keywords — allow a 2nd article for the same company if these appear
@@ -577,9 +610,13 @@ def categorise(articles):
 
         # ── Skip pure analyst/brokerage opinion pieces ──────────────────────
         analyst_hits = sum(1 for kw in ANALYST_FILTER_KEYWORDS if kw in blob)
-        if analyst_hits >= 2:
-            # Only skip if the article is predominantly analyst content;
-            # allow if it also has strong real-news signals (IPO, project, etc.)
+        # 1 strong hit (upside target, stock to buy, etc.) or 2+ general hits → filter
+        strong_analyst = any(kw in blob for kw in [
+            'stock to buy', 'stocks to buy', '% upside', 'upside target',
+            'multibagger', 'stock recommendation', 'should you buy',
+            'price target', 'initiates coverage',
+        ])
+        if strong_analyst or analyst_hits >= 2:
             real_news = any(kw in blob for kw in HIGH_IMPORTANCE_KEYWORDS)
             if not real_news:
                 continue
@@ -594,8 +631,18 @@ def categorise(articles):
         stock_score    = sum(1 for kw in STOCK_KEYWORDS    if kw in blob)
         industry_score = sum(1 for kw in INDUSTRY_KEYWORDS if kw in blob)
 
-        if is_priority:
+        # Regulatory / policy articles always go to industry regardless of stock score
+        is_regulatory = any(kw in blob for kw in [
+            'cerc', 'serc', 'mnre', 'ministry', 'policy', 'regulation',
+            'regulatory', 'amendment', 'notification', 'circular',
+            'directive', 'tribunal', 'pli scheme', 'pli solar',
+            'tariff order', 'discom', 'rpo', 'net metering',
+        ])
+
+        if is_priority and not is_regulatory:
             priority_stock.append(art)
+        elif is_regulatory:
+            industry_news.append(art)
         elif stock_score >= industry_score and stock_score > 0:
             other_stock.append(art)
         elif industry_score > 0:
