@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Updates — Solar &amp; Renewable Energy India | Sunday, 11 October 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --em-yellow:    #FFDD00;
+    --em-yellow-lt: #FFF9CC;
+    --em-yellow-dk: #F5C800;
+    --em-blue:      #243B7F;
+    --em-blue-mid:  #1A3070;
+    --em-blue-dk:   #152560;
+    --em-orange:    #EA7437;
+    --em-orange-dk: #DA7527;
+    --em-white:     #FFFFFF;
+    --em-off-white: #FAFAFA;
+    --em-light:     #F3F3F3;
+    --em-border:    #E2E2E2;
+    --em-text-dk:   #1A1A2E;
+    --em-text-mid:  #3A4A6B;
+    --em-text-lt:   #6B7A9B;
+    --em-green:     #1B7A45;
+    --em-green-bg:  #E8F5EE;
+    --em-red:       #B22222;
+    --em-red-bg:    #FAEAEA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    background: #E8E8E8;
+    color: var(--em-text-dk);
+    line-height: 1.55;
+    padding: 24px 20px;
+  }
+  .page { max-width: 980px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .header { border-radius: 10px 10px 0 0; overflow: hidden; }
+  .header-top {
+    background: var(--em-blue);
+    padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-name { font-size: 24pt; font-weight: 900; font-style: italic; color: var(--em-yellow); letter-spacing: -0.5px; line-height: 1; }
+  .brand-sub  { font-size: 8.5pt; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+  .header-meta   { text-align: right; }
+  .meta-date     { color: var(--em-yellow); font-size: 9pt; font-weight: 700; letter-spacing: 1px; }
+  .meta-edition  { color: rgba(255,255,255,0.45); font-size: 8pt; margin-top: 3px; }
+  .header-yellow {
+    background: var(--em-yellow);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hy-tagline  { font-size: 10.5pt; font-weight: 800; color: var(--em-blue); letter-spacing: 0.2px; }
+  .hy-tagline em { color: var(--em-orange-dk); font-style: normal; }
+  .hy-coverage { font-size: 8pt; font-weight: 600; color: var(--em-blue-mid); opacity: 0.75; }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-wrap {
+    background: var(--em-blue);
+    padding: 20px 32px;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+  }
+  .exec-label { font-size: 7.5pt; font-weight: 800; color: var(--em-yellow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .exec-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .exec-item  {
+    background: rgba(255,221,0,0.07);
+    border: 1px solid rgba(255,221,0,0.2);
+    border-left: 4px solid var(--em-yellow);
+    border-radius: 6px;
+    padding: 11px 14px;
+    color: rgba(255,255,255,0.88);
+    font-size: 9pt; line-height: 1.5;
+  }
+  .exec-item strong { display: block; color: var(--em-yellow); font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
+
+  /* ── SIGNALS BAR ── */
+  .signals {
+    background: var(--em-yellow);
+    padding: 10px 32px;
+    display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+    border-bottom: 3px solid var(--em-blue);
+  }
+  .sig-label { font-size: 7.5pt; font-weight: 800; color: var(--em-blue); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; margin-right: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 7.5pt; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.2px; }
+  .chip-blue   { background: var(--em-blue);      color: var(--em-yellow); }
+  .chip-orange { background: var(--em-orange-dk); color: #fff; }
+  .chip-green  { background: var(--em-green);     color: #fff; }
+  .chip-red    { background: var(--em-red);       color: #fff; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 18px; }
+  .section-hdr {
+    background: var(--em-blue);
+    padding: 11px 32px;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-icon  { font-size: 14pt; }
+  .section-title { font-size: 12pt; font-weight: 800; color: var(--em-yellow); font-style: italic; }
+  .section-count { margin-left: auto; background: var(--em-yellow); color: var(--em-blue); font-size: 7.5pt; font-weight: 800; padding: 2px 9px; border-radius: 12px; letter-spacing: 0.5px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--em-white);
+    border-left: 5px solid var(--em-yellow);
+    border-right: 1px solid var(--em-border);
+    border-bottom: 1px solid var(--em-border);
+    padding: 16px 28px;
+  }
+  .card:nth-child(even) { background: var(--em-off-white); }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .card-top      { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 8px; }
+  .card-num      { font-size: 7.5pt; font-weight: 800; color: var(--em-white); background: var(--em-blue); border-radius: 4px; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.5px; }
+  .card-headline { font-size: 10.5pt; font-weight: 700; color: var(--em-blue); line-height: 1.4; }
+
+  .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .pill      { display: inline-flex; align-items: center; font-size: 7.5pt; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.2px; }
+  .pill-src  { background: var(--em-blue);     color: var(--em-yellow); }
+  .pill-date { background: var(--em-yellow);   color: var(--em-blue); }
+  .pill-pos  { background: var(--em-green-bg); color: var(--em-green); border: 1px solid #8ED4AE; font-weight: 700; }
+  .pill-neg  { background: var(--em-red-bg);   color: var(--em-red);   border: 1px solid #ECA9A9; font-weight: 700; }
+
+  .card-body   { font-size: 9.5pt; color: var(--em-text-mid); line-height: 1.65; margin-bottom: 12px; font-weight: 400; }
+  .card-body p + p { margin-top: 7px; }
+
+  .orig-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 8.5pt; font-weight: 700;
+    color: var(--em-blue); text-decoration: none;
+    background: var(--em-yellow); border: 2px solid var(--em-blue);
+    padding: 5px 13px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .orig-link:hover { background: var(--em-yellow-lt); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .tag  { font-size: 7pt; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: rgba(36,59,127,0.07); color: var(--em-blue); border: 1px solid rgba(36,59,127,0.18); text-transform: uppercase; letter-spacing: 0.4px; }
+
+  .divider { border: none; border-top: 2px dashed var(--em-yellow); margin: 0; }
+  .no-news { padding: 32px; text-align: center; color: var(--em-text-lt); font-style: italic; background: var(--em-white); border-left: 5px solid var(--em-yellow); border-right: 1px solid var(--em-border); border-bottom: 1px solid var(--em-border); border-radius: 0 0 8px 8px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 18px;
+    background: var(--em-blue);
+    border-radius: 8px;
+    padding: 13px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-l { color: var(--em-yellow); font-size: 8.5pt; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--em-yellow); flex-shrink: 0; }
+  .footer-r { color: rgba(255,255,255,0.45); font-size: 8pt; }
+
+  @media print { body { background: #fff; padding: 0; } .page { max-width: 100%; } }
+  @media (max-width: 620px) {
+    .exec-grid { grid-template-columns: 1fr; }
+    .header-top, .header-yellow { flex-direction: column; gap: 8px; text-align: center; }
+    .footer { flex-direction: column; gap: 6px; text-align: center; }
+    .card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Daily News Updates</div>
+        <div class="brand-sub">Solar &amp; Renewable Energy &nbsp;&#183;&nbsp; India</div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-date">SUNDAY, 11 OCTOBER 2026</div>
+        <div class="meta-edition">Daily News Intelligence &nbsp;&#183;&nbsp; Coverage: Last 2 Days</div>
+      </div>
+    </div>
+    <div class="header-yellow">
+      <div class="hy-tagline">Solar &amp; Renewable Energy India &nbsp;|&nbsp; <em>Daily Market Intelligence</em></div>
+      <div class="hy-coverage">IPO / Stock Market &nbsp;&#183;&nbsp; Industry &nbsp;&#183;&nbsp; Policy &amp; Regulation &nbsp;&#183;&nbsp; Energy Storage</div>
+    </div>
+  </div>
+
+  <!-- EXEC SUMMARY -->
+  <div class="exec-wrap">
+    <div class="exec-label">&#9728; &nbsp;Executive Summary — Top Stories Today &nbsp;(15 articles)</div>
+    <div class="exec-grid">
+      <div class="exec-item"><strong>📈 NTPC Green Energy declares commercial operation of 66.18 MW solar project</strong>NTPC Green Energy declares commercial operation of 66.18 MW solar project  scanx.trade</div>
+      <div class="exec-item"><strong>📈 Premier Energies secures orders worth ₹4,000 crore in Q2</strong>Premier Energies secures orders worth ₹4,000 crore in Q2  BusinessLine</div>
+      <div class="exec-item"><strong>🏭 Kandla Port invites global firms to develop green hydrogen projects</strong>Kandla Port invites global firms to develop green hydrogen projects  Prop News Time</div>
+      <div class="exec-item"><strong>🏭 Telangana targets rooftop solar for 20.33 lakh households</strong>Telangana targets rooftop solar for 20.33 lakh households  The New Indian Express</div>
+    </div>
+  </div>
+
+  <!-- SIGNALS BAR -->
+  <div class="signals">
+    <span class="sig-label">Market Signals</span>
+    <span class="chip chip-green">&#9650; RE Financing</span>
+    <span class="chip chip-blue">&#9675; IPO / Stock Market</span>
+    <span class="chip chip-orange">&#9678; Rooftop / PM Surya Ghar</span>
+    <span class="chip chip-orange">&#9678; Green Hydrogen</span>
+  </div>
+
+  <!-- SECTION 1: IPO / STOCK -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">📈</span>
+      <span class="section-title">Section 1 — IPO / Stock Market</span>
+      <span class="section-count">5 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">01</span>
+        <div class="card-headline">NTPC Green Energy declares commercial operation of 66.18 MW solar project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">scanx.trade</span>
+        <span class="pill pill-date">11 Oct 2026, 01:41 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>NTPC Green Energy has achieved commercial operation of its 66.18 MW solar project across India, adding fresh renewable capacity and marking a key execution milestone.</p><p>The 66.18 MW plant will supply clean electricity to the grid under a Power Purchase Agreement, contributing directly to India&#x27;s national target of 500 GW renewable capacity by 2030.</p><p>Commissioning milestones are closely tracked by investors and analysts as they signal the start of revenue generation and validate the company&#x27;s project delivery capability.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPQ0JsWGtUWk40VG9ZRTdvU1lLdmRLOUNweU02VWRfSmxVWEZ1VnBjMnRjTDRaOEpoS0pXdkRrZVlGeGZmaktrZWFRbE9WWFJUV3o2ZDh0ck1YMkxkLXlkRzU5ZkZjbXY4Mm1TR1F6ek5HcmtUMGd3TktLZTNuN19pRU9DTHFEWEE4VGtCZUJzYjdvcWR5VThOUDVMdWxSRWQtdmlOM0VSa25vRlhhR2RZYU1aYXZzYVdIc3NQd2VOcURMcXpfVFE?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">NTPC Green Energy</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">02</span>
+        <div class="card-headline">Premier Energies secures orders worth ₹4,000 crore in Q2</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">BusinessLine</span>
+        <span class="pill pill-date">10 Oct 2026, 04:48 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Premier Energies has secured a ₹4,000 crore solar order, adding to its revenue backlog and reinforcing its position as a key player in India&#x27;s solar market.</p><p>Order wins of this nature strengthen Premier Energies&#x27;s manufacturing or EPC pipeline and signal rising demand from utilities, PSUs, or commercial &amp; industrial buyers.</p><p>A growing order book directly supports revenue visibility and investor confidence — it is one of the most-watched metrics for solar manufacturers and EPC companies.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxPQTRpLVhrS2VKSzVTQk54dzFwWnFyc3c1VEg3eE5oWk1NSkJRTXdVN2hDNFdmRFVMU0RadmNScV9DZHU4bklxUTJmY3NnbWhydFMxNDB0dDU2UVRjNk1vc2ZzZFFJRTI5ZlB0dzZDMncwdUU2V2ZZUEQ4TFN1QU1yZXEzSnktUXI3MHZTNlNOQnNSRk8yV1RYcE9SaWowMEJNanBRSGhWOFRFWmY5ZWZTOThRb1RLaDllNlpqdE5R0gHEAUFVX3lxTE9keEtjRDdvb2Q5MDY3ci1objVBTjRIYnpOZXo4VXdhUlhKQlpxYjZNNDJxSWNLYWZ3OTZ1S2JrTmFhTXpYc3VtR19uVE56MlpQWTVWSWRWd20yZGU5Ni1ES0hWU1hGU2p1WUg5QXp5c3ZpVkhCYlRiUUh2NnYxN2hxdlVmZ3NBRmNUQnJLdUt4R25tMC1OUFBuY2ZsSW9kYjNHYzFWZWRjeFZTU3JvbVlvdjdUbzBpWFJoZFpPcXVWZ19GUng?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Premier Energies</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">03</span>
+        <div class="card-headline">NTPC Green commissions 66.18 MW of Kalasar solar in Rajasthan, India</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Solarbytes</span>
+        <span class="pill pill-date">10 Oct 2026, 02:30 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>NTPC Green has achieved commercial operation of its 66.18 MW solar project in Rajasthan, adding fresh renewable capacity and marking a key execution milestone.</p><p>The 66.18 MW plant will supply clean electricity to the grid under a Power Purchase Agreement, contributing directly to India&#x27;s national target of 500 GW renewable capacity by 2030.</p><p>Commissioning milestones are closely tracked by investors and analysts as they signal the start of revenue generation and validate the company&#x27;s project delivery capability.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxPdkk3dFNvTlJZRzlBSVVZX1ZnMF83WGNvVVdwSm9faS1nVGt2RV9LVS05Tjg1T0YtanJyVG9UQi1EMnEzMTFqRmVZcEc3eTN2d25EZWNZdVpOSWwwLVIwbjR1ZHVyekxSYVdKMk9wN3NlWkR1V1BxcURTWXp5RDlncG5JdTdmSUlhSTVUVlZMbU05VEJYWmNvUmtTdGM2RnRmck9ySWcyYlF5LXBydE15enBJbmJweVlEV05JTg?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">NTPC Green Energy</span><span class="tag">Rajasthan</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">04</span>
+        <div class="card-headline">Premier Energies secures 2.308 GW of solar cell and module orders</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Solarbytes</span>
+        <span class="pill pill-date">10 Oct 2026, 10:17 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Premier Energies has secured a 2.308 GW solar order, adding to its revenue backlog and reinforcing its position as a key player in India&#x27;s solar market.</p><p>Order wins of this nature strengthen Premier Energies&#x27;s manufacturing or EPC pipeline and signal rising demand from utilities, PSUs, or commercial &amp; industrial buyers.</p><p>A growing order book directly supports revenue visibility and investor confidence — it is one of the most-watched metrics for solar manufacturers and EPC companies.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQQ2tsZ0JZUjZGeEVrd1h0a2JILVhpX3VVU3ZyUndsWFJaMEtIUnMxYTJTTXUxcFdiSEs3Y05WSEhwbXZHUUttNkFWamdEOEE5V0dfLXdLNTVDalkwM0JqYXV6dlgyOGdISHl2STFGOXZUQ3pGQUlsUGxVanJlNHFiQU1TS2NxczdzUk1GOTVkUmZOMVU0TndsVWJTZVpFbnp5SHg4Y1lWUzNKQ2xud2VN?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Premier Energies</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">05</span>
+        <div class="card-headline">Waaree Energies Shares Crash 15% as US Slaps 126% Duty on Indian Solar Imports; Green Energy Stocks Slide</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Goodreturns</span>
+        <span class="pill pill-date">09 Oct 2026, 10:41 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Goodreturns is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOdzd0MXNYM3l1TlpNWEE3OXJRWjJvMUdFUHFJRUx1M2NSUkEtd1NQMDFYcHJtS1Bnbm55ajlOZm4zMFl2TEYtMDVNQXZ1cDJQNzhsbmhOUFRlRDBuTi01VEpJUDktMHh5WG9tb0RqWVBzWjhOVDgwa1FyX051UlNQbHh4NzdvbTdBaERWUHRKWWJNMDQ1LWR6blJ2X1lvaGttczJfREpYZ3AzT1ZKbVkxb0o5WW1fVkUxZU5iOFdJX2ZVSkNtYjBXRkUwN0lWc2c5QjhIenVTeG4?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Waaree Energies</span><span class="tag">Solar</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: INDUSTRY -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">🏭</span>
+      <span class="section-title">Section 2 — Industry</span>
+      <span class="section-count">10 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">06</span>
+        <div class="card-headline">Kandla Port invites global firms to develop green hydrogen projects</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Prop News Time</span>
+        <span class="pill pill-date">11 Oct 2026, 02:30 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This development relates to green hydrogen — a clean fuel produced using renewable electricity — increasingly central to India&#x27;s industrial decarbonisation strategy.</p><p>India&#x27;s National Green Hydrogen Mission targets 5 MMTPA output by 2030, creating significant opportunities for electrolyser manufacturers and RE project developers.</p><p>Green hydrogen production requires large volumes of solar and wind power, making it a major demand driver for renewable energy in the decade ahead.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPcmxVVE9xcWFkcnRKbmdxNzFCcklJdDFRc2ZZdzJzdHoyU29aTVVkYmlraTR5NXdrT3B4OHY5LVNNd3lUNEZtdjBTOFlwZ1NXZ0V3TmZsVmZNNldmRlRzd0lnekZXVkZDYkN1WGxmUnlIYUxMTjRlRnBWcm1MQkFqZ05VRTVwSEJqVnNOQ0o0enB6ZlpkZlBZLTA5NGl1MHJDcWN0NG1GTjZLV0VzNmpSVl9HWFlsMkxwc3Nv?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Green Hydrogen</span><span class="tag">Hydrogen</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">07</span>
+        <div class="card-headline">Telangana targets rooftop solar for 20.33 lakh households</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">The New Indian Express</span>
+        <span class="pill pill-date">11 Oct 2026, 09:14 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This update relates to India&#x27;s rooftop solar segment — one of the fastest-growing areas of the clean energy market, serving households, businesses, and institutions.</p><p>Government schemes like PM Surya Ghar Muft Bijli Yojana and net metering regulations are enabling millions of Indians to generate their own clean electricity and reduce bills.</p><p>Rooftop solar reduces grid dependency for end-users and promotes distributed generation, playing a vital role alongside large-scale solar parks in India&#x27;s energy transition.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiugFBVV95cUxORDh5VUhSTldCOFA2R3dSUW1nWDlwMVF5YUd6d0lrTWtDSTJOcG0ycUlkZ29GRmtvTHkyQmpfbUc4b2xSNkhaakZpREhXT0dGSDRGWW52WkZ3RGdvUUlEdDVRbFBPc19LOF9ucDFhd1ZiUGw0ajNvY0FMdHNRNXR2ZFd2TGNZRFJETnhOWnkzMUZNc2pHMjJVczVqcmhGYzhnZWFpNE11c2dsWjJxNjhORU4wZ2tESzByYWfSAccBQVVfeXFMTUlJUkZMTk5Yc29qb0VtTTRESjN4aVJJQ2Fsc3c1T1hfVWdRRkFfdktVWlZSVUZiQUJMbmIxMmcySXEzMWNxV19ZaXJtd29ZYmpOU1luSjF3cGZLWGdvY2N4cVlCVzNKaVpSVDlpSFhpbnZSa0JQOGlKQUh6ell0VXEzdjdSX1VpMUFFYVB4VjNVSEpZdXYzSWY4UzlMcDFDbnVWcHAzajNTc29XX0Y0cElaVmEyNUZDQkt6d0dsSXhBNWNEbU1CQQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Rooftop Solar</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">08</span>
+        <div class="card-headline">NTPC Kalasar Solar 66.18 MW Commercial Operation Oct 2026</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Kalkine India</span>
+        <span class="pill pill-date">10 Oct 2026, 07:34 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>NTPC Kalasar Solar 66.18 MW Commercial Operation Oct 2026 is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPSy1SbmpNbmZzQnozanBCWk9WNXVjbjhYaml5b29aajN2VUFiTkhrdjRwb21iZjBLVk5vaXBleXlFWmJnMmtiYzdSbXo0ZzQycE1GajF3cXZoWDZaYUg0ekxpUThYNXNiZ3hlMWdxaHlQbzJkc0RSMHFQSzJCOWtpR3dNeWxLaWxnYUtEOUtNX3dEVFB5WmRDVENSUTFHdVBEMm9KUlIxc0l5bmhCMFl1WFdOVXdKUQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">09</span>
+        <div class="card-headline">Oswal Pumps (NSE:OSWALPUMPS): Why Is It Redirecting IPO Funds to a 1.2 GW Solar Cell Plant?</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Kalkine India</span>
+        <span class="pill pill-date">10 Oct 2026, 05:54 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Kalkine India is advancing its public market journey, opening up India&#x27;s solar growth story to a broader base of retail and institutional investors on Indian stock exchanges.</p><p>IPO proceeds are typically earmarked for capacity expansion, debt reduction, and working capital, enabling the company to scale up faster in a competitive market.</p><p>Solar sector IPOs in India have attracted strong subscription demand, reflecting high investor confidence in long-term renewable energy sector growth.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOOS1OLVJsd19reGF3V0drdGNnUmVFUm1pdGVrQm5ja0JEYWhCRHpVV0NQRkRQY3RjMzBPOXR6cWRrYUtHdHloMkdFQ0lORm8zcnhzNWc3bE5hS1l1T25qVzZCSmZDc1c3ZDlUVmI0MVhJLVgydEpjYnRlTVplaURicURlRllkamFXSXF3S1hGbFg3MlVQQjAwYTVXVmJ6XzZibjI3TzZXLXdfSlhDUURwdTkwMktpLVZDd0xiZTQtNVFRMG83N0t6U1BPNnRNUQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">IPO</span><span class="tag">NSE</span><span class="tag">REC</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">10</span>
+        <div class="card-headline">Adani Green Energy operational capacity surges 24% YoY in H1 FY27; check Q2 results schedule</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Upstox</span>
+        <span class="pill pill-date">10 Oct 2026, 05:37 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Adani Green Energy has disclosed its latest financial results, offering a window into its revenue growth, operational efficiency, and profitability for the reporting period.</p><p>Key performance indicators — including revenue from operations, EBITDA margins, and net profit — reflect the company&#x27;s project commissioning pace and order execution progress.</p><p>Earnings releases are pivotal events for stock market investors, often driving near-term price action and shaping analyst target revisions.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUTItbHNaanR1aUdVckd6MmlUak5pUkx4a01BQU1RZUZsT2hIX3o1ejhuZ0k3dnlYQXVULUZ5YUFHQ1FyeEFTRHZlTi1yeUVrQ0dKRmtDcnJhcUxkMXY1SVFjdmkyR1p6TGp1ZEZ5YkN6VVgyU0lPQVd6WW1ScVlMUXkyYUJVWllWb012S2xmSGZqS2lSLXRWNXVIdDlVQ2FRdW9scFgxeVp0ejJqTnJSM21oc294VHY2Wmg4emExaExIWXBZY0JueVNQM0lSUTI3M2gtSkFEU2ZFenY4S1FoNlRZOGdfZw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Adani Green</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">11</span>
+        <div class="card-headline">Global Solar PV &amp; Storage Tender News Snippets</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">TaiyangNews</span>
+        <span class="pill pill-date">10 Oct 2026, 05:22 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>A solar tender has been issued across India, creating fresh project opportunities for solar developers, EPC firms, and equipment suppliers across India.</p><p>Competitive bidding for tenders of this scale attracts leading developers and typically results in aggressive tariff discovery, benefiting DISCOMs and end consumers.</p><p>India&#x27;s auction-based solar market has consistently driven tariffs to record lows, making solar one of the cheapest sources of new electricity generation.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPX3dWa3dVZ0dqbDVFWjBJVmE4eEJ2bDNGTklDSFZHSThPSXF3VjgzOEVobHYzb2hLM2RvbW5rVzNRWVJHRHFld2JZbFJuVmZkMEF5elMzaENoUC1DRmlUMW53U3RMRVBMWG5OaUlwNUxZSnpXdl95eGRNLWZEdVZWdlpRczBPTjQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">12</span>
+        <div class="card-headline">Beyond Gigawatts: Why India&#x27;s Clean Energy Future Depends on Storage Intelligence</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">IndexBox</span>
+        <span class="pill pill-date">10 Oct 2026, 03:40 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This news covers energy storage — a critical technology that allows solar and wind power to be dispatched beyond generation hours, enabling 24x7 clean power supply.</p><p>Battery Energy Storage Systems (BESS) are gaining rapid traction in India as costs decline and grid operators increasingly mandate storage in new renewable tenders.</p><p>India&#x27;s energy storage market is projected to grow significantly, driven by round-the-clock RE obligations and rising corporate demand for firm clean energy.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQUlY3amdwcHk5X2dYYWtCQU9DSWNhSTdtUE9uYUFVelVEX29yZkRhWjJQc2xpMzZITl84b01vel9NcFBYY1R4aFhuZlY4dk9ucG5GdW14T0lJQ2pQVVNuT2xxNHdYeExDRE5xQnF2bXZBZmFCYktGak96THR3RlhTZFcxS1hkd1VTdzIzZmFpdzRMT28tc1lBaUpyWVlScUV1ejRFMGxsVVlqVWVHdHc?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">13</span>
+        <div class="card-headline">Asian countries, including India, must accelerate transition to renewable energy</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">BusinessLine</span>
+        <span class="pill pill-date">10 Oct 2026, 01:06 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Asian is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxPakMxdjVqb1hUVDh1U090RGlNTThBdkx4OXZLRktWajBFT1dOcnJ3b2RHV29lT3hfdXUwNWp6Wm9IWTMwX3ZVS3RtajlpeDQtcFlFSndZZ3plQnRSZzM0RVdwQnVHZ2FYSkhZV3IzOUVaMHU1UXcxNzZNVG9DeVMwbVlSbW51X0pIdjlaMlY1YVZJOWNDaXNyU0lLRHZIcTdLdHY0NngzcnlaT09GY0FCMm9kU2ltRnY4bV93WVFxVlVTamlzaF9uQjM3X0RDWmdqX0Y1NDJkaTRKUlXSAeIBQVVfeXFMTmVXUXFkRTJtLVVvM2d0aFFTNG40NFcxdzdMTmxiUnQ1WmJyNHdQRGlhOW41Z1JkSVl2WlJjWVpGRUt3cTlIUXRneU1BUzVPdFU3NFJrNnhsZ25TNF9fZnZOb3JpUTdnb3Z5RXBNQjg4UG1vczRVa2ZDUHBydC1MNWxhenRqclBFTUp1c1ZEazB2ZWctemhFNFhxb2xNaTRzaWhWODhpUzN3Q09uNWc1SlF5TmVrTVh0c2lrY3ZKRkRwV25ZdTJQdG51RVR0T2JQMnJaaHNRSG5YSnJxd2drbmZsUQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">14</span>
+        <div class="card-headline">Surat Housing Complex Completes 612 kW Rooftop Solar Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">https://www.mvapulse.com/</span>
+        <span class="pill pill-date">10 Oct 2026, 08:00 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This update relates to India&#x27;s rooftop solar segment — one of the fastest-growing areas of the clean energy market, serving households, businesses, and institutions.</p><p>Government schemes like PM Surya Ghar Muft Bijli Yojana and net metering regulations are enabling millions of Indians to generate their own clean electricity and reduce bills.</p><p>Rooftop solar reduces grid dependency for end-users and promotes distributed generation, playing a vital role alongside large-scale solar parks in India&#x27;s energy transition.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPaGs1RlFWZVhEOHIwX2hWWjQ1Ujg4dFVEWVotSzh4ZkxieTR2cHI1Y1Rsb2ZJSzk2Z0l1VmxfRkRmd2RjRmczY09OY1JIdU9rWnJ2RTFMaHFkYWVOU1Jva2xISU9ldm1rWGd2TkJWd2tmSXladjJkdUM1eVJ6c1RobmJqc3N5amVZdjVpeGdPOA?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Rooftop Solar</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">15</span>
+        <div class="card-headline">PSPCL holds camps across Jalandhar circle to promote rooftop solar scheme</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">The Tribune</span>
+        <span class="pill pill-date">10 Oct 2026, 04:21 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This update relates to India&#x27;s rooftop solar segment — one of the fastest-growing areas of the clean energy market, serving households, businesses, and institutions.</p><p>Government schemes like PM Surya Ghar Muft Bijli Yojana and net metering regulations are enabling millions of Indians to generate their own clean electricity and reduce bills.</p><p>Rooftop solar reduces grid dependency for end-users and promotes distributed generation, playing a vital role alongside large-scale solar parks in India&#x27;s energy transition.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQM3VFV1IyVU1LSFlNZDd4ZWd0M0w4MldZaHhWREhKemRCUWlhVjNyWmp0cWtzRkZHRXpDRGtfQzZwbVd1Q0hMMW5ZS3VVaGQwZlRPRnEtTEFiMmZ0RlNETmlvUF95VTB2cVNDb19IMEZZVXBxTGU1WHdCUmpvUHFqMGhZSFNGVV9hb2hLbUtoR0hmX3ZBZ21zTWJUaXJBSjh5X0x5UW9ndFRZNHR6bmZPaFhmdk5ady1vVVHSAb4BQVVfeXFMUE1TaEtuZm5LR05iRGpib3VnQVVGX2FJNTdMUnpSemZqcU5Fbm5BZlVDckNJd3VBckJWMFlEcmVRd20yWDJ3S0xyXzlYSnJROUd5NlBOakRONV9SWS1oY1loM2p4UFk1dlA4N3RlNXk0dXRQZWdnQkEtQ3FmbG4tSjVtZlY2VW4tWWJqWllOOV9qc0ZQVTkwMFE5ckkzYW1WN01Wajl5VGF5Y29ZTlBqXzJzaVBKNF9xVThGVTZ4Zw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Rooftop Solar</span><span class="tag">Solar</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-l">
+      <div class="footer-dot"></div>
+      Solar &amp; Renewable Energy India &nbsp;&#183;&nbsp; Daily News Intelligence &nbsp;&#183;&nbsp; Sunday, 11 October 2026
+    </div>
+    <div class="footer-r">Generated 03:42 PM IST &nbsp;&#183;&nbsp; Sources: Google News, Mercom India, PV Magazine &amp; others</div>
+  </div>
+
+</div>
+</body>
+</html>
