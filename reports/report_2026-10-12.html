@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Updates — Solar &amp; Renewable Energy India | Monday, 12 October 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --em-yellow:    #FFDD00;
+    --em-yellow-lt: #FFF9CC;
+    --em-yellow-dk: #F5C800;
+    --em-blue:      #243B7F;
+    --em-blue-mid:  #1A3070;
+    --em-blue-dk:   #152560;
+    --em-orange:    #EA7437;
+    --em-orange-dk: #DA7527;
+    --em-white:     #FFFFFF;
+    --em-off-white: #FAFAFA;
+    --em-light:     #F3F3F3;
+    --em-border:    #E2E2E2;
+    --em-text-dk:   #1A1A2E;
+    --em-text-mid:  #3A4A6B;
+    --em-text-lt:   #6B7A9B;
+    --em-green:     #1B7A45;
+    --em-green-bg:  #E8F5EE;
+    --em-red:       #B22222;
+    --em-red-bg:    #FAEAEA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    background: #E8E8E8;
+    color: var(--em-text-dk);
+    line-height: 1.55;
+    padding: 24px 20px;
+  }
+  .page { max-width: 980px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .header { border-radius: 10px 10px 0 0; overflow: hidden; }
+  .header-top {
+    background: var(--em-blue);
+    padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-name { font-size: 24pt; font-weight: 900; font-style: italic; color: var(--em-yellow); letter-spacing: -0.5px; line-height: 1; }
+  .brand-sub  { font-size: 8.5pt; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+  .header-meta   { text-align: right; }
+  .meta-date     { color: var(--em-yellow); font-size: 9pt; font-weight: 700; letter-spacing: 1px; }
+  .meta-edition  { color: rgba(255,255,255,0.45); font-size: 8pt; margin-top: 3px; }
+  .header-yellow {
+    background: var(--em-yellow);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hy-tagline  { font-size: 10.5pt; font-weight: 800; color: var(--em-blue); letter-spacing: 0.2px; }
+  .hy-tagline em { color: var(--em-orange-dk); font-style: normal; }
+  .hy-coverage { font-size: 8pt; font-weight: 600; color: var(--em-blue-mid); opacity: 0.75; }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-wrap {
+    background: var(--em-blue);
+    padding: 20px 32px;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+  }
+  .exec-label { font-size: 7.5pt; font-weight: 800; color: var(--em-yellow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .exec-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .exec-item  {
+    background: rgba(255,221,0,0.07);
+    border: 1px solid rgba(255,221,0,0.2);
+    border-left: 4px solid var(--em-yellow);
+    border-radius: 6px;
+    padding: 11px 14px;
+    color: rgba(255,255,255,0.88);
+    font-size: 9pt; line-height: 1.5;
+  }
+  .exec-item strong { display: block; color: var(--em-yellow); font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
+
+  /* ── SIGNALS BAR ── */
+  .signals {
+    background: var(--em-yellow);
+    padding: 10px 32px;
+    display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+    border-bottom: 3px solid var(--em-blue);
+  }
+  .sig-label { font-size: 7.5pt; font-weight: 800; color: var(--em-blue); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; margin-right: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 7.5pt; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.2px; }
+  .chip-blue   { background: var(--em-blue);      color: var(--em-yellow); }
+  .chip-orange { background: var(--em-orange-dk); color: #fff; }
+  .chip-green  { background: var(--em-green);     color: #fff; }
+  .chip-red    { background: var(--em-red);       color: #fff; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 18px; }
+  .section-hdr {
+    background: var(--em-blue);
+    padding: 11px 32px;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-icon  { font-size: 14pt; }
+  .section-title { font-size: 12pt; font-weight: 800; color: var(--em-yellow); font-style: italic; }
+  .section-count { margin-left: auto; background: var(--em-yellow); color: var(--em-blue); font-size: 7.5pt; font-weight: 800; padding: 2px 9px; border-radius: 12px; letter-spacing: 0.5px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--em-white);
+    border-left: 5px solid var(--em-yellow);
+    border-right: 1px solid var(--em-border);
+    border-bottom: 1px solid var(--em-border);
+    padding: 16px 28px;
+  }
+  .card:nth-child(even) { background: var(--em-off-white); }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .card-top      { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 8px; }
+  .card-num      { font-size: 7.5pt; font-weight: 800; color: var(--em-white); background: var(--em-blue); border-radius: 4px; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.5px; }
+  .card-headline { font-size: 10.5pt; font-weight: 700; color: var(--em-blue); line-height: 1.4; }
+
+  .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .pill      { display: inline-flex; align-items: center; font-size: 7.5pt; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.2px; }
+  .pill-src  { background: var(--em-blue);     color: var(--em-yellow); }
+  .pill-date { background: var(--em-yellow);   color: var(--em-blue); }
+  .pill-pos  { background: var(--em-green-bg); color: var(--em-green); border: 1px solid #8ED4AE; font-weight: 700; }
+  .pill-neg  { background: var(--em-red-bg);   color: var(--em-red);   border: 1px solid #ECA9A9; font-weight: 700; }
+
+  .card-body   { font-size: 9.5pt; color: var(--em-text-mid); line-height: 1.65; margin-bottom: 12px; font-weight: 400; }
+  .card-body p + p { margin-top: 7px; }
+
+  .orig-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 8.5pt; font-weight: 700;
+    color: var(--em-blue); text-decoration: none;
+    background: var(--em-yellow); border: 2px solid var(--em-blue);
+    padding: 5px 13px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .orig-link:hover { background: var(--em-yellow-lt); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .tag  { font-size: 7pt; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: rgba(36,59,127,0.07); color: var(--em-blue); border: 1px solid rgba(36,59,127,0.18); text-transform: uppercase; letter-spacing: 0.4px; }
+
+  .divider { border: none; border-top: 2px dashed var(--em-yellow); margin: 0; }
+  .no-news { padding: 32px; text-align: center; color: var(--em-text-lt); font-style: italic; background: var(--em-white); border-left: 5px solid var(--em-yellow); border-right: 1px solid var(--em-border); border-bottom: 1px solid var(--em-border); border-radius: 0 0 8px 8px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 18px;
+    background: var(--em-blue);
+    border-radius: 8px;
+    padding: 13px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-l { color: var(--em-yellow); font-size: 8.5pt; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--em-yellow); flex-shrink: 0; }
+  .footer-r { color: rgba(255,255,255,0.45); font-size: 8pt; }
+
+  @media print { body { background: #fff; padding: 0; } .page { max-width: 100%; } }
+  @media (max-width: 620px) {
+    .exec-grid { grid-template-columns: 1fr; }
+    .header-top, .header-yellow { flex-direction: column; gap: 8px; text-align: center; }
+    .footer { flex-direction: column; gap: 6px; text-align: center; }
+    .card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Daily News Updates</div>
+        <div class="brand-sub">Solar &amp; Renewable Energy &nbsp;&#183;&nbsp; India</div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-date">MONDAY, 12 OCTOBER 2026</div>
+        <div class="meta-edition">Daily News Intelligence &nbsp;&#183;&nbsp; Coverage: Last 2 Days</div>
+      </div>
+    </div>
+    <div class="header-yellow">
+      <div class="hy-tagline">Solar &amp; Renewable Energy India &nbsp;|&nbsp; <em>Daily Market Intelligence</em></div>
+      <div class="hy-coverage">IPO / Stock Market &nbsp;&#183;&nbsp; Industry &nbsp;&#183;&nbsp; Policy &amp; Regulation &nbsp;&#183;&nbsp; Energy Storage</div>
+    </div>
+  </div>
+
+  <!-- EXEC SUMMARY -->
+  <div class="exec-wrap">
+    <div class="exec-label">&#9728; &nbsp;Executive Summary — Top Stories Today &nbsp;(14 articles)</div>
+    <div class="exec-grid">
+      <div class="exec-item"><strong>📈 Premier Energies secures INR 4,001 crore in solar cell, module and EPC orders in Q2 F…</strong>Premier Energies received orders for 2,308 MW of solar cells and modules, alongside EPC project contracts, during July–September 2026.</div>
+      <div class="exec-item"><strong>📈 Tata Power Renewables reaches 7.2 GW of operational utility-scale RE capacity, 281 MW…</strong>Tata Power Renewable Energy Ltd (TPREL) commissioned 419 MW of utility-scale renewable energy projects and executed 131.2 MWh of battery energy storage projects in Q2 FY27.</div>
+      <div class="exec-item"><strong>🏭 Oswal Pumps to Set Up 1.2 GW Solar Cell Facility</strong>Listen to this article Oswal Pumps, a manufacturer of solar pumping systems, modules, and electric motors, said it will establish a 1.2 GW solar cell</div>
+      <div class="exec-item"><strong>🏭 POWERGRID Commissions Project to Evacuate 20 GW Renewable Power in Rajasthan</strong>The Power Grid Corporation of India (POWERGRID) has commissioned a transmission project to evacuate 20 GW of renewable energy in Rajasthan.The transmission project was commissioned on September 22, 2026, and was officially notifie…</div>
+    </div>
+  </div>
+
+  <!-- SIGNALS BAR -->
+  <div class="signals">
+    <span class="sig-label">Market Signals</span>
+    <span class="chip chip-green">&#9650; Solar EPC &amp; Developer</span>
+    <span class="chip chip-green">&#9650; BESS / Storage</span>
+    <span class="chip chip-green">&#9650; RE Financing</span>
+    <span class="chip chip-blue">&#9675; Policy &amp; Regulation</span>
+    <span class="chip chip-orange">&#9678; Rooftop / PM Surya Ghar</span>
+  </div>
+
+  <!-- SECTION 1: IPO / STOCK -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">📈</span>
+      <span class="section-title">Section 1 — IPO / Stock Market</span>
+      <span class="section-count">4 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">01</span>
+        <div class="card-headline">Premier Energies secures INR 4,001 crore in solar cell, module and EPC orders in Q2 FY27</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">12 Oct 2026, 12:31 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Manufacturing See all Premier Energies secures INR 4,001 crore in solar cell, module and EPC orders in Q2 FY27 Premier Energies received orders for 2,308 MW of solar cells and modules, alongside EPC…</p><p>By Uma Gupta 12 Oct 2026 Manufacturing Cells Highlights Modules Premier Energies Ltd received orders worth INR 4,001 crore in the July–Sep.</p><p>The orders came from major power producers, module manufacturers, engineering, procurement and construction (EPC) companies, and other customers.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/10/12/premier-energies-secures-inr-4001-crore-in-solar-cell-module-and-epc-orders-in-q2-fy27/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Premier Energies</span><span class="tag">REC</span><span class="tag">EPC</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">02</span>
+        <div class="card-headline">Tata Power Renewables reaches 7.2 GW of operational utility-scale RE capacity, 281 MWh of battery storage</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">12 Oct 2026, 11:35 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Applications &amp; Installations See all Tata Power Renewables reaches 7.2 GW of operational utility-scale RE capacity, 281 MWh of battery storage Tata Power Renewable Energy Ltd (TPREL) commissioned 419…</p><p>By Uma Gupta 12 Oct 2026 Applications &amp; Installations Energy Storage Highlights Utility-scale Tata Power Renewable Energy Ltd (TPREL), a subsidiary of Tata Power, commissioned 419 MW of utility-scale…</p><p>The company also executed 131.2 MWh of battery energy storage system (BESS) projects during the quarter.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/10/12/tata-power-renewables-reaches-7-2-gw-of-operational-utility-scale-re-capacity-281-mwh-of-battery-storage/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Tata Power</span><span class="tag">Battery Storage</span><span class="tag">Storage</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">03</span>
+        <div class="card-headline">NTPC Green Floats Tender to Procure Inverter for Its Nokhra Solar Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com</span>
+        <span class="pill pill-date">12 Oct 2026, 11:31 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>A solar tender has been issued across India, creating fresh project opportunities for solar developers, EPC firms, and equipment suppliers across India.</p><p>Competitive bidding for tenders of this scale attracts leading developers and typically results in aggressive tariff discovery, benefiting DISCOMs and end consumers.</p><p>India&#x27;s auction-based solar market has consistently driven tariffs to record lows, making solar one of the cheapest sources of new electricity generation.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOdW5vc1pOa1Y5U3NldU9lckpOa0MzUTFqUndRZHJQb2xzZy1fWHFIdC13Zk1mLTQ5YzFmcWxTTVF1WGs2ZGJDZEh5TFlJcHBWR2NLZDNCZ21FdC1wVUxiMWN0d3o5STBabFQ0aWJqVUpaVFRRMVl4S2puS3M4LURBREhLdXhWYVFuV3N6dzRwanhTZ1pJU0JYQ3piZnFObnBwY1Zn?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">NTPC Green Energy</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">04</span>
+        <div class="card-headline">More than 70% of announced U.S. solar manufacturing expansion plans yet to be financed</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">12 Oct 2026, 10:53 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Manufacturing See all More than 70% of announced U.S.</p><p>solar manufacturing expansion plans yet to be financed Forecasted capital expenditure for new U.S.</p><p>solar manufacturing expansions for 2027 reflects a hesitant financing climate, with Tesla’s Texas plans having the potential to rocket boost the entire sector’s spending outlook.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/10/12/more-than-70-of-announced-u-s-solar-manufacturing-expansion-plans-yet-to-be-financed/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">REC</span><span class="tag">Solar</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: INDUSTRY -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">🏭</span>
+      <span class="section-title">Section 2 — Industry</span>
+      <span class="section-count">10 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">05</span>
+        <div class="card-headline">Oswal Pumps to Set Up 1.2 GW Solar Cell Facility</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 08:31 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>The company’s wholly owned subsidiary Oswal Solar Energy will use the proposed facility’s entire output for its solar module manufacturing lines.</p><p>The facility is expected to meet approximately 75% of the subsidiary’s solar cell requirements.</p><p>Oswal Solar Energy will continue to procure the remaining cells externally in the near term.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/oswal-pumps-to-set-up-1-2-gw-solar-cell-facility" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">06</span>
+        <div class="card-headline">POWERGRID Commissions Project to Evacuate 20 GW Renewable Power in Rajasthan</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 07:58 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>The transmission project was commissioned on September 22, 2026, and was officially notified on October 11, 2026.</p><p>RECPDCL awarded the project to POWERGRID in 2023, and the project was expected to be completed in 18 months.</p><p>The project, initially under the special purpose vehicle POWERGRID Ramgarh II Transmission, was later merged with POWERGRID Vataman Transmission.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/powergrid-commissions-project-to-evacuate-20-gw-renewable-power-in-rajasthan" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Transmission</span><span class="tag">RPO</span><span class="tag">REC</span><span class="tag">Rajasthan</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">07</span>
+        <div class="card-headline">Finance Ministry Clarifies Battery Storage Systems Attract 10% Customs Duty</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 05:55 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Battery storage BESS Custom Duty Finance ministry PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Ministry of Finance has clarified that stationary, grid-scale, and industrial lithium-ion battery energy storage systems (BESS) are eligible for the concessional basic customs duty (BCD) rate of…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/finance-ministry-clarifies-battery-storage-systems-attract-10-customs-duty" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">BESS</span><span class="tag">Battery Storage</span><span class="tag">Storage</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">08</span>
+        <div class="card-headline">Daily News Wrap-Up: ALMM Solar Cell Capacity Rises to 37.8 GW</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 05:35 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Gopin Semicon accounted for the latest addition, comprising tunnel oxide passivated contact solar cell manufacturing capacity.</p><p>The Bihar Electricity Regulatory Commission proposed amendments to its rooftop solar regulations, limiting the capacity of net metering systems to up to 500 kW and revising the compensation mechanism…</p><p>Under the proposal, excess electricity remaining at the end of the financial year would be compensated at 50% of the feed-in tariff.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/daily-news-wrap-up-almm-solar-cell-capacity-rises-to-37-8-gw" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">MNRE</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">09</span>
+        <div class="card-headline">Chennai Port Authority Tenders Solar Project with Battery Storage</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 05:15 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>BESS Chennai Port Authority Solar tender PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Chennai Port Authority has invited bids to develop a grid-connected solar project integrated with a battery energy storage system (BESS) under the renewable energy service company (RESCO) model.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/chennai-port-authority-tenders-solar-project-with-battery-storage" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">BESS</span><span class="tag">Battery Storage</span><span class="tag">Storage</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">10</span>
+        <div class="card-headline">Data Centers Bet Big on RTC Renewables, Transmission Systems Remain Key</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 04:46 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Colt Data Center Services Energy Storage Featured In-depth ReNew Renewable Energy Serentica Renewables STT GDC PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy…</p><p>The rapid rise of artificial intelligence (AI) and India’s growing data center pipeline are driving substantial new electricity demand, making renewable energy with storage essential to power this…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/data-centers-bet-big-on-rtc-renewables-transmission-systems-remain-key" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Transmission</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">11</span>
+        <div class="card-headline">India’s Solar Cell Growth to Boost Metallization Paste Demand: Interview</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 04:42 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>In an exclusive interview with Mercom India, Weili Shi, Chairman and General Manager at DK Electronic Materials ( DKEM ), talks about the company’s India strategy, plans to expand customized silver…</p><p>Edited excerpts from the interview: What are DKEM’s plans and priorities for its solar business in India?</p><p>DKEM is the world’s largest supplier and technology leader of metallization pastes for the solar industry and has supported the transition from p-type to n-type solar cells, as well as developments…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/indias-solar-cell-growth-to-boost-metallization-paste-demand-interview" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">12</span>
+        <div class="card-headline">Four-Hour Battery Storage Now Cheaper Than Gas Turbines: Report</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 04:25 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This shift is driven by technological advancements and evolving market dynamics.</p><p>Single-axis tracking solar is the lowest-cost new power generation option in 43 of the 48 markets analyzed.</p><p>Wood Mackenzie attributed the shift to declining battery costs, gas turbine shortages, and volatile fuel prices.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/four-hour-battery-storage-now-cheaper-than-gas-turbines-report" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Battery Storage</span><span class="tag">Storage</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">13</span>
+        <div class="card-headline">French solar tender prices drop sharply in latest rounds</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">12 Oct 2026, 04:12 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Applications &amp; Installations See all French solar tender prices drop sharply in latest rounds French ground-mounted solar tender prices fell to €60/MWh in October 2026, down from €79.48/MWh in the…</p><p>Small-scale rooftop PV (100–500 kW) prices also dropped to €75/MWh, down 15.5% from €88.73/MWh in the first tender held in 2025.</p><p>By Marie Beyer 12 Oct 2026 Applications &amp; Installations Highlights Utility-scale The results of France’s latest solar tenders were announced on Oct.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/10/12/french-solar-tender-prices-drop-sharply-in-latest-rounds/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Rooftop Solar</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">14</span>
+        <div class="card-headline">Impact of New Right-of-Way Compensation Rules on Transmission Buildout Challenges</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">12 Oct 2026, 04:11 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Mercom Research Focus Ministry of Power Policy Impact Analysis Right of Way Transmission PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>Listen to this article Right-of-way (RoW) disputes have been a major bottleneck to faster buildout of power transmission infrastructure, as renewable energy capacity is added</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/impact-of-new-right-of-way-compensation-rules-on-transmission-buildout-challenges" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Transmission</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-l">
+      <div class="footer-dot"></div>
+      Solar &amp; Renewable Energy India &nbsp;&#183;&nbsp; Daily News Intelligence &nbsp;&#183;&nbsp; Monday, 12 October 2026
+    </div>
+    <div class="footer-r">Generated 04:43 PM IST &nbsp;&#183;&nbsp; Sources: Google News, Mercom India, PV Magazine &amp; others</div>
+  </div>
+
+</div>
+</body>
+</html>
