@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Updates — Solar &amp; Renewable Energy India | Friday, 30 October 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --em-yellow:    #FFDD00;
+    --em-yellow-lt: #FFF9CC;
+    --em-yellow-dk: #F5C800;
+    --em-blue:      #243B7F;
+    --em-blue-mid:  #1A3070;
+    --em-blue-dk:   #152560;
+    --em-orange:    #EA7437;
+    --em-orange-dk: #DA7527;
+    --em-white:     #FFFFFF;
+    --em-off-white: #FAFAFA;
+    --em-light:     #F3F3F3;
+    --em-border:    #E2E2E2;
+    --em-text-dk:   #1A1A2E;
+    --em-text-mid:  #3A4A6B;
+    --em-text-lt:   #6B7A9B;
+    --em-green:     #1B7A45;
+    --em-green-bg:  #E8F5EE;
+    --em-red:       #B22222;
+    --em-red-bg:    #FAEAEA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    background: #E8E8E8;
+    color: var(--em-text-dk);
+    line-height: 1.55;
+    padding: 24px 20px;
+  }
+  .page { max-width: 980px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .header { border-radius: 10px 10px 0 0; overflow: hidden; }
+  .header-top {
+    background: var(--em-blue);
+    padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-name { font-size: 24pt; font-weight: 900; font-style: italic; color: var(--em-yellow); letter-spacing: -0.5px; line-height: 1; }
+  .brand-sub  { font-size: 8.5pt; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+  .header-meta   { text-align: right; }
+  .meta-date     { color: var(--em-yellow); font-size: 9pt; font-weight: 700; letter-spacing: 1px; }
+  .meta-edition  { color: rgba(255,255,255,0.45); font-size: 8pt; margin-top: 3px; }
+  .header-yellow {
+    background: var(--em-yellow);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hy-tagline  { font-size: 10.5pt; font-weight: 800; color: var(--em-blue); letter-spacing: 0.2px; }
+  .hy-tagline em { color: var(--em-orange-dk); font-style: normal; }
+  .hy-coverage { font-size: 8pt; font-weight: 600; color: var(--em-blue-mid); opacity: 0.75; }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-wrap {
+    background: var(--em-blue);
+    padding: 20px 32px;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+  }
+  .exec-label { font-size: 7.5pt; font-weight: 800; color: var(--em-yellow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .exec-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .exec-item  {
+    background: rgba(255,221,0,0.07);
+    border: 1px solid rgba(255,221,0,0.2);
+    border-left: 4px solid var(--em-yellow);
+    border-radius: 6px;
+    padding: 11px 14px;
+    color: rgba(255,255,255,0.88);
+    font-size: 9pt; line-height: 1.5;
+  }
+  .exec-item strong { display: block; color: var(--em-yellow); font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
+
+  /* ── SIGNALS BAR ── */
+  .signals {
+    background: var(--em-yellow);
+    padding: 10px 32px;
+    display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+    border-bottom: 3px solid var(--em-blue);
+  }
+  .sig-label { font-size: 7.5pt; font-weight: 800; color: var(--em-blue); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; margin-right: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 7.5pt; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.2px; }
+  .chip-blue   { background: var(--em-blue);      color: var(--em-yellow); }
+  .chip-orange { background: var(--em-orange-dk); color: #fff; }
+  .chip-green  { background: var(--em-green);     color: #fff; }
+  .chip-red    { background: var(--em-red);       color: #fff; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 18px; }
+  .section-hdr {
+    background: var(--em-blue);
+    padding: 11px 32px;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-icon  { font-size: 14pt; }
+  .section-title { font-size: 12pt; font-weight: 800; color: var(--em-yellow); font-style: italic; }
+  .section-count { margin-left: auto; background: var(--em-yellow); color: var(--em-blue); font-size: 7.5pt; font-weight: 800; padding: 2px 9px; border-radius: 12px; letter-spacing: 0.5px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--em-white);
+    border-left: 5px solid var(--em-yellow);
+    border-right: 1px solid var(--em-border);
+    border-bottom: 1px solid var(--em-border);
+    padding: 16px 28px;
+  }
+  .card:nth-child(even) { background: var(--em-off-white); }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .card-top      { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 8px; }
+  .card-num      { font-size: 7.5pt; font-weight: 800; color: var(--em-white); background: var(--em-blue); border-radius: 4px; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.5px; }
+  .card-headline { font-size: 10.5pt; font-weight: 700; color: var(--em-blue); line-height: 1.4; }
+
+  .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .pill      { display: inline-flex; align-items: center; font-size: 7.5pt; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.2px; }
+  .pill-src  { background: var(--em-blue);     color: var(--em-yellow); }
+  .pill-date { background: var(--em-yellow);   color: var(--em-blue); }
+  .pill-pos  { background: var(--em-green-bg); color: var(--em-green); border: 1px solid #8ED4AE; font-weight: 700; }
+  .pill-neg  { background: var(--em-red-bg);   color: var(--em-red);   border: 1px solid #ECA9A9; font-weight: 700; }
+
+  .card-body   { font-size: 9.5pt; color: var(--em-text-mid); line-height: 1.65; margin-bottom: 12px; font-weight: 400; }
+  .card-body p + p { margin-top: 7px; }
+
+  .orig-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 8.5pt; font-weight: 700;
+    color: var(--em-blue); text-decoration: none;
+    background: var(--em-yellow); border: 2px solid var(--em-blue);
+    padding: 5px 13px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .orig-link:hover { background: var(--em-yellow-lt); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .tag  { font-size: 7pt; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: rgba(36,59,127,0.07); color: var(--em-blue); border: 1px solid rgba(36,59,127,0.18); text-transform: uppercase; letter-spacing: 0.4px; }
+
+  .divider { border: none; border-top: 2px dashed var(--em-yellow); margin: 0; }
+  .no-news { padding: 32px; text-align: center; color: var(--em-text-lt); font-style: italic; background: var(--em-white); border-left: 5px solid var(--em-yellow); border-right: 1px solid var(--em-border); border-bottom: 1px solid var(--em-border); border-radius: 0 0 8px 8px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 18px;
+    background: var(--em-blue);
+    border-radius: 8px;
+    padding: 13px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-l { color: var(--em-yellow); font-size: 8.5pt; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--em-yellow); flex-shrink: 0; }
+  .footer-r { color: rgba(255,255,255,0.45); font-size: 8pt; }
+
+  @media print { body { background: #fff; padding: 0; } .page { max-width: 100%; } }
+  @media (max-width: 620px) {
+    .exec-grid { grid-template-columns: 1fr; }
+    .header-top, .header-yellow { flex-direction: column; gap: 8px; text-align: center; }
+    .footer { flex-direction: column; gap: 6px; text-align: center; }
+    .card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Daily News Updates</div>
+        <div class="brand-sub">Solar &amp; Renewable Energy &nbsp;&#183;&nbsp; India</div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-date">FRIDAY, 30 OCTOBER 2026</div>
+        <div class="meta-edition">Daily News Intelligence &nbsp;&#183;&nbsp; Coverage: Last 2 Days</div>
+      </div>
+    </div>
+    <div class="header-yellow">
+      <div class="hy-tagline">Solar &amp; Renewable Energy India &nbsp;|&nbsp; <em>Daily Market Intelligence</em></div>
+      <div class="hy-coverage">IPO / Stock Market &nbsp;&#183;&nbsp; Industry &nbsp;&#183;&nbsp; Policy &amp; Regulation &nbsp;&#183;&nbsp; Energy Storage</div>
+    </div>
+  </div>
+
+  <!-- EXEC SUMMARY -->
+  <div class="exec-wrap">
+    <div class="exec-label">&#9728; &nbsp;Executive Summary — Top Stories Today &nbsp;(15 articles)</div>
+    <div class="exec-grid">
+      <div class="exec-item"><strong>📈 Waaree Energies WAAREEENER: 1.6 GW US Production Starts</strong>Waaree Energies WAAREEENER: 1.6 GW US Production Starts  Kalkine India</div>
+      <div class="exec-item"><strong>📈 NTPC Green Energy begins commercial operation of 95.6 MW of Kalasar solar project in …</strong>NTPC Green Energy begins commercial operation of 95.6 MW of Kalasar solar project in Rajasthan  BusinessLine</div>
+      <div class="exec-item"><strong>🏭 Solar Cell Manufacturing Capacity Under ALMM-II Grows to 45 GW</strong>The Ministry of New and Renewable Energy (MNRE) has added 7,063 MW of solar cell manufacturing capacity to the Approved List of Models and Manufacturers (ALMM) List-II, taking the total enlisted capacity to 44.9 GW.</div>
+      <div class="exec-item"><strong>🏭 Regulator Rejects Kerala’s Costly Power Purchase Proposals, Flags BESS Delays</strong>The Kerala State Electricity Regulatory Commission (KSERC) has partially approved Kerala State Electricity Board’s (KSEB) proposal to procure short-term electricity, reducing the financial commitment by 61% to ₹1.31 billion (~$13.…</div>
+    </div>
+  </div>
+
+  <!-- SIGNALS BAR -->
+  <div class="signals">
+    <span class="sig-label">Market Signals</span>
+    <span class="chip chip-green">&#9650; BESS / Storage</span>
+    <span class="chip chip-green">&#9650; RE Financing</span>
+    <span class="chip chip-blue">&#9675; Policy &amp; Regulation</span>
+    <span class="chip chip-orange">&#9678; Green Hydrogen</span>
+  </div>
+
+  <!-- SECTION 1: IPO / STOCK -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">📈</span>
+      <span class="section-title">Section 1 — IPO / Stock Market</span>
+      <span class="section-count">5 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">01</span>
+        <div class="card-headline">Waaree Energies WAAREEENER: 1.6 GW US Production Starts</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Kalkine India</span>
+        <span class="pill pill-date">30 Oct 2026, 03:33 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Kalkine India is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOTGkxcE8wRXFlYWRrWnJ1d3EwMENFZlpCSmVVZE9hcHhBRHlIN3RCQkI0WGhsekJjTjRLOVpxUzczTFlKVFl0YzVTZjRQMHh3QkJCUy1VUVhZY1Y2TU0tdWlSeWw4T0JZSENvWEJqX1FzTGF6YzFiWG84STZ0M3lZRzFEZmc4WE1XekFiWWgwdTg2THIxTzV2djROaU9vSkxPZUItbzlFYW9oUE93ekxKWno0WkVUY0l6YTdiT2tEZw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Waaree Energies</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">02</span>
+        <div class="card-headline">NTPC Green Energy begins commercial operation of 95.6 MW of Kalasar solar project in Rajasthan</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">BusinessLine</span>
+        <span class="pill pill-date">30 Oct 2026, 01:42 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>NTPC Green Energy is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi8gFBVV95cUxOM1pqemg2NkpxRmppUmphX015anpjOEQ3MWhHMjlidk55Qzd6TF9hWFNkY19JU2RJQm9yUUt0Yk5kcFJSWUFKbzF1NnRjaDhYRWVIeTkydFNhWHpXLTQ1Z1RzcURLNEhLcXhxaFNsMmZwTE5IT0ZUcnVhMGdlQnNwN3pmWnBvdWQ4N3R6aE41MWhGN3A0Y2FDMk9PNVUzSEdDandjcjdtWnJ5VUc1Nk1ZdEZKNlNrZXNCUDlQa2dMN09MRnZsdGo0RG5udVp6WGxUdlFKYTlaOVN0T0IzNzBqV3Nzdy1OdzhXX3ZRakR2QldUZ9IB-AFBVV95cUxPTG1RQnNNNDBtejE4WHY0ck00TENzSkEtYUpLRHZlS2d0dXMxV250TUpmMjNDRDZHUzF4b1lPRmlxQnhSNU5JZXYzTERUVE1URWhqdHZodlFQcEJxbW1rVkpqM0R3NlRfQ3N1U1l5d3JkZ1dmeVRZekl1M3RtekFRNWt4eEJwOEttR1ZpYWhqbTA0WTZBY2k3eXNZZ2U4WXg4NkE3YXhEaWVnX3BkWHo4bHR5YlhPTWpKV2FEMktRbGxKYTQ5RnBzVlA0SnJyVTgwelNKa1Zlclk0WVdoaEJfc2o4cGtGVkpHeFpqb2x5SjE3eHdENTVaQQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">NTPC Green Energy</span><span class="tag">Rajasthan</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">03</span>
+        <div class="card-headline">Waaree Energies Wins GPCB Order Revoking Ankleshwar Closure</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Equitypandit</span>
+        <span class="pill pill-date">30 Oct 2026, 11:19 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Waaree Energies has secured a solar order, adding to its revenue backlog and reinforcing its position as a key player in India&#x27;s solar market.</p><p>Order wins of this nature strengthen Waaree Energies&#x27;s manufacturing or EPC pipeline and signal rising demand from utilities, PSUs, or commercial &amp; industrial buyers.</p><p>A growing order book directly supports revenue visibility and investor confidence — it is one of the most-watched metrics for solar manufacturers and EPC companies.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxOWGtZMWRGMWJFVW1BRW8zVVIxcXVfa3JqN0x4U2g0U2gtNm1iazZ4dVhoMm1zSC1XRDNZNS1HcVdPNGcwUU1seUFNNXQwQWo3RENxU2V0SG82NVBBUWVxX1ZrRE1JN3R0eEwzM0YtS1ItU1dOYUxNaGFOYWZOa3J0OFlKOGs5TTJxWE4tOVJfcmtoQWs?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Waaree Energies</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">04</span>
+        <div class="card-headline">Vashi Mart to Add 22 Solar Equipment Outlets by FY27</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Indian Retailer</span>
+        <span class="pill pill-date">29 Oct 2026, 11:13 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Vashi Mart is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ3AwM0d0VjZqajZkNmVZTDIwWFdUSEN0S3dXQ0hnQzB3MUdEQUE0ZmRKSWFEMmpSOWREREwydVBCbTRIVk5OWlluRk5EVGRiemxGQlo3aE0xeXRYMHQ3U0dvMGFZNUlsRFVQVjZ2MUZDZ05FR2E3Rks0dkpYaUJVMGN2WjRZb3VTYmc?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">05</span>
+        <div class="card-headline">Saatvik exhibits G12R solar module and inverters at REI 2026</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Solarbytes</span>
+        <span class="pill pill-date">29 Oct 2026, 04:44 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Saatvik is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOc29CMlJYLWYwZjQ5WF9sQ3FCVWR5VklxX1dLQnRDVTFJQi10TUNVdlFOMHl6ME4yZkpZekVtWDQ3Szc0ZndFSG9VSGJCQTA5Q3QtTE9qX0U2U3djVmY5d1lIRUZsLXJCYnBXeGViLVFPT0gydUZqbm43TkF0Z2doekJGVS12bVNOLU81OFdsMFdxeURLV1c1N25ma21iMWJ6Q2lZX29zTURaUVA5dFkteGdxeThZUQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Saatvik Solar</span><span class="tag">Solar</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: INDUSTRY -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">🏭</span>
+      <span class="section-title">Section 2 — Industry</span>
+      <span class="section-count">10 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">06</span>
+        <div class="card-headline">Solar Cell Manufacturing Capacity Under ALMM-II Grows to 45 GW</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">30 Oct 2026, 06:49 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Ampin Solar One Avaada Electro Grew Energy Manufacturing ALMM MNRE Solar Cells PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Ministry of New and Renewable Energy (MNRE) has added 7,063 MW of solar cell manufacturing capacity to the Approved List of Models and Manufacturers (ALMM) List-II, taking the total enlisted…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/solar-cell-manufacturing-capacity-under-almm-ii-grows-to-45-gw" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">MNRE</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">07</span>
+        <div class="card-headline">Regulator Rejects Kerala’s Costly Power Purchase Proposals, Flags BESS Delays</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">30 Oct 2026, 06:15 PM IST</span>
+        <span class="pill pill-neg">&#10006; Negative</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Kerala KSEB KSERC power procurement PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Kerala State Electricity Regulatory Commission (KSERC) has partially approved Kerala State Electricity Board’s (KSEB) proposal to procure short-term electricity, reducing the financial commitment…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/regulator-rejects-keralas-costly-power-purchase-proposals-flags-bess-delays" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">BESS</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">08</span>
+        <div class="card-headline">NTPC REL Invites Bids for Solar Project in Andhra Pradesh</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">30 Oct 2026, 04:55 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>ALMM Andhra Pradesh NTPC REL Solar Solar Cells tender PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>NTPC Renewables (NTPC REL) has invited bids for the engineering, procurement, and construction package, including land, for a solar power project connected to the interstate transmission system…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/ntpc-rel-bids-solar-project-andhra-pradesh" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Transmission</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">09</span>
+        <div class="card-headline">Unreliable Power Supply Hindering EV Charging Infrastructure Growth: Interview</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">30 Oct 2026, 04:49 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>However, unreliable grid connectivity and inconsistent power supply remain challenges for EV charging infrastructure operators.</p><p>Speaking to Mercom India on the sidelines of the Renewable Energy India (REI) Expo 2026, Tushar Gupta, Business Head, Lithium Battery Division and VP Strategy at Servotech Renewable Power System,…</p><p>What battery energy storage solutions are you offering for utility-scale and commercial applications?</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/unreliable-power-supply-hindering-ev-charging-infrastructure-growth-interview" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Battery Storage</span><span class="tag">Storage</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">10</span>
+        <div class="card-headline">Solar, Battery Storage Help Lower Power Prices in California, Texas: SEIA</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">30 Oct 2026, 04:18 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>The decline in wholesale electricity prices was attributed partly to increased solar generation and battery energy storage deployment.</p><p>The analysis examined the weighted average hourly wholesale day-ahead electricity prices for June, July, and August 2021 and the same months in 2026.</p><p>Both the Electric Reliability Council of Texas (ERCOT) and the California Independent System Operator (CAISO) saw weighted daily average prices drop over the period.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/solar-battery-storage-help-lower-power-prices-in-california-texas-seia" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Battery Storage</span><span class="tag">Storage</span><span class="tag">REC</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">11</span>
+        <div class="card-headline">Global Battery Storage Failure Rate Dropped 98% Between 2018 and 2025: Report</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">30 Oct 2026, 03:42 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>The annual failure rate was calculated by analyzing incidents per GWh deployed globally.</p><p>The report recorded 150 incidents during the period.</p><p>In 2025, 24 incidents were recorded across 634 GWh of cumulative deployed capacity, compared with 26 incidents across 343 GWh in 2024.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/global-battery-storage-failure-rate-dropped-98-between-2018-and-2025-report" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">BESS</span><span class="tag">Battery Storage</span><span class="tag">Storage</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">12</span>
+        <div class="card-headline">ACME Solar signs 400 MW firm renewable power deal in India</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine Global</span>
+        <span class="pill pill-date">30 Oct 2026, 03:14 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>ACME Solar is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPSmRueUNjWFpLdUJUX1hPSXQyQ2Z3aEJqU0d1SXZlU3ZLd0xEc09UOUtKVWw1QnBPREFITXFWa0JfZHZ0VV8tWXVmUnRNOS1OOHNnVFhZODZUcmVxNmRubzJnT3hqbzd4aWFLdWcwSTlaZ1QtZzAzTnlIUXV2NVROT2lIcWRXbUtUT3UwNXlIUGJXa2pMcmRaNzVDNzRTbXc?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">13</span>
+        <div class="card-headline">India&#x27;s Green Hydrogen Offtake Commitments: 2026 Update</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">INSIGHTS IAS</span>
+        <span class="pill pill-date">30 Oct 2026, 02:25 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This development relates to green hydrogen — a clean fuel produced using renewable electricity — increasingly central to India&#x27;s industrial decarbonisation strategy.</p><p>India&#x27;s National Green Hydrogen Mission targets 5 MMTPA output by 2030, creating significant opportunities for electrolyser manufacturers and RE project developers.</p><p>Green hydrogen production requires large volumes of solar and wind power, making it a major demand driver for renewable energy in the decade ahead.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOVnBLQUdGYmRGYXN4bzBWaWdFZmpPLTFReEJRNWxoYXh1QzRQVmFZTVZHMk55OUlJZ1NrTVU2Tk9vblFhakNzMWJPTW5EbGUwcGxHTUlCVWtQbjlnMHNRSVRpdU5TWXVobko1M0VqQnB4OHNkOTZjUVlWZ3BhSXhubFQ3Nk40NVdkdGE5N2tB?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Green Hydrogen</span><span class="tag">MNRE</span><span class="tag">Hydrogen</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">14</span>
+        <div class="card-headline">Sigenergy Reimagines Renewable Energy Infrastructure in India with AI-Enabled Sigen Neo, SigenTerra and SigenCube</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Renewable Watch</span>
+        <span class="pill pill-date">30 Oct 2026, 02:17 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Sigenergy Reimagines Renewable Energy Infrastructure is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi9gFBVV95cUxQX21mX2hwa2MtM0Y3YUJUbEhUbFJKNmkyVmJ4UU1RX1dNTnRNZFJqajJwYS1OdFdta1NDLVUzSEFOSlZWcFZUeEVtVUg4dUE1ZjhCVV9mSTZ5S0JzSllpOHpGSzRjbk51RDVvSnRPcE45VXlZQU9ESTdQa3laUVk2V0czam9SZXhKb3JDOHd5WHNXZ1NhbjZQMmJGTE5BRktYeThNS3R4ZkFUX0hrN0tjSW12M01pWjZkeFVaQnh6OTBQMjJyLUIyOHJDMThPM0Vad2xsWHZfQWsyMDFpVDJUeWxyRkZLcUhMZ1pTbGRlNVRyYkV1N3c?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">15</span>
+        <div class="card-headline">Critical Minerals: Building India-GCC Clean Energy Ties | GHT Ep.9</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Centre for Public Policy Research (CPPR)</span>
+        <span class="pill pill-date">30 Oct 2026, 01:41 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Centre for Public Policy Research (CPPR) is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMidkFVX3lxTE1xdXdLay0zNHNBQ3VrTGJSVHo0bTI3VFRaYlV1TXhGQVl4NzVUZ1cxR3dlSUNEX2pzcVBvSkwyNE1IY1lUZWU4Wjk4V2N0RkQ1SDVJRS1LRGNIV3NKVVc1Y002NnJqOHFsSTdNNUZmXzE5cF9JUWc?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-l">
+      <div class="footer-dot"></div>
+      Solar &amp; Renewable Energy India &nbsp;&#183;&nbsp; Daily News Intelligence &nbsp;&#183;&nbsp; Friday, 30 October 2026
+    </div>
+    <div class="footer-r">Generated 03:48 PM IST &nbsp;&#183;&nbsp; Sources: Google News, Mercom India, PV Magazine &amp; others</div>
+  </div>
+
+</div>
+</body>
+</html>
