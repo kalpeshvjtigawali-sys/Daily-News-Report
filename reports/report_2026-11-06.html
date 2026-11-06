@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Updates — Solar &amp; Renewable Energy India | Friday, 06 November 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --em-yellow:    #FFDD00;
+    --em-yellow-lt: #FFF9CC;
+    --em-yellow-dk: #F5C800;
+    --em-blue:      #243B7F;
+    --em-blue-mid:  #1A3070;
+    --em-blue-dk:   #152560;
+    --em-orange:    #EA7437;
+    --em-orange-dk: #DA7527;
+    --em-white:     #FFFFFF;
+    --em-off-white: #FAFAFA;
+    --em-light:     #F3F3F3;
+    --em-border:    #E2E2E2;
+    --em-text-dk:   #1A1A2E;
+    --em-text-mid:  #3A4A6B;
+    --em-text-lt:   #6B7A9B;
+    --em-green:     #1B7A45;
+    --em-green-bg:  #E8F5EE;
+    --em-red:       #B22222;
+    --em-red-bg:    #FAEAEA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    background: #E8E8E8;
+    color: var(--em-text-dk);
+    line-height: 1.55;
+    padding: 24px 20px;
+  }
+  .page { max-width: 980px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .header { border-radius: 10px 10px 0 0; overflow: hidden; }
+  .header-top {
+    background: var(--em-blue);
+    padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-name { font-size: 24pt; font-weight: 900; font-style: italic; color: var(--em-yellow); letter-spacing: -0.5px; line-height: 1; }
+  .brand-sub  { font-size: 8.5pt; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+  .header-meta   { text-align: right; }
+  .meta-date     { color: var(--em-yellow); font-size: 9pt; font-weight: 700; letter-spacing: 1px; }
+  .meta-edition  { color: rgba(255,255,255,0.45); font-size: 8pt; margin-top: 3px; }
+  .header-yellow {
+    background: var(--em-yellow);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hy-tagline  { font-size: 10.5pt; font-weight: 800; color: var(--em-blue); letter-spacing: 0.2px; }
+  .hy-tagline em { color: var(--em-orange-dk); font-style: normal; }
+  .hy-coverage { font-size: 8pt; font-weight: 600; color: var(--em-blue-mid); opacity: 0.75; }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-wrap {
+    background: var(--em-blue);
+    padding: 20px 32px;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+  }
+  .exec-label { font-size: 7.5pt; font-weight: 800; color: var(--em-yellow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .exec-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .exec-item  {
+    background: rgba(255,221,0,0.07);
+    border: 1px solid rgba(255,221,0,0.2);
+    border-left: 4px solid var(--em-yellow);
+    border-radius: 6px;
+    padding: 11px 14px;
+    color: rgba(255,255,255,0.88);
+    font-size: 9pt; line-height: 1.5;
+  }
+  .exec-item strong { display: block; color: var(--em-yellow); font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
+
+  /* ── SIGNALS BAR ── */
+  .signals {
+    background: var(--em-yellow);
+    padding: 10px 32px;
+    display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+    border-bottom: 3px solid var(--em-blue);
+  }
+  .sig-label { font-size: 7.5pt; font-weight: 800; color: var(--em-blue); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; margin-right: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 7.5pt; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.2px; }
+  .chip-blue   { background: var(--em-blue);      color: var(--em-yellow); }
+  .chip-orange { background: var(--em-orange-dk); color: #fff; }
+  .chip-green  { background: var(--em-green);     color: #fff; }
+  .chip-red    { background: var(--em-red);       color: #fff; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 18px; }
+  .section-hdr {
+    background: var(--em-blue);
+    padding: 11px 32px;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-icon  { font-size: 14pt; }
+  .section-title { font-size: 12pt; font-weight: 800; color: var(--em-yellow); font-style: italic; }
+  .section-count { margin-left: auto; background: var(--em-yellow); color: var(--em-blue); font-size: 7.5pt; font-weight: 800; padding: 2px 9px; border-radius: 12px; letter-spacing: 0.5px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--em-white);
+    border-left: 5px solid var(--em-yellow);
+    border-right: 1px solid var(--em-border);
+    border-bottom: 1px solid var(--em-border);
+    padding: 16px 28px;
+  }
+  .card:nth-child(even) { background: var(--em-off-white); }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .card-top      { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 8px; }
+  .card-num      { font-size: 7.5pt; font-weight: 800; color: var(--em-white); background: var(--em-blue); border-radius: 4px; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.5px; }
+  .card-headline { font-size: 10.5pt; font-weight: 700; color: var(--em-blue); line-height: 1.4; }
+
+  .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .pill      { display: inline-flex; align-items: center; font-size: 7.5pt; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.2px; }
+  .pill-src  { background: var(--em-blue);     color: var(--em-yellow); }
+  .pill-date { background: var(--em-yellow);   color: var(--em-blue); }
+  .pill-pos  { background: var(--em-green-bg); color: var(--em-green); border: 1px solid #8ED4AE; font-weight: 700; }
+  .pill-neg  { background: var(--em-red-bg);   color: var(--em-red);   border: 1px solid #ECA9A9; font-weight: 700; }
+
+  .card-body   { font-size: 9.5pt; color: var(--em-text-mid); line-height: 1.65; margin-bottom: 12px; font-weight: 400; }
+  .card-body p + p { margin-top: 7px; }
+
+  .orig-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 8.5pt; font-weight: 700;
+    color: var(--em-blue); text-decoration: none;
+    background: var(--em-yellow); border: 2px solid var(--em-blue);
+    padding: 5px 13px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .orig-link:hover { background: var(--em-yellow-lt); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .tag  { font-size: 7pt; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: rgba(36,59,127,0.07); color: var(--em-blue); border: 1px solid rgba(36,59,127,0.18); text-transform: uppercase; letter-spacing: 0.4px; }
+
+  .divider { border: none; border-top: 2px dashed var(--em-yellow); margin: 0; }
+  .no-news { padding: 32px; text-align: center; color: var(--em-text-lt); font-style: italic; background: var(--em-white); border-left: 5px solid var(--em-yellow); border-right: 1px solid var(--em-border); border-bottom: 1px solid var(--em-border); border-radius: 0 0 8px 8px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 18px;
+    background: var(--em-blue);
+    border-radius: 8px;
+    padding: 13px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-l { color: var(--em-yellow); font-size: 8.5pt; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--em-yellow); flex-shrink: 0; }
+  .footer-r { color: rgba(255,255,255,0.45); font-size: 8pt; }
+
+  @media print { body { background: #fff; padding: 0; } .page { max-width: 100%; } }
+  @media (max-width: 620px) {
+    .exec-grid { grid-template-columns: 1fr; }
+    .header-top, .header-yellow { flex-direction: column; gap: 8px; text-align: center; }
+    .footer { flex-direction: column; gap: 6px; text-align: center; }
+    .card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Daily News Updates</div>
+        <div class="brand-sub">Solar &amp; Renewable Energy &nbsp;&#183;&nbsp; India</div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-date">FRIDAY, 06 NOVEMBER 2026</div>
+        <div class="meta-edition">Daily News Intelligence &nbsp;&#183;&nbsp; Coverage: Last 2 Days</div>
+      </div>
+    </div>
+    <div class="header-yellow">
+      <div class="hy-tagline">Solar &amp; Renewable Energy India &nbsp;|&nbsp; <em>Daily Market Intelligence</em></div>
+      <div class="hy-coverage">IPO / Stock Market &nbsp;&#183;&nbsp; Industry &nbsp;&#183;&nbsp; Policy &amp; Regulation &nbsp;&#183;&nbsp; Energy Storage</div>
+    </div>
+  </div>
+
+  <!-- EXEC SUMMARY -->
+  <div class="exec-wrap">
+    <div class="exec-label">&#9728; &nbsp;Executive Summary — Top Stories Today &nbsp;(15 articles)</div>
+    <div class="exec-grid">
+      <div class="exec-item"><strong>📈 Saatvik Green’s Q2 Profit Down 76% as Solar Cell Shortage Bites</strong>Haryana-based solar module manufacturer Saatvik Green Energy reported a revenue from operations of ₹9.03 billion (~$93.8 million) in the second quarter (Q2) of the financial year (FY) 2027, up 17.5% year-over-year (YoY) from ₹7.68…</div>
+      <div class="exec-item"><strong>📈 Premier Energies Reports 38.2% Revenue Growth in Q2 FY27</strong>Premier Energies Reports 38.2% Revenue Growth in Q2 FY27  Machine Maker</div>
+      <div class="exec-item"><strong>🏭 Solar Corporate Funding Rises 45% to $25 Billion in 9M 2026</strong>Global solar corporate funding, including venture capital (VC), public market, and debt financing, increased 45% year-over-year (YoY) to $25.1 billion in the first nine months (9M) of 2026 from $17.3 billion in the corresponding p…</div>
+      <div class="exec-item"><strong>🏭 Daily News Wrap-Up: Battery Storage, Hybrid Projects Lead Q3 Auctions</strong>Government agencies issued tenders for 21 GW of renewable energy capacity and auctioned 12 GW in the third quarter (Q3) of 2026, according to Mercom India’s Q3 and 9M 2026 India Renewable Energy Procurement and Demand Report. Batt…</div>
+    </div>
+  </div>
+
+  <!-- SIGNALS BAR -->
+  <div class="signals">
+    <span class="sig-label">Market Signals</span>
+    <span class="chip chip-green">&#9650; Solar EPC &amp; Developer</span>
+    <span class="chip chip-green">&#9650; BESS / Storage</span>
+    <span class="chip chip-green">&#9650; RE Financing</span>
+    <span class="chip chip-blue">&#9675; Policy &amp; Regulation</span>
+    <span class="chip chip-orange">&#9678; Rooftop / PM Surya Ghar</span>
+  </div>
+
+  <!-- SECTION 1: IPO / STOCK -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">📈</span>
+      <span class="section-title">Section 1 — IPO / Stock Market</span>
+      <span class="section-count">5 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">01</span>
+        <div class="card-headline">Saatvik Green’s Q2 Profit Down 76% as Solar Cell Shortage Bites</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">06 Nov 2026, 04:17 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>The company’s profit after tax (PAT) fell 76.2% YoY to ₹202 million (~$2.1 million) from ₹847 million (~$8.8 million).</p><p>Earnings before interest, taxes, depreciation, and amortization (EBITDA) declined 44.9% YoY to ₹696 million (~$7.2 million) from ₹1.26 billion (~$13.1 million).</p><p>Saatvik highlighted that India had approximately 36.6 GW of solar cell manufacturing capacity compared to 261.7 GW of module manufacturing capacity as of June 2026, with module manufacturing…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/saatvik-greens-q2-profit-down-76-as-solar-cell-shortage-bites" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Saatvik Solar</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">02</span>
+        <div class="card-headline">Premier Energies Reports 38.2% Revenue Growth in Q2 FY27</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Machine Maker</span>
+        <span class="pill pill-date">06 Nov 2026, 04:05 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Premier Energies has disclosed its latest financial results, offering a window into its revenue growth, operational efficiency, and profitability for the reporting period.</p><p>Key performance indicators — including revenue from operations, EBITDA margins, and net profit — reflect the company&#x27;s project commissioning pace and order execution progress.</p><p>Earnings releases are pivotal events for stock market investors, often driving near-term price action and shaping analyst target revisions.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQclZMYXQtbTBrWHJaeE1XLXJPMXVzTEMyYUk0aXNwRTR6NnVVd1dYaVRORHZIWUExa2NXbzBKd2s2NmwwUzhyWnVTS3FjVTlRV283TkduS0VnXzZNeDB1QmF2T3lQUlNsdXJBb1A0S2tGRVhLWldBTHladnhpMTF3alFiZGJhTjNheVh2YTJDM2Q1UE0?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Premier Energies</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">03</span>
+        <div class="card-headline">Waaree Energies Doubles Texas Solar Module Capacity to 3.2 GW</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Construction World</span>
+        <span class="pill pill-date">06 Nov 2026, 01:33 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Waaree Energies Doubles Texas Solar Module Capacity is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUzl1N3d1cDlPZk01MXVFajhBRUZPUWx4d3hObHFHSkFFU0ZLNU5YYzJ0TzVkaTE0X25uek9CRVUwV2h1ZGlsaUhlVkRlVmFCR2puZUFhbmVmTVBCX3hhbS1FNEJuLUZIaC1SWFJXTkRRMTh2QUZTZkt5d3RIM3pXbXdKUEl0MUdjRlVXMHV6N3J2S19fUWp0bUVnSDFhZFJuMV9vdzdPYW5odHRHZ2V6all0X1BfMTRlNm9NNmItS0YtOUNkcHEtVmIybk9IR19yZEpiTEpqRGE1LWRZcHRKSm9Vbw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Waaree Energies</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">04</span>
+        <div class="card-headline">Tata Power commissions 300 MW solar project in Karnataka</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Renewable Watch</span>
+        <span class="pill pill-date">06 Nov 2026, 12:17 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Tata Power has achieved commercial operation of its 300 MW solar project in Karnataka, adding fresh renewable capacity and marking a key execution milestone.</p><p>The 300 MW plant will supply clean electricity to the grid under a Power Purchase Agreement, contributing directly to India&#x27;s national target of 500 GW renewable capacity by 2030.</p><p>Commissioning milestones are closely tracked by investors and analysts as they signal the start of revenue generation and validate the company&#x27;s project delivery capability.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOZjdlbzJfS2owakNWUzdTSlc1SVItMEZqM3Rrd2E3bEVOU1VvQ08xR0d5dnlzb0dybzBfbllRM2pMcEd0UHhONVc1YzZIRHZIYjgtTC1zUHFnMDU0QlpmMHgzWlNWeWprNlN6X0NzNGp3N2xrT3JBQUtmbkZaWk9zeFlneXREdThrR2tyWXh4TDFsMjBIa0J6MUtDM3A?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Tata Power</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">05</span>
+        <div class="card-headline">Tata Power commissions 300 MW SECI solar project in Karnataka</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Solarbytes</span>
+        <span class="pill pill-date">06 Nov 2026, 11:42 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Tata Power has achieved commercial operation of its 300 MW solar project in Karnataka, adding fresh renewable capacity and marking a key execution milestone.</p><p>The 300 MW plant will supply clean electricity to the grid under a Power Purchase Agreement, contributing directly to India&#x27;s national target of 500 GW renewable capacity by 2030.</p><p>Commissioning milestones are closely tracked by investors and analysts as they signal the start of revenue generation and validate the company&#x27;s project delivery capability.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxPcHFHREl6dEZVYTk3S3ozRlFpWlVNQ0F1X1JyMGdneDhSMnBQQXJkb0t2ZENyVHJXWVV3YWd0NHJNQ19PZHdiak95bUwyNFNpR0NIR2NpTW5JUDJKZlhKUHBITEFnQWo3ZzZLN2JIRjFkQzFIVUcwNHpUN0REZ2ZpNWxLUzJoVlJucWhnTE1KYXFtSjJCaF8wcUc5U2FYb3IxdkRlby1RQk5UQXRGempyREJkZ2dOQ3JIUlpJUDln?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Tata Power</span><span class="tag">SECI</span><span class="tag">Solar</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: INDUSTRY -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">🏭</span>
+      <span class="section-title">Section 2 — Industry</span>
+      <span class="section-count">10 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">06</span>
+        <div class="card-headline">Solar Corporate Funding Rises 45% to $25 Billion in 9M 2026</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">06 Nov 2026, 04:36 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Corporate funding deals rose 35% to 172, up from 127 in the same period last year.</p><p>The growth was primarily driven by debt financing, which increased 61% year-over-year (YoY), while public market financing rose 59%.</p><p>Debt drove nearly all of the net increase in funding, underscoring the importance of corporate borrowing, acquisition financing, and refinancing in the period.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/solar-corporate-funding-rises-to-25-billion-9m-2026" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">RPO</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">07</span>
+        <div class="card-headline">Daily News Wrap-Up: Battery Storage, Hybrid Projects Lead Q3 Auctions</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">06 Nov 2026, 04:36 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Battery energy storage and hybrid projects together accounted for 45.2% of auctioned capacity The Telangana Electricity Regulatory Commission increased the additional surcharge on eligible open…</p><p>In an interview with Mercom India, Kayan Kalthia, Executive Director, Business Development at Kosol Energie, discussed how intelligent energy management software, energy arbitrage, and integration…</p><p>The Gujarat Electricity Regulatory Commission rejected a petition seeking an extension of the commissioning deadline for a 4 MW solar project in Kheda district, Gujarat.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/daily-news-wrap-up-battery-storage-hybrid-projects-lead-q3-auctions" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Battery Storage</span><span class="tag">Storage</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">08</span>
+        <div class="card-headline">China’s Proposed Tech Export Curbs Test India’s Solar Manufacturing Push</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">06 Nov 2026, 04:34 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Cell China Featured Fujiyama In-depth Indosol Solar Modules Premier Energies Raana Semiconductors Solar PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>China’s proposed curbs on solar technology exports have once again exposed the vulnerabilities in India’s plans to ramp up domestic solar manufacturing.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/chinas-proposed-tech-export-curbs-test-indias-solar-manufacturing-push" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">09</span>
+        <div class="card-headline">Ministry of Railways Wins PM Surya Ghar Excellence Award 2026</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">INSIGHTS IAS</span>
+        <span class="pill pill-date">06 Nov 2026, 03:16 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This update relates to India&#x27;s rooftop solar segment — one of the fastest-growing areas of the clean energy market, serving households, businesses, and institutions.</p><p>Government schemes like PM Surya Ghar Muft Bijli Yojana and net metering regulations are enabling millions of Indians to generate their own clean electricity and reduce bills.</p><p>Rooftop solar reduces grid dependency for end-users and promotes distributed generation, playing a vital role alongside large-scale solar parks in India&#x27;s energy transition.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPX1ZicVE5d0pLNG5pMGlFa1c0T1NHcTc5MHdlSnhhLVV3Q0h2blBnMGJPbVVoR3VJdjd5OEhJaTI3UGEySkkyVmJEV1N1SXA0MmVyeFVmOHEzRjZ5emIteTVEQnFUR0R1QWM4My1YX3FIM1c4SURCaTBRZmwzXzEzYzJaem83YzE0RUhXS3l6a09VVERyQkttODFsenk0ZE5xQU5sNmhMQ1I?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">10</span>
+        <div class="card-headline">India looks forward to strengthening bilateral cooperation with Rwanda in solar energy: Pralhad Joshi</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">News On AIR</span>
+        <span class="pill pill-date">06 Nov 2026, 03:06 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>India is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPTlduSFo2UXpTbDB1clE5a1F6dldYcVNUQ05mX2hCT3dSUlRkSTJleHI1a3Vnb193UF9JbFd2b3pnUE1mcEhKNGxmbElBNVRRMjBfQlJlQV9wc2dwYUdXQWlyemxFWmlJam9TSGF2Uld5LUJMYld3SjlDYU9fMGxXUVlDMjlyb3otUDdYWGJSYXVoODhqRU5rQnRfam9vXzgxZGFIcDVRYUVtSXRtYTVNcGlONFNic0xEZThSYWlyRWxsUGhL?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">11</span>
+        <div class="card-headline">The Invisible Shield: The Energy Crisis That Renewables Quietly Softened</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Saur Energy</span>
+        <span class="pill pill-date">06 Nov 2026, 02:14 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Saur Energy is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQ3RQRWYxSU1oV3ZScVE5R0R5elY5X1V3S0xMd3pjbmE4dHRmY3hnVkdicmRXODhZSjVRMk81WUdGbUt0cm5McV92SldYOVp4cHBZSkN0X0ZNanZ4eXdOTXdSTV9EbGVPX09ySjJoMnRiYWFPbWJqVXZGWXRXX0JVLTJNQlY5N0c3eHpXVm8xU0FqSHd4UXNmOWNETzZXVk1QV1B5SDkzNHh0cXEzTWVOOFRDTkJLRExhUE8zcmhja1Q1bWs?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">12</span>
+        <div class="card-headline">Bharat Renewable Energy Summit &amp; Expo 2026</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">India Education Diary</span>
+        <span class="pill pill-date">06 Nov 2026, 01:24 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Bharat Renewable Energy Summit &amp; Expo 2026 is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMifEFVX3lxTFBLVXFjWVlhN0lreHczTER0SDFSTG95UXBodXAyaFFmSzVaSzBUTUhkNjlsZGtaWGZzMUdKOV82SVBUcFMxMEhGWmgyZTFEY0t0OVBLWkJDZVc3TWFDWUduWGRTTHd5V1pNeTlJaVQ0SVdaUzhoVll0cFhGa3k?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">13</span>
+        <div class="card-headline">Indus Towers Deploys 50,000 Solar-Powered Telecom Sites</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Construction World</span>
+        <span class="pill pill-date">06 Nov 2026, 01:18 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Indus Towers is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxOa3RDaUpMUmE2Zk1mcThDN2h1a0l0OHRHX096TmFLLXhBVkpEeXdHY19rNTNxLTREc2NsMzB2U3ZpNVNkZ2F1ZWpIYmFORzg0bk5pc29hRldYSTEzdDFlQUhjQ1BNLVFEbERqTm1aTlJpYWpMYTZraTlVN05MeVh6NUk4U0RHNDlxVTJ6X05UZjhXNHlXX0xqd2NsY193ZjAzd1FOMFFGV01DNzN5dUlrZlpjMEFJQlJIV2pNVVQ2ZXdxbkJid2U4NGozRGd3bnFYZTlSQ2I0YVozUQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">14</span>
+        <div class="card-headline">Essar Signs PPA for 300 MW Hybrid Renewable Energy Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Construction World</span>
+        <span class="pill pill-date">06 Nov 2026, 01:18 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Essar is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxOWUJnSEhkLTNHSE5sYVZ6UHZUcjZUVi1YbU96czZIRHNLMFpDaUNfakxjOVkteDMzOGVIdGtIUDA0Uk5Rbk9oaVU4UnJ5azZadFFKMVc2dDJpMU5uaTlzbGFXMWlsQk9HVVhOOVpDak1FWnlSVWFDS2pmOWJjWnJvaEY1azAzd1NJVHJiZ3J4WGZLM1NiZnd3VlZNMzdXeldwSllsbXI4SVR3ZjZkdGlVSGxYXzE3Y0RiYURZdHB6WmFnNlYzdVNhdFRFQWZVNGZsVGQ0OS0tdHdsaDFVLUk4?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">PPA</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">15</span>
+        <div class="card-headline">CERC Adopts Tariffs for SECI&#x27;s 400 MW Solar Projects</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Construction World</span>
+        <span class="pill pill-date">06 Nov 2026, 01:13 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>CERC Adopts Tariffs has received a key ruling from CERC, which could directly affect its project economics, tariff recovery, or compliance obligations.</p><p>Regulatory and legal decisions involving GST, tariff adjustments, or compliance orders can materially impact a solar company&#x27;s revenue recognition and project margins.</p><p>The outcome of this case sets a precedent for similar disputes across the sector, making it a development closely watched by developers, financiers, and legal counsel.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxNeThTZWVRWWZFQmNBUFdhdkM2ODMyRW9EZ2JBTkJVWTlsV3o5MzBMWnJ6RHVabi1xcTNfZUNlSVBaMWtnN0NDZl90NTdka3FaQkkzU3Y0dnBGNzN4NmRRUlBKUDZmRVpHNUJ6Y1JJRDlMWHMwMWJ0dzR0bXJLTWtVN21BSWVDRXhRbXpscGFkdU13SlVnUXplVDQ3ZnRkQU1KWXFnaVZzRVh5SDVRem5kUEZxbmxXLV81d284RXRHM3A3eDRQWG5TM3F6Z1FLSndPRkt6SGxB?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">SECI</span><span class="tag">CERC</span><span class="tag">Solar</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-l">
+      <div class="footer-dot"></div>
+      Solar &amp; Renewable Energy India &nbsp;&#183;&nbsp; Daily News Intelligence &nbsp;&#183;&nbsp; Friday, 06 November 2026
+    </div>
+    <div class="footer-r">Generated 04:45 PM IST &nbsp;&#183;&nbsp; Sources: Google News, Mercom India, PV Magazine &amp; others</div>
+  </div>
+
+</div>
+</body>
+</html>
