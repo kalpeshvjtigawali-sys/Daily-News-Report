@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Updates — Solar &amp; Renewable Energy India | Thursday, 19 November 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --em-yellow:    #FFDD00;
+    --em-yellow-lt: #FFF9CC;
+    --em-yellow-dk: #F5C800;
+    --em-blue:      #243B7F;
+    --em-blue-mid:  #1A3070;
+    --em-blue-dk:   #152560;
+    --em-orange:    #EA7437;
+    --em-orange-dk: #DA7527;
+    --em-white:     #FFFFFF;
+    --em-off-white: #FAFAFA;
+    --em-light:     #F3F3F3;
+    --em-border:    #E2E2E2;
+    --em-text-dk:   #1A1A2E;
+    --em-text-mid:  #3A4A6B;
+    --em-text-lt:   #6B7A9B;
+    --em-green:     #1B7A45;
+    --em-green-bg:  #E8F5EE;
+    --em-red:       #B22222;
+    --em-red-bg:    #FAEAEA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    background: #E8E8E8;
+    color: var(--em-text-dk);
+    line-height: 1.55;
+    padding: 24px 20px;
+  }
+  .page { max-width: 980px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .header { border-radius: 10px 10px 0 0; overflow: hidden; }
+  .header-top {
+    background: var(--em-blue);
+    padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-name { font-size: 24pt; font-weight: 900; font-style: italic; color: var(--em-yellow); letter-spacing: -0.5px; line-height: 1; }
+  .brand-sub  { font-size: 8.5pt; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+  .header-meta   { text-align: right; }
+  .meta-date     { color: var(--em-yellow); font-size: 9pt; font-weight: 700; letter-spacing: 1px; }
+  .meta-edition  { color: rgba(255,255,255,0.45); font-size: 8pt; margin-top: 3px; }
+  .header-yellow {
+    background: var(--em-yellow);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hy-tagline  { font-size: 10.5pt; font-weight: 800; color: var(--em-blue); letter-spacing: 0.2px; }
+  .hy-tagline em { color: var(--em-orange-dk); font-style: normal; }
+  .hy-coverage { font-size: 8pt; font-weight: 600; color: var(--em-blue-mid); opacity: 0.75; }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-wrap {
+    background: var(--em-blue);
+    padding: 20px 32px;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+  }
+  .exec-label { font-size: 7.5pt; font-weight: 800; color: var(--em-yellow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .exec-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .exec-item  {
+    background: rgba(255,221,0,0.07);
+    border: 1px solid rgba(255,221,0,0.2);
+    border-left: 4px solid var(--em-yellow);
+    border-radius: 6px;
+    padding: 11px 14px;
+    color: rgba(255,255,255,0.88);
+    font-size: 9pt; line-height: 1.5;
+  }
+  .exec-item strong { display: block; color: var(--em-yellow); font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
+
+  /* ── SIGNALS BAR ── */
+  .signals {
+    background: var(--em-yellow);
+    padding: 10px 32px;
+    display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+    border-bottom: 3px solid var(--em-blue);
+  }
+  .sig-label { font-size: 7.5pt; font-weight: 800; color: var(--em-blue); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; margin-right: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 7.5pt; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.2px; }
+  .chip-blue   { background: var(--em-blue);      color: var(--em-yellow); }
+  .chip-orange { background: var(--em-orange-dk); color: #fff; }
+  .chip-green  { background: var(--em-green);     color: #fff; }
+  .chip-red    { background: var(--em-red);       color: #fff; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 18px; }
+  .section-hdr {
+    background: var(--em-blue);
+    padding: 11px 32px;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-icon  { font-size: 14pt; }
+  .section-title { font-size: 12pt; font-weight: 800; color: var(--em-yellow); font-style: italic; }
+  .section-count { margin-left: auto; background: var(--em-yellow); color: var(--em-blue); font-size: 7.5pt; font-weight: 800; padding: 2px 9px; border-radius: 12px; letter-spacing: 0.5px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--em-white);
+    border-left: 5px solid var(--em-yellow);
+    border-right: 1px solid var(--em-border);
+    border-bottom: 1px solid var(--em-border);
+    padding: 16px 28px;
+  }
+  .card:nth-child(even) { background: var(--em-off-white); }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .card-top      { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 8px; }
+  .card-num      { font-size: 7.5pt; font-weight: 800; color: var(--em-white); background: var(--em-blue); border-radius: 4px; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.5px; }
+  .card-headline { font-size: 10.5pt; font-weight: 700; color: var(--em-blue); line-height: 1.4; }
+
+  .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .pill      { display: inline-flex; align-items: center; font-size: 7.5pt; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.2px; }
+  .pill-src  { background: var(--em-blue);     color: var(--em-yellow); }
+  .pill-date { background: var(--em-yellow);   color: var(--em-blue); }
+  .pill-pos  { background: var(--em-green-bg); color: var(--em-green); border: 1px solid #8ED4AE; font-weight: 700; }
+  .pill-neg  { background: var(--em-red-bg);   color: var(--em-red);   border: 1px solid #ECA9A9; font-weight: 700; }
+
+  .card-body   { font-size: 9.5pt; color: var(--em-text-mid); line-height: 1.65; margin-bottom: 12px; font-weight: 400; }
+  .card-body p + p { margin-top: 7px; }
+
+  .orig-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 8.5pt; font-weight: 700;
+    color: var(--em-blue); text-decoration: none;
+    background: var(--em-yellow); border: 2px solid var(--em-blue);
+    padding: 5px 13px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .orig-link:hover { background: var(--em-yellow-lt); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .tag  { font-size: 7pt; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: rgba(36,59,127,0.07); color: var(--em-blue); border: 1px solid rgba(36,59,127,0.18); text-transform: uppercase; letter-spacing: 0.4px; }
+
+  .divider { border: none; border-top: 2px dashed var(--em-yellow); margin: 0; }
+  .no-news { padding: 32px; text-align: center; color: var(--em-text-lt); font-style: italic; background: var(--em-white); border-left: 5px solid var(--em-yellow); border-right: 1px solid var(--em-border); border-bottom: 1px solid var(--em-border); border-radius: 0 0 8px 8px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 18px;
+    background: var(--em-blue);
+    border-radius: 8px;
+    padding: 13px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-l { color: var(--em-yellow); font-size: 8.5pt; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--em-yellow); flex-shrink: 0; }
+  .footer-r { color: rgba(255,255,255,0.45); font-size: 8pt; }
+
+  @media print { body { background: #fff; padding: 0; } .page { max-width: 100%; } }
+  @media (max-width: 620px) {
+    .exec-grid { grid-template-columns: 1fr; }
+    .header-top, .header-yellow { flex-direction: column; gap: 8px; text-align: center; }
+    .footer { flex-direction: column; gap: 6px; text-align: center; }
+    .card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Daily News Updates</div>
+        <div class="brand-sub">Solar &amp; Renewable Energy &nbsp;&#183;&nbsp; India</div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-date">THURSDAY, 19 NOVEMBER 2026</div>
+        <div class="meta-edition">Daily News Intelligence &nbsp;&#183;&nbsp; Coverage: Last 2 Days</div>
+      </div>
+    </div>
+    <div class="header-yellow">
+      <div class="hy-tagline">Solar &amp; Renewable Energy India &nbsp;|&nbsp; <em>Daily Market Intelligence</em></div>
+      <div class="hy-coverage">IPO / Stock Market &nbsp;&#183;&nbsp; Industry &nbsp;&#183;&nbsp; Policy &amp; Regulation &nbsp;&#183;&nbsp; Energy Storage</div>
+    </div>
+  </div>
+
+  <!-- EXEC SUMMARY -->
+  <div class="exec-wrap">
+    <div class="exec-label">&#9728; &nbsp;Executive Summary — Top Stories Today &nbsp;(15 articles)</div>
+    <div class="exec-grid">
+      <div class="exec-item"><strong>📈 Premier Energies: Capacity Expansion Meets Falling Solar Prices</strong>Premier Energies: Capacity Expansion Meets Falling Solar Prices  Moneylife</div>
+      <div class="exec-item"><strong>📈 Waaree Transpower secures inverter duty transformer order worth over INR 100 crore fo…</strong>Waaree Transpower has secured an order from NTPC to supply inverter duty transformers ranging from 11 MVA to 22 MVA for NTPC&#x27;s battery storage project.</div>
+      <div class="exec-item"><strong>🏭 Gujarat Regulator Rejects Deadline Extension for 4 MW Captive Solar Project</strong>The Gujarat Electricity Regulatory Commission (GERC) has refused an extension of the scheduled commissioning date (SCOD) for evacuation infrastructure associated with a 4 MW captive solar power project in Surendranagar district, G…</div>
+      <div class="exec-item"><strong>🏭 NTPC SAIL Invites Bids for Solar Project in Chhattisgarh</strong>NTPC SAIL Power Company (NSPCL), a joint venture of NTPC and Steel Authority of India (SAIL), has invited bids for the engineering, procurement, and construction (EPC) of a solar project in Chhattisgarh.</div>
+    </div>
+  </div>
+
+  <!-- SIGNALS BAR -->
+  <div class="signals">
+    <span class="sig-label">Market Signals</span>
+    <span class="chip chip-green">&#9650; Solar EPC &amp; Developer</span>
+    <span class="chip chip-green">&#9650; BESS / Storage</span>
+    <span class="chip chip-green">&#9650; RE Financing</span>
+    <span class="chip chip-blue">&#9675; Policy &amp; Regulation</span>
+    <span class="chip chip-blue">&#9675; IPO / Stock Market</span>
+  </div>
+
+  <!-- SECTION 1: IPO / STOCK -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">📈</span>
+      <span class="section-title">Section 1 — IPO / Stock Market</span>
+      <span class="section-count">5 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">01</span>
+        <div class="card-headline">Premier Energies: Capacity Expansion Meets Falling Solar Prices</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Moneylife</span>
+        <span class="pill pill-date">19 Nov 2026, 04:18 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Moneylife is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPd3FOQUVpbnZuQWJldUhYQ2pDa3RzU0lCcDhFRW9jYjc4T2RiLVF1SWJZbEh5UVJXLUFiOVdVakd1MHFoWWZISjBTOGwzaThGTXp6dkJnSUMxWEdRVDVTM3lCNFhuM2FsaE93QTRfWUpOeXcyWXBQSTVZcU9UM2lrM0EwQ0o1RlVMRWo2c1I0dmdVVGZvSklreW43SGNJSTBpdHJNZWhzdVdpdw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Premier Energies</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">02</span>
+        <div class="card-headline">Waaree Transpower secures inverter duty transformer order worth over INR 100 crore for NTPC’s battery energy storage project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">19 Nov 2026, 01:28 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Manufacturing See all Waaree Transpower secures inverter duty transformer order worth over INR 100 crore for NTPC’s battery energy storage project Waaree Transpower has secured an order from NTPC to…</p><p>By Uma Gupta 19 Nov 2026 Manufacturing Energy Storage Inverter duty transformer Utility-scale Waaree Transpower (formerly KOTSONS), a subsidiary of Waaree Energies, has secured an order worth over…</p><p>Under the order, the company will supply IDTs ranging from 11 MVA to 22 MVA for the NTPC project.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/11/19/waaree-transpower-secures-inverter-duty-transformer-order-worth-over-inr-100-crore-for-ntpcs-battery-energy-storage-project/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Waaree Energies</span><span class="tag">Battery Storage</span><span class="tag">Storage</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">03</span>
+        <div class="card-headline">Pace Digitek Secures INR 2,691 Crore BESS Order from NTPC Green Energy</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Energetica India Magazine</span>
+        <span class="pill pill-date">18 Nov 2026, 12:43 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Pace Digitek has secured a ₹2,691 Crore solar order, adding to its revenue backlog and reinforcing its position as a key player in India&#x27;s solar market.</p><p>Order wins of this nature strengthen Pace Digitek&#x27;s manufacturing or EPC pipeline and signal rising demand from utilities, PSUs, or commercial &amp; industrial buyers.</p><p>A growing order book directly supports revenue visibility and investor confidence — it is one of the most-watched metrics for solar manufacturers and EPC companies.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPU3VxRjVBTUduRGloQ2xzanpOR3h4WldsSGZPMDNGei0zTGc4Y2tUY1dVbkJxbVFjUjg0cFFBUnRpT3pQajN5WDVTY2YwRlRUek5LV052N1pIMkNqTnRMcFM0Sy1GYmJuV3NBblhiWTRQSE1qemYwVUpMYlRpcVZsYkM3VkFRb2drWEdGSWV1TUpHU2FrMHBWYWotQXQ3TTV4ajB6OTVGWU9SVjA?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">NTPC Green Energy</span><span class="tag">BESS</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">04</span>
+        <div class="card-headline">UTL Solar (NSE:UTLSOLAR): What Is Behind the Plant Visit and Investor Meet on 23 November 2026?</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Kalkine India</span>
+        <span class="pill pill-date">18 Nov 2026, 11:32 AM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Kalkine India has scheduled an analyst and investor interaction, where management is expected to discuss order pipeline, capacity expansion plans, financial guidance, and market outlook.</p><p>Investor meets provide direct access to management commentary on near-term order wins, margins, working capital, and strategic priorities — key inputs for equity research.</p><p>Such events reflect a company&#x27;s commitment to investor transparency and often coincide with or precede major business announcements or quarterly earnings.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxOSzFtaTlOd3JHcFhMT0oydElXTmlxc0lPSlJzR0llRUU2em1scjU0elp6MlZVMTJCRW45ZkZMZ2dwMWE1NXFvYWNZNjdOV2JmMUFUZHRXRDlxOGxmNEVVZ01Ca0ZOX1IwUDNNb1Nld3NuTlFxUG0zRFpQbjBQMVpjNjcza3hUQXctUGZNWjBycjk4dk5HNDNBRWRUTmJrRWoxRG1yWDBjQ2QwLXBIQU9BUEtaMHRfQ1BXSGNSS2lCRzhXVjNXU2VGeWhXNmp1UzBKVklNSQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">UTL Solar</span><span class="tag">NSE</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">05</span>
+        <div class="card-headline">Tata Power Renewable commissions 100.8 MW wind project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Prop News Time</span>
+        <span class="pill pill-date">17 Nov 2026, 06:33 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Tata Power Renewable has achieved commercial operation of its 100.8 MW solar project across India, adding fresh renewable capacity and marking a key execution milestone.</p><p>The 100.8 MW plant will supply clean electricity to the grid under a Power Purchase Agreement, contributing directly to India&#x27;s national target of 500 GW renewable capacity by 2030.</p><p>Commissioning milestones are closely tracked by investors and analysts as they signal the start of revenue generation and validate the company&#x27;s project delivery capability.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQc09pZ3B0a1dZN2ZzcFN5ajluakNfRVoxWXUzQ0s4UzBYdGQzOHNXVkVqRF9ZVTZkR1Vnd2MyQTVnTUdzNlFHSFpDTUhDOGlzTTA2eUdyR2pudkJYLWRPZHJ4ZnhYbkZSalN0TjlEVUw5NldvQnowTnNSWmJWWGRhRml2TXc4cWI0VHI5QTZkM3k1VzFWR0gyNUJsSDJxeE5vdnZDc2VWQ0tlZw?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Tata Power</span><span class="tag">Wind</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: INDUSTRY -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">🏭</span>
+      <span class="section-title">Section 2 — Industry</span>
+      <span class="section-count">10 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">06</span>
+        <div class="card-headline">Gujarat Regulator Rejects Deadline Extension for 4 MW Captive Solar Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">19 Nov 2026, 09:59 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Captive Connectivity Evacuation Extension GERC Order PGVCL Regulatory Solar PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Gujarat Electricity Regulatory Commission (GERC) has refused an extension of the scheduled commissioning date (SCOD) for evacuation infrastructure associated with a 4 MW captive solar power…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/gujarat-regulator-rejects-deadline-extension-for-4-mw-captive-solar-project" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Gujarat</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">07</span>
+        <div class="card-headline">NTPC SAIL Invites Bids for Solar Project in Chhattisgarh</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">19 Nov 2026, 09:57 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Chhattisgarh NTPC SAIL Solar tender PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>NTPC SAIL Power Company (NSPCL), a joint venture of NTPC and Steel Authority of India (SAIL), has invited bids for the engineering, procurement, and construction (EPC) of a solar project in…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/ntpc-sail-invites-bids-for-solar-project-in-chhattisgarh" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">EPC</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">08</span>
+        <div class="card-headline">esVolta Secures Over $180 Million for Texas Battery Storage Projects</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">19 Nov 2026, 09:47 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Orrick, Herrington &amp; Sutcliffe advised esVolta on both transactions.</p><p>Winston Taylor advised MUFG Bank on the project financing transaction.</p><p>So far, the company has secured more than $1 billion in funding.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/esvolta-secures-over-180-million-for-texas-battery-storage-projects" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Battery Storage</span><span class="tag">Storage</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">09</span>
+        <div class="card-headline">CEA Issues Standard Operating Procedure for Repowering of Wind Projects</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">19 Nov 2026, 09:43 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>CEA Repowering wind PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Central Electricity Authority (CEA) has issued a standard operating procedure (SOP) allowing the phased repowering of wind power projects comprising a combination of old and new wind turbine…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/cea-issues-standard-operating-procedure-for-repowering-of-wind-projects" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Wind</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">10</span>
+        <div class="card-headline">Corporate Funding for Energy Storage Companies Rises 49% YoY in 9M 2026</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">19 Nov 2026, 05:15 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>The funding spanned venture capital (VC), debt, and public market financing categories, and remained concentrated in several large transactions.</p><p>The five largest transactions contributed approximately 51% of the total corporate funding.</p><p>CATL’s share placement alone accounted for nearly 30% of the nine-month total.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/corporate-funding-for-energy-storage-companies-rises-49-yoy-in-9m-2026" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Storage</span><span class="tag">RPO</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">11</span>
+        <div class="card-headline">Daily News Wrap-Up: India’s Solar Open Access Capacity Up 8.4 GW in 9M 2026</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">19 Nov 2026, 04:36 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>In an interview with Mercom India, Tanmoy Duari, Chief Executive Officer, India and Southeast Asia, AXITEC Energy India, said energy storage systems and hybrid inverters present significant growth…</p><p>The Central Electricity Regulatory Commission allowed a 50 MW solar project to retain its eligibility for a 100% waiver of interstate transmission system (ISTS) charges despite missing its…</p><p>The Appellate Tribunal for Electricity directed Andhra Pradesh’s distribution companies to pay wind generators the full contracted tariff for electricity generated beyond the normative capacity…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/daily-news-wrap-up-indias-solar-open-access-capacity-up-8-4-gw-in-9m-2026" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">REC</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">12</span>
+        <div class="card-headline">ArMee Infotech signs MoU with MSEDCL to develop 135 MW solar power project in Maharashtra</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">19 Nov 2026, 04:21 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Applications &amp; Installations See all ArMee Infotech signs MoU with MSEDCL to develop 135 MW solar power project in Maharashtra The company’s subsidiary, ArMee MH ONE Renewable Energy, will enter into…</p><p>(MSEDCL) to develop the 135 MW solar plant and supply power to the utility.</p><p>By Uma Gupta 19 Nov 2026 Applications &amp; Installations Highlights Utility-scale ArMee Infotech has signed a Memorandum of Understanding with Maharashtra State Electricity Distribution Co.</p></div>
+      <a class="orig-link" href="https://www.pv-magazine-india.com/2026/11/19/armee-infotech-signs-mou-with-msedcl-to-develop-135-mw-solar-power-project-in-maharashtra/" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">PPA</span><span class="tag">Maharashtra</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">13</span>
+        <div class="card-headline">LevelTen Energy enters India with 500-MW clean power tender</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Renewables Now</span>
+        <span class="pill pill-date">19 Nov 2026, 04:08 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>A solar tender has been issued across India, creating fresh project opportunities for solar developers, EPC firms, and equipment suppliers across India.</p><p>Competitive bidding for tenders of this scale attracts leading developers and typically results in aggressive tariff discovery, benefiting DISCOMs and end consumers.</p><p>India&#x27;s auction-based solar market has consistently driven tariffs to record lows, making solar one of the cheapest sources of new electricity generation.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQWjYtdVNIVXBMOExCd3lJdmVOWEtDbVM0eGxKeHN4MGlHWVRfdmFBOWNHazluOEdPZEczZnpXOUVMWi1WMk84bGozLTdOazBqdmptckw3RkkzWHhMYWRMWnJ2VzJCektkX1hkUXpWR1Z5NlRRV3pmSlVpbnpidzZETUFscG9EMm9GOUVDWV9lcjgzTTNHdXZ0ZmVfbFZyQWZY?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">14</span>
+        <div class="card-headline">India&#x27;s Solar Growth Enters a New Era as solar power sector expands ‘68 fold’</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Jharkhand State News</span>
+        <span class="pill pill-date">19 Nov 2026, 03:26 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>India&#x27;s Solar Growth has outlined expansion targets or strategic growth plans across India, reflecting its ambition to scale up in India&#x27;s fast-growing solar energy market.</p><p>Expansion announcements reveal management&#x27;s confidence in long-term project demand, domestic manufacturing opportunities, and the company&#x27;s ability to execute at scale.</p><p>India&#x27;s solar sector is attracting aggressive capacity expansion from established players and new entrants alike, supported by strong government policy tailwinds and rising demand.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxOdGhIazVtbVdTeVRnb25qeHNrZUJ3cFNZZWowUzViNHlZZnd6bE91cDlnSFF4M291bjhMRmV6TUJjWmFQOGxKb09jRDdIYzNudnU5LVdkOTB2VVJzWVBJRXpIUUNSS0Z2dW9FVERldDdsS1Bjck1IRXZYMXRwRk5BUGplVDZrYkZjREItZ1BsdzJWQS15UWYyUjRTTHIzVHMwX2FDWGhNZnRhY2tZMC1GOGRsN2kydXdhQWR6R1FaX2NvZUcyNkFhRHk3NA?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">15</span>
+        <div class="card-headline">KKR takes minority stake in Gentari’s India renewables platform</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">ET EnergyWorld</span>
+        <span class="pill pill-date">19 Nov 2026, 03:13 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>KKR is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxOYndCdjh5ME5zTk9BdDk3bm9scXFibUFXRnhYYkRodDFlZl94eHJuOUZUNzhmUnpZd1ZfQU1qdTY3VGJjSkJiSUN0Rm1iWXBMckhIbHp5a0Z1Qnlya3hldlV6ZE5iMlI2MXgzWWNOY003WmU1MGR6RVZuY0R4ck5FZjV4WmZ1YTBERkhWUjQzUmk4ODAzdEI1TUJPVlczLUN1TkVobUUzX3BJQWNKRWJCQTg4RmVsSV84RVVPYWJUY3I3NjdIU3Bubjk1ONIB0AFBVV95cUxQVktPY2NLOGVvMlpRMTNtM0hVV2YzXzY3bGJYbE9sdkt0eEp5bEg3Sm5NZGlCa0pMYXp2cGZnZ2lpbHh6aFlWaFhnMS1LZGFEN3ZyUGE1TVdHMEs5MXZLRGhaNXN0Ym5UaklHSWpfWXVWb1lMSFlIa2xiZ25WYW1aSDNOLTRseC02MTh0N3ZWNWdreXNGWDdoS1cyOGJkMmVJemM5UXBST3BGZGkzWWZxczlsR2ZvTmlsdDBpblRTQXlLMzE5VVJwTDRIMjItUEd6?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-l">
+      <div class="footer-dot"></div>
+      Solar &amp; Renewable Energy India &nbsp;&#183;&nbsp; Daily News Intelligence &nbsp;&#183;&nbsp; Thursday, 19 November 2026
+    </div>
+    <div class="footer-r">Generated 05:27 PM IST &nbsp;&#183;&nbsp; Sources: Google News, Mercom India, PV Magazine &amp; others</div>
+  </div>
+
+</div>
+</body>
+</html>
