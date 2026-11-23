@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Updates — Solar &amp; Renewable Energy India | Monday, 23 November 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --em-yellow:    #FFDD00;
+    --em-yellow-lt: #FFF9CC;
+    --em-yellow-dk: #F5C800;
+    --em-blue:      #243B7F;
+    --em-blue-mid:  #1A3070;
+    --em-blue-dk:   #152560;
+    --em-orange:    #EA7437;
+    --em-orange-dk: #DA7527;
+    --em-white:     #FFFFFF;
+    --em-off-white: #FAFAFA;
+    --em-light:     #F3F3F3;
+    --em-border:    #E2E2E2;
+    --em-text-dk:   #1A1A2E;
+    --em-text-mid:  #3A4A6B;
+    --em-text-lt:   #6B7A9B;
+    --em-green:     #1B7A45;
+    --em-green-bg:  #E8F5EE;
+    --em-red:       #B22222;
+    --em-red-bg:    #FAEAEA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    background: #E8E8E8;
+    color: var(--em-text-dk);
+    line-height: 1.55;
+    padding: 24px 20px;
+  }
+  .page { max-width: 980px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .header { border-radius: 10px 10px 0 0; overflow: hidden; }
+  .header-top {
+    background: var(--em-blue);
+    padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-name { font-size: 24pt; font-weight: 900; font-style: italic; color: var(--em-yellow); letter-spacing: -0.5px; line-height: 1; }
+  .brand-sub  { font-size: 8.5pt; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+  .header-meta   { text-align: right; }
+  .meta-date     { color: var(--em-yellow); font-size: 9pt; font-weight: 700; letter-spacing: 1px; }
+  .meta-edition  { color: rgba(255,255,255,0.45); font-size: 8pt; margin-top: 3px; }
+  .header-yellow {
+    background: var(--em-yellow);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hy-tagline  { font-size: 10.5pt; font-weight: 800; color: var(--em-blue); letter-spacing: 0.2px; }
+  .hy-tagline em { color: var(--em-orange-dk); font-style: normal; }
+  .hy-coverage { font-size: 8pt; font-weight: 600; color: var(--em-blue-mid); opacity: 0.75; }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-wrap {
+    background: var(--em-blue);
+    padding: 20px 32px;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+  }
+  .exec-label { font-size: 7.5pt; font-weight: 800; color: var(--em-yellow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .exec-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .exec-item  {
+    background: rgba(255,221,0,0.07);
+    border: 1px solid rgba(255,221,0,0.2);
+    border-left: 4px solid var(--em-yellow);
+    border-radius: 6px;
+    padding: 11px 14px;
+    color: rgba(255,255,255,0.88);
+    font-size: 9pt; line-height: 1.5;
+  }
+  .exec-item strong { display: block; color: var(--em-yellow); font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
+
+  /* ── SIGNALS BAR ── */
+  .signals {
+    background: var(--em-yellow);
+    padding: 10px 32px;
+    display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+    border-left: 5px solid var(--em-yellow);
+    border-right: 5px solid var(--em-yellow);
+    border-bottom: 3px solid var(--em-blue);
+  }
+  .sig-label { font-size: 7.5pt; font-weight: 800; color: var(--em-blue); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; margin-right: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 7.5pt; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.2px; }
+  .chip-blue   { background: var(--em-blue);      color: var(--em-yellow); }
+  .chip-orange { background: var(--em-orange-dk); color: #fff; }
+  .chip-green  { background: var(--em-green);     color: #fff; }
+  .chip-red    { background: var(--em-red);       color: #fff; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 18px; }
+  .section-hdr {
+    background: var(--em-blue);
+    padding: 11px 32px;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-icon  { font-size: 14pt; }
+  .section-title { font-size: 12pt; font-weight: 800; color: var(--em-yellow); font-style: italic; }
+  .section-count { margin-left: auto; background: var(--em-yellow); color: var(--em-blue); font-size: 7.5pt; font-weight: 800; padding: 2px 9px; border-radius: 12px; letter-spacing: 0.5px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--em-white);
+    border-left: 5px solid var(--em-yellow);
+    border-right: 1px solid var(--em-border);
+    border-bottom: 1px solid var(--em-border);
+    padding: 16px 28px;
+  }
+  .card:nth-child(even) { background: var(--em-off-white); }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .card-top      { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 8px; }
+  .card-num      { font-size: 7.5pt; font-weight: 800; color: var(--em-white); background: var(--em-blue); border-radius: 4px; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.5px; }
+  .card-headline { font-size: 10.5pt; font-weight: 700; color: var(--em-blue); line-height: 1.4; }
+
+  .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .pill      { display: inline-flex; align-items: center; font-size: 7.5pt; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.2px; }
+  .pill-src  { background: var(--em-blue);     color: var(--em-yellow); }
+  .pill-date { background: var(--em-yellow);   color: var(--em-blue); }
+  .pill-pos  { background: var(--em-green-bg); color: var(--em-green); border: 1px solid #8ED4AE; font-weight: 700; }
+  .pill-neg  { background: var(--em-red-bg);   color: var(--em-red);   border: 1px solid #ECA9A9; font-weight: 700; }
+
+  .card-body   { font-size: 9.5pt; color: var(--em-text-mid); line-height: 1.65; margin-bottom: 12px; font-weight: 400; }
+  .card-body p + p { margin-top: 7px; }
+
+  .orig-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 8.5pt; font-weight: 700;
+    color: var(--em-blue); text-decoration: none;
+    background: var(--em-yellow); border: 2px solid var(--em-blue);
+    padding: 5px 13px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .orig-link:hover { background: var(--em-yellow-lt); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .tag  { font-size: 7pt; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: rgba(36,59,127,0.07); color: var(--em-blue); border: 1px solid rgba(36,59,127,0.18); text-transform: uppercase; letter-spacing: 0.4px; }
+
+  .divider { border: none; border-top: 2px dashed var(--em-yellow); margin: 0; }
+  .no-news { padding: 32px; text-align: center; color: var(--em-text-lt); font-style: italic; background: var(--em-white); border-left: 5px solid var(--em-yellow); border-right: 1px solid var(--em-border); border-bottom: 1px solid var(--em-border); border-radius: 0 0 8px 8px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 18px;
+    background: var(--em-blue);
+    border-radius: 8px;
+    padding: 13px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-l { color: var(--em-yellow); font-size: 8.5pt; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--em-yellow); flex-shrink: 0; }
+  .footer-r { color: rgba(255,255,255,0.45); font-size: 8pt; }
+
+  @media print { body { background: #fff; padding: 0; } .page { max-width: 100%; } }
+  @media (max-width: 620px) {
+    .exec-grid { grid-template-columns: 1fr; }
+    .header-top, .header-yellow { flex-direction: column; gap: 8px; text-align: center; }
+    .footer { flex-direction: column; gap: 6px; text-align: center; }
+    .card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="brand-name">Daily News Updates</div>
+        <div class="brand-sub">Solar &amp; Renewable Energy &nbsp;&#183;&nbsp; India</div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-date">MONDAY, 23 NOVEMBER 2026</div>
+        <div class="meta-edition">Daily News Intelligence &nbsp;&#183;&nbsp; Coverage: Last 2 Days</div>
+      </div>
+    </div>
+    <div class="header-yellow">
+      <div class="hy-tagline">Solar &amp; Renewable Energy India &nbsp;|&nbsp; <em>Daily Market Intelligence</em></div>
+      <div class="hy-coverage">IPO / Stock Market &nbsp;&#183;&nbsp; Industry &nbsp;&#183;&nbsp; Policy &amp; Regulation &nbsp;&#183;&nbsp; Energy Storage</div>
+    </div>
+  </div>
+
+  <!-- EXEC SUMMARY -->
+  <div class="exec-wrap">
+    <div class="exec-label">&#9728; &nbsp;Executive Summary — Top Stories Today &nbsp;(13 articles)</div>
+    <div class="exec-grid">
+      <div class="exec-item"><strong>📈 Waaree signs PPA with SECI for 700 MW solar and 2,800 MWh storage</strong>Waaree signs PPA with SECI for 700 MW solar and 2,800 MWh storage  Power Peak Digest</div>
+      <div class="exec-item"><strong>📈 Stocks at 52-week low: Tata Power, Cochin Shipyard, APL Apollo, Aadhar Hsg</strong>Stocks at 52-week low: Tata Power, Cochin Shipyard, APL Apollo, Aadhar Hsg  Business Standard</div>
+      <div class="exec-item"><strong>🏭 CERC Waives Interstate Transmission Charges for 166 MW Wind-Solar Project</strong>The Central Electricity Regulatory Commission (CERC) granted interstate transmission system (ISTS) charge waiver eligibility to 166 MW of a 171.6 MW wind-solar hybrid project in Karnataka after delays in commissioning the associat…</div>
+      <div class="exec-item"><strong>🏭 Gujarat Regulator Grants Partial Relief to 200 MW Wind Power Project</strong>The Gujarat Electricity Regulatory Commission (GERC) has partially allowed a developer’s plea for an extension of the scheduled commercial operation date (SCOD) for a 200 MW wind power project in Gir Somnath district, Gujarat, due…</div>
+    </div>
+  </div>
+
+  <!-- SIGNALS BAR -->
+  <div class="signals">
+    <span class="sig-label">Market Signals</span>
+    <span class="chip chip-green">&#9650; Solar EPC &amp; Developer</span>
+    <span class="chip chip-green">&#9650; BESS / Storage</span>
+    <span class="chip chip-green">&#9650; RE Financing</span>
+    <span class="chip chip-blue">&#9675; Policy &amp; Regulation</span>
+    <span class="chip chip-blue">&#9675; IPO / Stock Market</span>
+    <span class="chip chip-orange">&#9678; Rooftop / PM Surya Ghar</span>
+    <span class="chip chip-orange">&#9678; Green Hydrogen</span>
+  </div>
+
+  <!-- SECTION 1: IPO / STOCK -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">📈</span>
+      <span class="section-title">Section 1 — IPO / Stock Market</span>
+      <span class="section-count">3 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">01</span>
+        <div class="card-headline">Waaree signs PPA with SECI for 700 MW solar and 2,800 MWh storage</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Power Peak Digest</span>
+        <span class="pill pill-date">23 Nov 2026, 05:02 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This news covers energy storage — a critical technology that allows solar and wind power to be dispatched beyond generation hours, enabling 24x7 clean power supply.</p><p>Battery Energy Storage Systems (BESS) are gaining rapid traction in India as costs decline and grid operators increasingly mandate storage in new renewable tenders.</p><p>India&#x27;s energy storage market is projected to grow significantly, driven by round-the-clock RE obligations and rising corporate demand for firm clean energy.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9WcWZpTVVGME94RzNaYmQyM1p3b0prY2gxRWozd3RvNWFtZlppdVlkU1pPcWVaZkJ3eEJCb1NoRFMxcHpuRnZMQWNHejFUdEU0VDgweUxzRHFkemhDM2RIeHJxN19HcFZIRy1ydzQ5RlViZTRiYWZNRkZKYlI?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Waaree Energies</span><span class="tag">SECI</span><span class="tag">PPA</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">02</span>
+        <div class="card-headline">Stocks at 52-week low: Tata Power, Cochin Shipyard, APL Apollo, Aadhar Hsg</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Business Standard</span>
+        <span class="pill pill-date">23 Nov 2026, 02:37 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Stocks is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxQUmZ5ZG9FUXZvdWI3Mm9FYUdtN09BSGhRb0FLNkYtazJsc1FSRHFnTFZ0cFRja0pBT3Q1VTZMaUlvekNOOXd5czI1QVQ2TmVtOFBneDQ3MHB4dHdhcFFuUTY4RTBQNVJYUkZQbjZzaEZIcVJ3X1F2Z3NfcEZ4ZTM1cElPV29idkhucXYtcURtVVdiNzNnVlBsZG1tVTE2V3NaZXpsMEJhSTdoa0wwLTl3dVBaNEZLN0EtNk1RV3Jmc281VFlmVDZ0MWhHc1M1dmtpREZ0YkJCUUjSAd4BQVVfeXFMTTdnTlNFTE51TzJ1alliMWZvY09fRDlSUlBieGtrVmRaVFZCYXh4bllQbWxpaERzb18zMF9hNm5nVHQ5YUllOUd1b0V4RUhrbk9NLVp4b3FXTnpPXy1XTHBZLXB1Z3JaLUdSdDBHWmh2Zk9hcHZScjJyRVh0WmhFb3V5WGRIWllTeVJrQW1jUjVjbmhXc0dCVlRfWWhqbDVnN0ROZTlua3RvWFJhMEhlS1FKMjdvMEZtZC1WcUdQOUJvQU9zQU9qWjl3dzZuRTZJbVcwZ2tOYlBkWmdydU53?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Tata Power</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">03</span>
+        <div class="card-headline">Waaree Energies secures PPA with SECI for 700 MW solar-plus-storage project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">23 Nov 2026, 12:57 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Waaree Energies has secured a 700 MW solar order, adding to its revenue backlog and reinforcing its position as a key player in India&#x27;s solar market.</p><p>Order wins of this nature strengthen Waaree Energies&#x27;s manufacturing or EPC pipeline and signal rising demand from utilities, PSUs, or commercial &amp; industrial buyers.</p><p>A growing order book directly supports revenue visibility and investor confidence — it is one of the most-watched metrics for solar manufacturers and EPC companies.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOT05tQnFyWFByM29mUkY5SDAyWWlsalpKYVVXcUtER2lQZ3cwTHg5UVJEUGg1RDNMdXc3dHI5akRnMTdfQ1VvWXk5dWNiWnZRMGJWTy1rWk9BVjJrNDF0aWgyUUpKbEM1R2xLMkpQLWR0X2dtWWFPMEFydlR5TkJCMHZpMFQ2eDRmaFpQN3ctMWxDV3hoM2ZQbW9SbXpBRGxwQU5ZNlNsXzNBcC1vR0xuZFhSZnVuUGZIR1ViNVpn?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Waaree Energies</span><span class="tag">SECI</span><span class="tag">PPA</span><span class="tag">Solar</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: INDUSTRY -->
+  <div class="section">
+    <div class="section-hdr">
+      <span class="section-icon">🏭</span>
+      <span class="section-title">Section 2 — Industry</span>
+      <span class="section-count">10 STORIES</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">04</span>
+        <div class="card-headline">CERC Waives Interstate Transmission Charges for 166 MW Wind-Solar Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">23 Nov 2026, 11:07 PM IST</span>
+        <span class="pill pill-neg">&#10006; Negative</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>CERC Hybrid ISTS charges waiver Wind-Solar PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Central Electricity Regulatory Commission (CERC) granted interstate transmission system (ISTS) charge waiver eligibility to 166 MW of a 171.6 MW wind-solar hybrid project in Karnataka after…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/cerc-waives-interstate-transmission-charges-for-166-mw-wind-solar-project" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">CERC</span><span class="tag">Transmission</span><span class="tag">Solar</span><span class="tag">Wind</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">05</span>
+        <div class="card-headline">Gujarat Regulator Grants Partial Relief to 200 MW Wind Power Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">23 Nov 2026, 08:54 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Extension Force Majeure GERC Gujarat GYVNL Order wind PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Gujarat Electricity Regulatory Commission (GERC) has partially allowed a developer’s plea for an extension of the scheduled commercial operation date (SCOD) for a 200 MW wind power project in Gir…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/gujarat-regulator-grants-partial-relief-to-200-mw-wind-power-project" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Gujarat</span><span class="tag">Wind</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">06</span>
+        <div class="card-headline">Central Regulator Allows ISTS Charges Waiver for 150 MW Solar Project</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">23 Nov 2026, 08:32 PM IST</span>
+        <span class="pill pill-neg">&#10006; Negative</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>CERC ISTS charges waiver Solar PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Central Electricity Regulatory Commission (CERC) has granted interstate transmission system (ISTS) charge waiver eligibility to a 150 MW captive solar project at the Phalodi-Pokhran Solar Park in…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/central-regulator-allows-ists-charges-waiver-for-150-mw-solar-project" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">CERC</span><span class="tag">Transmission</span><span class="tag">Rajasthan</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">07</span>
+        <div class="card-headline">West Bengal Invites Bids for Rooftop Solar Projects</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">23 Nov 2026, 07:06 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Rooftop Tenders ULA WBSEDCL West Bengal PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>West Bengal State Electricity Distribution Company (WBSEDCL) has invited bids to set up rooftop solar projects across the state.The projects entail setting up 100 MW of grid-connected rooftop solar…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/west-bengal-invites-bids-for-rooftop-solar-projects" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">BSE</span><span class="tag">Rooftop Solar</span><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">08</span>
+        <div class="card-headline">Rajasthan High Court Quashes Retroactive Localization Rule for BESS Projects</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">23 Nov 2026, 06:34 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>Battery storage Domestic Content Requirement Rajasthan PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>The Rajasthan High Court has ruled against Rajasthan Rajya Vidyut Utpadan Nigam (RVUNL) retrospectively imposing a minimum 20% domestic content requirement on developers awarded contracts for 500…</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/rajasthan-high-court-quashes-retroactive-localization-rule-for-bess-projects" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">BESS</span><span class="tag">Battery Storage</span><span class="tag">Storage</span><span class="tag">Rajasthan</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">09</span>
+        <div class="card-headline">SJVN commissions 45 MW solar in Assam</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">23 Nov 2026, 06:23 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>SJVN has achieved commercial operation of its 45 MW solar project across India, adding fresh renewable capacity and marking a key execution milestone.</p><p>The 45 MW plant will supply clean electricity to the grid under a Power Purchase Agreement, contributing directly to India&#x27;s national target of 500 GW renewable capacity by 2030.</p><p>Commissioning milestones are closely tracked by investors and analysts as they signal the start of revenue generation and validate the company&#x27;s project delivery capability.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFdWRjJhby1hbnJZT2xCRmZ4akJHVFF0NjR0Y0N1QWd5b1FiSmhySVVPSDRvSE1XLUFTODNZcFA3ZEo4QUFibURXeDRHbkNScWpxSkF2QlVJVVNDeEVDRFB5TklQVnZVUktPREdkOUNpWVlKb01SdkFOWVRZcHZ6THo2TndJd18yaEJV?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">10</span>
+        <div class="card-headline">BESCOM Revises Solar Open Access Billing Methodology in Karnataka</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">23 Nov 2026, 06:17 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>Where clean energy&#x27;s most influential leaders get their intelligence Exclusive reporting, market intelligence, and insider access that shapes billion-dollar decisions in renewable energy and clean…</p><p>BESCOM Karnataka KERC Open Access Solar Tariff ToD PREV ALL POSTS NEXT RELATED POSTS Get the most relevant India solar and clean energy news.</p><p>Bangalore Electricity Supply Company (BESCOM) has revised the time-of-day (ToD) billing methodology for high-tension (HT) consumers procuring solar and non-solar power through open access.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/bescom-revises-solar-open-access-billing-methodology-in-karnataka" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">11</span>
+        <div class="card-headline">MENA Weekly Round-Up: Oman Advances Solar Manufacturing Investments</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Mercomindia.com RSS feed</span>
+        <span class="pill pill-date">23 Nov 2026, 05:25 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>The projects include the United Solar Polysilicon plant in Sohar Free Zone , developed with an investment of OMR 668 million (~$1.74 billion).</p><p>The facility will manufacture high-purity polysilicon used in solar cell production and is expected to create 1,500 jobs.</p><p>OIA also highlighted the ongoing Orion Solar project, involving an investment of OMR177.5 million (~$462.83 million) to establish domestic solar cell manufacturing capabilities.</p></div>
+      <a class="orig-link" href="https://www.mercomindia.com/mena-weekly-round-up-oman-advances-solar-manufacturing-investments" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">12</span>
+        <div class="card-headline">12th Green Hydrogen in India Mumbai I Electrolyser Technologies and Domestic Manufacturing</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">Renewable Watch</span>
+        <span class="pill pill-date">23 Nov 2026, 04:55 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>This development relates to green hydrogen — a clean fuel produced using renewable electricity — increasingly central to India&#x27;s industrial decarbonisation strategy.</p><p>India&#x27;s National Green Hydrogen Mission targets 5 MMTPA output by 2030, creating significant opportunities for electrolyser manufacturers and RE project developers.</p><p>Green hydrogen production requires large volumes of solar and wind power, making it a major demand driver for renewable energy in the decade ahead.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNa0tDZW5BZThyQkxodl91YWxKaHBaSmtoVzVhOHpKa2pPU2NRdzZGN29QU3BkUlpfN3Z4RE10Tnl5ZW9QUmV3eE1UTjFUVW5mRER5b1d6NDJUWXdHWHk2UERQRzRCYXBZZFA1R2hXRlNndEFVSGtFS3BCTkZPSGVBM0VuWFBXd3pZcVhIc1Q3QWxKcjJydDBaYWpwbW5WSE1ScDlKN1dqWTcwMHByR2dwREUwU1E2LVpNTGtzc2FXSWh0bTFpTlllc3BsQ2c?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Green Hydrogen</span><span class="tag">Hydrogen</span></div>
+    </div>
+    <hr class="divider">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-num">13</span>
+        <div class="card-headline">From solar panels to rural transformation: Making model solar villages work</div>
+      </div>
+      <div class="card-meta">
+        <span class="pill pill-src">pv magazine India</span>
+        <span class="pill pill-date">23 Nov 2026, 04:40 PM IST</span>
+        <span class="pill pill-pos">&#10004; Positive</span>
+      </div>
+      <div class="card-body"><p>From is involved in a new development in India&#x27;s solar and renewable energy sector, reflecting the dynamic commercial, regulatory, and investment activity across the industry.</p><p>India&#x27;s clean energy sector is seeing record activity in 2025–26, with new project announcements, manufacturing investments, and policy developments emerging regularly.</p><p>Stakeholders across the solar value chain — developers, manufacturers, financiers, and policymakers — are actively shaping India&#x27;s next phase of clean energy expansion.</p></div>
+      <a class="orig-link" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNOXBXbWQxWkV3bjNDQkR4VEp0bUNQOWJOa3ZSNGVQZlZjQ2hMWDc1eWdjdFJXSE40RDE4WlhtRFZSNDNGejNfRXVvRy1lSXl6aUl6MUs5dEh5TENOcmNETWNwYW1lT3ZUbjZUcmtJX0hWTGpsX2U0czZPLURsZXMzak1LajQ0azVZRlgzNWs3bkxZRmgzSV80UlhTWTBsbjhpUEZsNjFuODVmTTluN1hxV1ZYbUVESFpFRGRWdQ?oc=5" target="_blank" rel="noopener noreferrer">&#128279; Read Original Article</a>
+      <div class="tags"><span class="tag">Solar</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-l">
+      <div class="footer-dot"></div>
+      Solar &amp; Renewable Energy India &nbsp;&#183;&nbsp; Daily News Intelligence &nbsp;&#183;&nbsp; Monday, 23 November 2026
+    </div>
+    <div class="footer-r">Generated 06:54 PM IST &nbsp;&#183;&nbsp; Sources: Google News, Mercom India, PV Magazine &amp; others</div>
+  </div>
+
+</div>
+</body>
+</html>
